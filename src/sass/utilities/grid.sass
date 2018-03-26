@@ -1,0 +1,86 @@
+// --- Globals
+
+$width: 1240px
+$gutter: 16px
+$columns: 18
+
+// --- Calculations
+
+$template: calc(#{$width}/#{$columns})
+
+// --- Mobile
+
+$screen-xl: 1240px
+$screen-lg: 1240px
+$screen-md: 992px
+$screen-sm: 768px
+$screen-xs: 480px
+
+// --- Break Class
+
+$break-lg: 12
+$break-md: 12
+$break-sm: 6
+$break-xs: 2
+
+// --- Classes
+
+.container
+  display: grid
+  margin: 0 auto
+  max-width: $width
+  grid-template-columns: repeat($columns, [col-start] 1fr)
+  grid-column-gap: $gutter
+  grid-row-gap: 0
+
+  @media screen and (max-width: $width)
+    margin: 0 rem-calc(16)
+
+  @media screen and (max-width: $width)
+    grid-template-columns: repeat(auto-fill, minmax($template, 1fr))
+
+  @media screen and (min-width: $screen-lg) and (max-width: $width)
+    grid-template-columns: repeat($break-lg, [col-start] 1fr)
+
+  @media screen and (min-width: $screen-md) and (max-width: $screen-lg)
+    grid-template-columns: repeat($break-md, [col-start] 1fr)
+
+  @media screen and (min-width: $screen-sm) and (max-width: $screen-md)
+    grid-template-columns: repeat($break-sm, [col-start] 1fr)
+
+  @media screen and (min-width: $screen-xs) and (max-width: $screen-sm)
+    grid-template-columns: repeat($break-xs, [col-start] 1fr)
+
+  @media screen and (max-width: $screen-xs)
+    display: block
+
+.row
+  grid-column-end: span #{$columns}
+
+  @media screen and (min-width: $screen-lg) and (max-width: $width)
+    grid-column-end: span $break-lg
+  @media screen and (min-width: $screen-md) and (max-width: $screen-lg)
+    grid-column-end: span $break-md
+  @media screen and (min-width: $screen-sm) and (max-width: $screen-md)
+    grid-column-end: span $break-sm
+  @media screen and (min-width: $screen-xs) and (max-width: $screen-sm)
+    grid-column-end: span $break-xs
+
+// --- Functions
+
+@for $i from 1 through $columns
+  .col-#{$i}
+    grid-column-end: span #{$i}
+
+    @if $i >= $break-lg
+      @media screen and (min-width: $screen-lg) and (max-width: $width)
+        grid-column-end: span $break-lg
+    @if $i > $break-md
+      @media screen and (min-width: $screen-md) and (max-width: $screen-lg)
+        grid-column-end: span $break-md
+    @if $i > $break-sm
+      @media screen and (min-width: $screen-sm) and (max-width: $screen-md)
+        grid-column-end: span $break-sm
+    @if $i > $break-xs
+      @media screen and (min-width: $screen-xs) and (max-width: $screen-sm)
+        grid-column-end: span $break-xs
