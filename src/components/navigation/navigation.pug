@@ -1,4 +1,6 @@
 nav.navigation
-  span.navigation__link(v-for='nav in props', v-if='nav.navigation')
-    router-link(:to='nav.path')
-      a {{ nav.name }}
+  router-link.navigation__logo(to='/')
+    Icon(name='')
+  .navigation__links
+    router-link.navigation__link(:to='link.path' v-for='(link, i) in props', :key='i' v-if='link.navigation' v-html='link.name')
+  .navigation__button(@click='openModal')
