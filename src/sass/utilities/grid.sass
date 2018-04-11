@@ -80,17 +80,17 @@ $template: calc(#{$width}/#{$columns})
 
 @for $i from 1 through $break-sm
   .col-sm-#{$i}
-    @media screen and (min-width: $screen-sm)
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md-max)
       grid-column-end: span #{$i}
 
 @for $i from 1 through $break-md
   .col-md-#{$i}
-    @media screen and (min-width: $screen-md)
+    @media screen and (min-width: $screen-md) and (max-width: $screen-lg-max)
       grid-column-end: span #{$i}
 
 @for $i from 1 through $break-lg
   .col-lg-#{$i}
-    @media screen and (min-width: $screen-lg)
+    @media screen and (min-width: $screen-lg) and (max-width: $screen-xl-max)
       grid-column-end: span #{$i}
 
 @for $i from 1 through $break-xl
@@ -108,17 +108,17 @@ $template: calc(#{$width}/#{$columns})
 
 @for $i from 1 through $break-sm
   .col-sm-offset-#{$i}
-    @media screen and (min-width: $screen-sm)
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md-max)
       grid-column-start: #{$i}
 
 @for $i from 1 through $break-md
   .col-md-offset-#{$i}
-    @media screen and (min-width: $screen-md)
+    @media screen and (min-width: $screen-md) and (max-width: $screen-lg-max)
       grid-column-start: #{$i}
 
 @for $i from 1 through $break-lg
   .col-lg-offset-#{$i}
-    @media screen and (min-width: $screen-lg)
+    @media screen and (min-width: $screen-lg) and (max-width: $screen-xl-max)
       grid-column-start: #{$i}
 
 @for $i from 1 through $columns
