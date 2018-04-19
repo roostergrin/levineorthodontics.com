@@ -1,0 +1,10 @@
+.block-appointment
+  .block-appointment__image(:style="{ backgroundImage: 'url(' + props.image + ')' }" v-parallax='0.05' v-if='props.image')
+  .block-appointment__overlay(v-if='!props.image')
+  .block-appointment__container
+    .block-appointment__text(v-html='props.body')
+    .block-appointment__button(@click='openModal')
+      | {{ props.link }}
+      svg
+        rect(x='0' y='0' width='100%' height='100%')
+      

@@ -1,1 +1,9 @@
-<svg id="c14cd154-7182-456b-a699-930ff8af6c07" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.99 49.43"><title>cube</title><path d="M25.48,49.43,45.63,37.8V14.29L25.48,25.92Zm1.68-22.54L44,17.2V36.83l-16.79,9.7Z" transform="translate(-3.64)" style="fill:#010101"/><polygon points="20.99 3.88 20.15 4.37 20.15 19.88 20.99 20.36 21.83 19.88 21.83 4.37 20.99 3.88" style="fill:#010101"/><path d="M24.64,0l-21,12.12,21,12.12,21-12.12ZM7,12.12,24.64,1.94,42.27,12.12,24.64,22.3Z" transform="translate(-3.64)" style="fill:#010101"/><polygon points="38.63 35.86 25.19 28.1 25.19 30.04 36.95 36.83 38.63 35.86" style="fill:#010101"/><path d="M23.8,25.92,3.64,14.29V37.8L23.8,49.43Zm-1.68,20.6L5.32,36.83V17.2l16.79,9.7Z" transform="translate(-3.64)" style="fill:#010101"/><polygon points="3.36 35.86 16.8 28.1 16.8 30.04 5.04 36.83 3.36 35.86" style="fill:#010101"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <title>cube</title>
+  <path class="icon-fill" d="M25.85,50,46.24,38.24V14.45L25.85,26.22Zm1.7-22.8,17-9.8V37.25l-17,9.82Z"/>
+  <polygon class="icon-fill" points="25 3.92 24.14 4.42 24.14 20.11 25 20.59 25.84 20.11 25.84 4.42 25 3.92"/>
+  <path class="icon-fill" d="M25,0,3.76,12.26,25,24.52,46.25,12.26ZM7.16,12.26,25,2l17.84,10.3L25,22.56Z"/>
+  <polygon class="icon-fill" points="42.84 36.27 29.24 28.42 29.24 30.39 41.14 37.26 42.84 36.27"/>
+  <path class="icon-fill" d="M24.16,26.22,3.76,14.45V38.24L24.16,50Zm-1.7,20.84-17-9.81V17.4l17,9.81Z"/>
+  <polygon class="icon-fill" points="7.16 36.27 20.76 28.42 20.76 30.39 8.86 37.26 7.16 36.27"/>
+</svg>

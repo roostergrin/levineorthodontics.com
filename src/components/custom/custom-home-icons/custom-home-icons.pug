@@ -1,0 +1,8 @@
+.custom-home-icons
+  .custom-home-icons__title(v-html='props.title')
+  .custom-home-icons__subtitle(v-html='props.body')
+  .custom-home-icons__container
+    .custom-home-icons__tile(v-for='(tile, i) in props.tiles', :key='i')
+      Icon.custom-home-icons__icon(:name='tile.icon')
+      .custom-home-icons__tile-title(v-html='tile.title')
+      .custom-home-icons__tile-body(v-html='tile.body')

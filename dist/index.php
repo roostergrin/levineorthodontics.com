@@ -10,7 +10,7 @@
   <?php wp_footer(); ?>
   <script type="text/javascript">
     WebFontConfig = {
-      google: { families: [ 'Lato:300,400', 'Montserrat:400,500,600' ] }
+      google: { families: [ 'Lato:300,400', 'Montserrat:400,500,600', 'Arizonia' ] }
     };
     (function() {
       var wf = document.createElement('script');

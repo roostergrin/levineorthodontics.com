@@ -1,0 +1,6 @@
+.custom-home-banner
+  .custom-home-banner__container
+    .custom-home-banner__container--small
+      .custom-home-banner__image-box
+        .custom-home-banner__image(:style="{ backgroundImage: 'url(' + props.image + ')'}")
+      .custom-home-banner__tagline(v-html='props.tagline')

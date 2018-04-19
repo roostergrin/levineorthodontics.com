@@ -1,0 +1,61 @@
+.custom-home-testimonials
+  padding: 4rem 0
+
+  &__container
+    @extend .container
+
+  &__slider
+    @extend .col-sm-14
+    @extend .col-sm-offset-2
+    width: 100%
+
+  &__slide
+    padding: 0 4rem
+
+  &__title
+    @extend h3
+    text-align: center
+    text-transform: uppercase
+    color: $black
+
+  &__subtitle
+    @extend h2
+    padding: 1rem 0 2rem
+    text-align: center
+    text-transform: uppercase
+    color: $lavender
+
+  &__quote
+    @extend .testimonials
+    text-align: center
+
+  &__author
+    padding: 2rem 0 0
+    text-align: center
+    color: $black
+    font-family: $font3
+    font-size: 24px
+
+
+  &__prev,
+  &__next
+    position: absolute
+    top: 10%
+    transform: rotate(45deg) translate(50%, -50%)
+    z-index: 9
+    border: 3px solid $dark-lavender
+    width: 1.5rem
+    height: 1.5rem
+
+    &:hover
+      cursor: pointer
+
+  &__prev
+    border-top: none
+    border-right: none
+
+  &__next
+    right: 0
+    transform: rotate(45deg) translate(-50%)
+    border-bottom: none
+    border-left: none

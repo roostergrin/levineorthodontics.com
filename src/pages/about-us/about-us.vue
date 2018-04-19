@@ -1,6 +1,7 @@
 <template lang='pug' src='./about-us.pug'></template>
 
 <script>
+import BlockHeader from 'components/block/block-header/block-header'
 import Loader from 'components/loader/loader'
 
 export default {
@@ -14,6 +15,7 @@ export default {
     }
   },
   components: {
+    BlockHeader,
     Loader
   }
 }

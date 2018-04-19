@@ -1,0 +1,56 @@
+.custom-home-icons
+  padding: 4rem 0
+
+  &__container
+    @extend .container
+
+  &__title
+    @extend h2
+    padding-bottom: 1rem
+    text-align: center
+    text-transform: uppercase
+    color: $lavender
+
+  &__subtitle
+    margin: auto
+    padding-bottom: 2rem
+    max-width: rem-calc(1030px)
+    text-align: center
+
+  &__tile
+    // @include link-fade()
+    @extend .col-sm-4
+    @extend .flex-center-start
+    flex-direction: column
+    padding: 3rem 0
+
+    &:nth-child(3n-2)
+      @extend .col-sm-offset-2
+
+    &:nth-child(3n-1)
+      @extend .col-sm-offset-7
+
+    &:nth-child(3n)
+      @extend .col-sm-offset-12
+
+    &:nth-last-child(2)
+      @extend .col-sm-offset-4
+
+    &:last-child
+      @extend .col-sm-offset-10
+
+  &__icon
+    width: 4rem
+
+    .icon-fill
+      fill: $blue-grey
+
+  &__tile-title
+    @extend h4
+    padding: 1rem 0
+    text-align: center
+    text-transform: uppercase
+    color: $lavender
+
+  &__tile-body
+    text-align: center

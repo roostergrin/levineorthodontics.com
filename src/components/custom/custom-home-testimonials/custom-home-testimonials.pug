@@ -1,0 +1,10 @@
+.custom-home-testimonials
+  .custom-home-testimonials__title(v-html='props.title')
+  .custom-home-testimonials__subtitle(v-html='props.subtitle')
+  .custom-home-testimonials__container
+    swiper.custom-home-testimonials__slider(:options='swiperOption')
+      swiperSlide.custom-home-testimonials__slide(v-for='(item, i) in props.testimonials', :key='i')
+        .custom-home-testimonials__quote(v-html='item.quote')
+        .custom-home-testimonials__author(v-html='item.author')
+      .custom-home-testimonials__prev(slot='button-prev')
+      .custom-home-testimonials__next(slot='button-next')

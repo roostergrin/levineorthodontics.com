@@ -1,12 +1,17 @@
 // --- Globals
 // --- TODO: Fallbacks for grid that's built on floats, margins and widths.
 // --- for things outside the standard container size
-$width-large: 1440px
+
+$width-large: 1330px
+
 // --- for the standard container
-$width: 1330px
+
+$width: 1180px
 $gutter: 22px
 $columns: 16
+
 // --- not used yet finding ways to implement a responsive height structure for larger templating issues
+
 $rows: 1
 
 // --- Screens
@@ -42,10 +47,19 @@ $screen-xs-max: $screen-xs - 1
 
 // --- Classes
 
+
+// --- container for just a basic one column container
+.flex-container
+  display: flex
+  margin: 0 auto
+  width: 100%
+  max-width: $width
+
 .container
   display: grid
   position: relative
   margin: 0 auto
+  width: 100%
   max-width: $width
   grid-template-columns: repeat($columns, [col-start] 1fr)
   grid-column-gap: $gutter

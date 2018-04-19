@@ -1,4 +1,4 @@
-<template lang='pug' src='./block-header.pug'></template>
+<template lang='pug' src='./hero.pug'></template>
 
 <script>
 export default {

@@ -1,0 +1,6 @@
+.block-header
+  .block-header__overlay
+  .block-header__container
+    .block-header__title(v-html='props.title' v-if='props.title')
+    .block-header__subtitle(v-html='props.subtitle' v-if='props.subtitle')
+    .block-header__body(v-html='props.body' v-if='props.body')
