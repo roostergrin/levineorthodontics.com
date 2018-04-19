@@ -1,8 +1,13 @@
 // --- Globals
-
+// --- TODO: Fallbacks for grid that's built on floats, margins and widths.
+// --- for things outside the standard container size
+$width-large: 1440px
+// --- for the standard container
 $width: 1330px
 $gutter: 22px
 $columns: 16
+// --- not used yet finding ways to implement a responsive height structure for larger templating issues
+$rows: 1
 
 // --- Screens
 
@@ -12,14 +17,13 @@ $screen-md: 1024px
 $screen-sm: 768px
 $screen-xs: 480px
 
-// --- Break Columns
-
-$break-xl: $columns
-$break-lg: 12
-$break-md: 8
-$break-sm: 4
-$break-xs: 2
-
+// DONT TOUCH BEYOUD THIS POINT
+// DONT TOUCH BEYOUD THIS POINT
+// DONT TOUCH BEYOUD THIS POINT
+// DONT TOUCH BEYOUD THIS POINT
+// DONT TOUCH BEYOUD THIS POINT
+// DONT TOUCH BEYOUD THIS POINT
+// DONT TOUCH BEYOUD THIS POINT
 // DONT TOUCH BEYOUD THIS POINT
 // DONT TOUCH BEYOUD THIS POINT
 // DONT TOUCH BEYOUD THIS POINT
@@ -36,14 +40,11 @@ $screen-md-max: $screen-md - 1
 $screen-sm-max: $screen-sm - 1
 $screen-xs-max: $screen-xs - 1
 
-// --- Calculations
-
-$template: calc(#{$width}/#{$columns})
-
 // --- Classes
 
 .container
   display: grid
+  position: relative
   margin: 0 auto
   max-width: $width
   grid-template-columns: repeat($columns, [col-start] 1fr)
@@ -52,76 +53,79 @@ $template: calc(#{$width}/#{$columns})
 
   @media screen and (max-width: $width)
     padding: 0 calc(#{$gutter}/2)
-    grid-template-columns: repeat(auto-fill, minmax($template, 1fr))
+    grid-template-columns: repeat($columns, [col-start] 1fr)
+
+// --- allows for a container that's larger than the standard for the website useful for having columns in a header or footer that you still want content constrained by
+
+.container-large
+  display: flex
+  justify-content: space-between
+  margin: 0 auto
+  max-width: $width-large
+  @media screen and (max-width: $width-large)
+    padding: 0 calc(#{$gutter}/2)
+
+// --- for fallbacks with floats
 
 .row
-  grid-column-end: span #{$break-xl}
-
-  @media screen and (min-width: $screen-xl)
-    grid-column-end: span $break-xl
-  @media screen and (min-width: $screen-lg)
-    grid-column-end: span $break-lg
-  @media screen and (min-width: $screen-md)
-    grid-column-end: span $break-md
-  @media screen and (min-width: $screen-sm)
-    grid-column-end: span $break-sm
-  @media screen and (min-width: $screen-xs)
-    grid-column-end: span $break-xs
+  &:after,
+  &:before
+    display: table
+    clear: both
+    content: ''
 
 // --- Functions
 
-  // --- Column Widths
+// --- Column Widths
+// --- responsive cascades to largest screen size can't be done with max-widths
 
-
-@for $i from 1 through $break-xs
+@for $i from 1 through $columns
   .col-xs-#{$i}
     transition: all .35s ease-in-out
+    // width: calc(#{$columns} / #{$i} * 100%)
     grid-column-end: span #{$i}
 
-@for $i from 1 through $break-sm
   .col-sm-#{$i}
-    @media screen and (min-width: $screen-sm) and (max-width: $screen-md-max)
+    @media screen and (min-width: $screen-sm)
+      // width: calc(#{$columns} / #{$i} * 100%)
       grid-column-end: span #{$i}
 
-@for $i from 1 through $break-md
   .col-md-#{$i}
-    @media screen and (min-width: $screen-md) and (max-width: $screen-lg-max)
+    @media screen and (min-width: $screen-md)
+      // width: calc(#{$columns} / #{$i} * 100%)
       grid-column-end: span #{$i}
 
-@for $i from 1 through $break-lg
   .col-lg-#{$i}
-    @media screen and (min-width: $screen-lg) and (max-width: $screen-xl-max)
+    @media screen and (min-width: $screen-lg)
+      // width: calc(#{$columns} / #{$i} * 100%)
       grid-column-end: span #{$i}
 
-@for $i from 1 through $break-xl
   .col-xl-#{$i}
     @media screen and (min-width: $screen-xl)
+      // width: calc(#{$columns} / #{$i} * 100%)
       grid-column-end: span #{$i}
 
 
-  // --- Offsets
+// --- Offsets
+// --- responsive cascades to largest screen size can't be done with max-widths
 
-@for $i from 1 through $break-xs
+@for $i from 1 through $columns
   .col-xs-offset-#{$i}
     @media screen and (max-width: $screen-sm-max)
       grid-column-start: #{$i}
 
-@for $i from 1 through $break-sm
   .col-sm-offset-#{$i}
-    @media screen and (min-width: $screen-sm) and (max-width: $screen-md-max)
+    @media screen and (min-width: $screen-sm)
       grid-column-start: #{$i}
 
-@for $i from 1 through $break-md
   .col-md-offset-#{$i}
-    @media screen and (min-width: $screen-md) and (max-width: $screen-lg-max)
+    @media screen and (min-width: $screen-md)
       grid-column-start: #{$i}
 
-@for $i from 1 through $break-lg
   .col-lg-offset-#{$i}
-    @media screen and (min-width: $screen-lg) and (max-width: $screen-xl-max)
+    @media screen and (min-width: $screen-lg)
       grid-column-start: #{$i}
 
-@for $i from 1 through $columns
   .col-xl-offset-#{$i}
     @media screen and (min-width: $screen-xl)
       grid-column-start: #{$i}

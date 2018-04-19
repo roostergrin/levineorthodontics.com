@@ -1,0 +1,54 @@
+.nav-tablet
+  display: none
+  &__container
+    @extend .flex-center-between
+    position: relative
+    z-index: 9999
+    padding: 1rem
+
+  &__logo
+    display: block
+    width: 10rem
+
+  &__left
+    @extend .flex-center-end
+
+  &__button
+    margin-right: 2rem
+    background: $grape
+    padding: .25rem .5rem
+    text-transform: uppercase
+    text-decoration: none
+    color: $ice-blue
+
+  &__hamburger
+    @include hamburger-basic($dark-lavender, .5s, 2.5rem, 2.5rem)
+
+  &__drawer
+    position: fixed
+    top: 0
+    right: 0
+    transform: translateX(100%)
+    transition: all 1s ease-in-out
+    z-index: 99
+    background: $ice-blue
+    width: 40%
+    height: 100%
+
+    &--active
+      transform: translateX(0)
+
+  &__links
+    @extend .flex-center
+    flex-direction: column
+    padding: 1rem
+    padding-top: 5rem
+
+  &__link
+    opacity: 0
+    padding: 1rem 0
+    text-transform: uppercase
+    text-decoration: none
+    color: $grape
+    &--active
+      @include link-fade(5, fade-in-up, 1.5s, .25s, .125s)

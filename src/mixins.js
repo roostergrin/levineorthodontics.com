@@ -6,3 +6,17 @@ export const openModal = {
     }
   }
 }
+
+export const openNav = {
+  data () {
+    return {
+      navActive: false
+    }
+  },
+  methods: {
+    openNav () {
+      this.navActive = !this.navActive
+      this.navActive ? document.body.classList.add('body-stop') : document.body.classList.remove('body-stop')
+    }
+  }
+}

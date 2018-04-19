@@ -1,0 +1,103 @@
+.footer
+  position: relative
+  background: $blue-grey
+  padding: 2rem 0
+  &__mask
+    display: none
+    position: absolute
+    top: 0
+    left: 0
+    background: $white
+    width: 100%
+    height: 100%
+    @media screen and (min-width: $screen-md)
+      display: block
+      clip-path: polygon(0 100%, 100% 60%, 100% 100%)
+
+  &__container
+    @extend .container
+    @media screen and (max-width: $screen-sm-max)
+      display: block
+
+    &--left
+      @extend .col-sm-5
+      @extend .flex-start
+      flex-direction: column
+      @media screen and (max-width: $screen-sm)
+        align-items: center
+        justify-content: center
+        padding-bottom: 2rem
+        text-align: center
+
+    &--center
+      @extend .col-sm-4
+      @extend .col-sm-offset-7
+      @extend .flex-start-center
+      @media screen and (max-width: $screen-sm)
+        align-items: center
+        justify-content: center
+        padding-bottom: 2rem
+
+    &--right
+      @extend .col-sm-5
+      @extend .col-sm-offset-12
+      @extend .flex-start-center
+      @media screen and (max-width: $screen-sm)
+        align-items: center
+        justify-content: center
+
+  &__sponsor
+    padding-bottom: 1rem
+
+
+  &__sponsor,
+  &__link
+    @extend .footer-text
+    text-decoration: none
+    color: $white
+    &:hover
+      font-weight: bold
+
+  &__review
+    @include button-background-draw(205px, 36px, $white, $bluey-grey, .5rem)
+
+  &__icon
+    margin: 0 .5rem
+    width: 3rem
+    font-size: 0
+    .icon-background,
+    .icon-fill,
+    .icon-fill-2
+      transition: all .5s ease-in-out
+
+    .icon-background
+      stroke: $white
+      fill: transparent
+
+    .icon-fill
+      fill: $white
+
+    .icon-fill-2
+      fill: $blue-grey
+
+    &:hover
+      .icon-background,
+      .icon-fill-2
+        fill: $white
+
+      .icon-fill
+        fill: $blue-grey
+
+  &__rooster
+    @extend .col-sm-16
+    position: static
+    right: 0
+    bottom: -.75rem
+    z-index: 99
+    text-align: center
+    color: $white
+    font-family: $font2
+    font-size: 11px
+    @media screen and (min-width: $screen-md)
+      position: absolute
+      color: $blue-grey

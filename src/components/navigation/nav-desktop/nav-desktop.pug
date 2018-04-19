@@ -1,0 +1,13 @@
+.nav-desktop
+  .nav-desktop__container
+    .nav-desktop__left
+      router-link.nav-desktop__logo(to='/')
+        Icon(:name='props.logo')
+    .nav-desktop__right
+      router-link.nav-desktop__link(:to='link.path' v-for='(link, i) in links', :key='i' v-if='link.navigation')
+        | {{ link.name }}
+        hr
+      a.nav-desktop__button(:href='props.href')
+        | {{ props.label }}
+        svg
+          rect(x='0' y='0' width='100%' height='100%')

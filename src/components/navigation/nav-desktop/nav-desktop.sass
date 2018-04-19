@@ -1,0 +1,45 @@
+.nav-desktop
+  display: none
+  background: $white
+  padding: 1rem 0
+
+  &__container
+    @extend .container-large
+
+  &__left
+    @extend .flex-center-start
+
+  &__right
+    @extend .flex-center-end
+
+  &__logo
+    display: block
+    width: 15rem
+
+  &__link
+    position: relative
+    margin: 0 1rem
+    padding: .25rem
+    text-transform: uppercase
+    text-decoration: none
+    color: $black
+
+    hr
+      display: none
+      position: absolute
+      bottom: -.25rem
+      left: 50%
+      transform: translateX(-50%)
+      border: none
+      background-color: $lavender
+      width: 50%
+      height: 3px
+
+    &:hover
+
+      hr
+        display: block
+
+  &__button
+    @include button-outline-draw(125px, 28px, $lavender, .25rem)
+    text-decoration: none
