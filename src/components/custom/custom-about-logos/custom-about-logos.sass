@@ -1,0 +1,12 @@
+.custom-about-logos
+  @extend .container
+  padding-bottom: 4rem
+
+  &__container
+    @extend .col-sm-offset-2
+    @extend .col-sm-14
+    @extend .flex-center-between
+
+  &__logos
+    @include link-fade(4, fade-in-up, .75s, .5s, 1s)
+    height: 3rem

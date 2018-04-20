@@ -1,0 +1,113 @@
+.custom-about-team
+  background: $pale-lavender
+  padding: 7rem 0
+
+  &__container
+    @extend .container
+
+  &__image-box
+    position: relative
+    width: 34.5%
+    min-height: 27.5rem
+
+  &__content
+    @extend .flex-center-end
+    flex-direction: column
+    width: 63.5%
+
+  &__text-box
+    @extend .flex-center-between
+    padding-bottom: 2rem
+    width: 100%
+
+  &__headers
+    @extend .flex-start
+    width: 50%
+
+  &__slider
+    @extend .col-sm-14
+    @extend .col-sm-offset-2
+    position: relative
+    width: 100%
+
+  &__slide
+    @extend .flex-stretch-between
+
+    &.swiper-slide
+      opacity: 0 !important
+
+    &.swiper-slide-active
+      opacity: 1 !important
+
+
+  &__navigation
+    @extend .flex-stretch-between
+    position: absolute
+    top: 0
+    right: 0
+    width: 63.5%
+    height: 10%
+
+  &__tile
+    position: relative
+    border-bottom: 4px solid transparent
+    width: calc(100% / 6 - 11px)
+    min-height: 8em
+
+    &--active
+      border-color: $lavender
+
+
+  &__subtitle
+    @extend body
+    @extend .col-sm-14
+    @extend .col-sm-offset-2
+    padding-bottom: 4rem
+    text-align: center
+
+  &__title
+    @extend h3
+    padding-bottom: 1.5rem
+    text-align: center
+    text-transform: uppercase
+
+  &__image
+    position: absolute
+    top: 0
+    left: 0
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    width: 100%
+    height: 100%
+
+  &__tile-image
+    position: absolute
+    top: 0
+    left: 0
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    width: 100%
+    height: 95%
+
+  &__dash
+    position: relative
+    top: 10px
+    margin-right: 3rem
+    background: $lavender
+    width: 2rem
+
+  &__name-text
+    @extend .header-small
+    text-transform: uppercase
+
+  &__text
+    @extend .header-small
+    color: $dark-lavender
+    font-weight: 500
+
+  &__body
+    padding-left: 5rem
+    max-height: 10rem
+    overflow: scroll

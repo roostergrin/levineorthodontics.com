@@ -2,4 +2,9 @@
   Loader(v-if='loading')
   div(v-if='!loading')
     BlockHeader(:props='props.acf.header')
-    pre {{ props }}
+    AboutDoctor(:props='props.acf.doctor')
+    AboutLogos(:props='props.acf.logos')
+    BlockAppt(:props='props.acf.appointment')
+    AboutStaff(:props='props.acf.team')
+    AboutOffice(:props='props.acf.office')
+    //- pre {{ props }}

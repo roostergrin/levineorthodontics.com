@@ -1,0 +1,9 @@
+.custom-about-doctor
+  .custom-about-doctor__container
+    .custom-about-doctor__container--left
+      .custom-about-doctor__tagline
+        hr.custom-about-doctor__dash
+        .custom-about-doctor__tagline-text(v-html='props.tagline')
+      .custom-about-doctor__body(v-html='props.body')
+    .custom-about-doctor__container--right
+      .custom-about-doctor__image(:style="{ backgroundImage: 'url(' + props.image + ')' }")
