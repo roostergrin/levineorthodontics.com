@@ -1,7 +1,7 @@
 <template lang='pug' src='./nav-mobile.pug'></template>
 
 <script>
-import { openNav } from '@/mixins.js'
+import { toggleNav } from '@/mixins.js'
 
 import Icon from 'components/icon/icon'
 
@@ -12,7 +12,7 @@ export default {
       return this.$router.options.routes
     }
   },
-  mixins: [openNav],
+  mixins: [toggleNav],
   components: {
     Icon
   }

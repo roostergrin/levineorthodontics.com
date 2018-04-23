@@ -6,7 +6,7 @@
     swiper.custom-about-team__slider(:options='swiperOptions' ref='mySwiper')
       swiperSlide.custom-about-team__slide(v-for='(slide, i) in props.staff', :key='i')
         .custom-about-team__image-box
-          .custom-about-team__image(:style="{ backgroundImage: 'url(' + slide.image + ')'}")
+          .custom-about-team__image(:style="{ backgroundImage: 'url(' + slide.image + ')' }")
         .custom-about-team__content
           .custom-about-team__text-box
             .custom-about-team__headers

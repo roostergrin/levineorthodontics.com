@@ -12,7 +12,10 @@ export default {
         slidesPerView: 3,
         spaceBetween: 11,
         centeredSlides: true,
-        autoplay: true
+        autoplay: {
+          delay: 3000
+        },
+        freeMode: true
       }
     }
   },

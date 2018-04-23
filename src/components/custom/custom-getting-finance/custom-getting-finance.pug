@@ -1,0 +1,8 @@
+.custom-getting-finance
+  .custom-getting-finance__title(v-html='props.title')
+  .custom-getting-finance__container
+    .custom-getting-finance__left
+      .custom-getting-finance__body(v-html='props.body')
+      hr.custom-getting-finance__line
+    .custom-getting-finance__right
+      .custom-getting-finance__image(:style="{ backgroundImage: 'url(' + props.image + ')' }")

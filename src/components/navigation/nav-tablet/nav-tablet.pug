@@ -7,7 +7,7 @@
       a.nav-tablet__button(:href='props.href')
         | {{ props.label }}
       
-      .nav-tablet__hamburger(@click='openNav', :class="{ 'nav-tablet__hamburger--active': navActive }")
+      .nav-tablet__hamburger(@click='toggleNav', :class="{ 'nav-tablet__hamburger--active': navActive }")
         span
         span
         span

@@ -1,0 +1,12 @@
+.custom-getting-forms
+  .custom-getting-forms__title(v-html='props.title')
+  .custom-getting-forms__container
+    .custom-getting-forms__center
+      .custom-getting-forms__body(v-html='props.subtitle')
+        
+  .custom-getting-forms__container
+    .custom-getting-forms__buttons
+      .custom-getting-forms__button(v-for='(button, i) in props.forms', :href='button.href')
+        | {{ button.label }}
+        svg
+          rect(x='0' y='0' width='100%' height='100%')

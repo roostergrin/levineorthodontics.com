@@ -1,0 +1,17 @@
+.block-imagegrid
+  .block-imagegrid__container
+    .block-imagegrid__left
+      .block-imagegrid__caption(v-html='props.panel_text')
+      .block-imagegrid__image(:style="{ backgroundImage: 'url(' + props.panel + ')' }")
+    .block-imagegrid__right
+      .block-imagegrid__top
+        .block-imagegrid__caption(v-html='props.block_text')
+        .block-imagegrid__image(:style="{ backgroundImage: 'url(' + props.block + ')' }")
+      .block-imagegrid__bottom(v-if='props.body')
+        .block-imagegrid__text(v-html='props.body')
+        .block-imagegrid__list
+          .block-imagegrid__list-item(v-for='(item, i) in props.list', :key='i')
+            span.block-imagegrid__bullet
+            | {{ item.text }}
+      .block-imagegrid__bottom--alt(v-if='!props.body')
+        .block-imagegrid__text

@@ -3,7 +3,7 @@
     router-link.nav-mobile__logo(to='/')
       Icon(:name='props.logo')
       
-    .nav-mobile__hamburger(@click='openNav', :class="{ 'nav-mobile__hamburger--active': navActive }")
+    .nav-mobile__hamburger(@click='toggleNav', :class="{ 'nav-mobile__hamburger--active': navActive }")
       span
       span
       span

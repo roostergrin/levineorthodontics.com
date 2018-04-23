@@ -1,0 +1,57 @@
+.block-imagegrid
+  padding: 4rem 0
+
+  &__container
+    @extend .container
+
+  &__left
+    @extend .col-sm-offset-2
+    @extend .col-sm-7
+    @extend .flex-end-center
+    position: relative
+    min-height: 40rem
+
+  &__right
+    @extend .col-sm-9
+    @extend .col-sm-offset-9
+
+  &__top
+    @extend .flex-end-center
+    position: relative
+    min-height: 25rem
+
+  &__bottom
+    padding-top: 1rem
+
+  &__caption
+    @extend .caption
+    position: relative
+    z-index: 9
+    padding: 1rem
+    color: $white
+    @media screen and (min-width: $screen-sm)
+      padding: 0 4rem 4rem
+
+  &__image
+    position: absolute
+    top: 0
+    left: 0
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    width: 100%
+    height: 100%
+
+  &__text
+    padding-bottom: 1rem
+
+  &__list-item
+    @extend .flex-center-start
+    padding-bottom: .5rem
+
+  &__bullet
+    display: block
+    margin: 0 .75rem
+    border: .25rem solid $lavender
+    border-radius: 50%
+    content: ''

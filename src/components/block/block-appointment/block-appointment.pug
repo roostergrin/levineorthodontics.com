@@ -3,7 +3,7 @@
   .block-appointment__overlay(v-if='!props.image')
   .block-appointment__container
     .block-appointment__text(v-html='props.body')
-    .block-appointment__button(@click='openModal')
+    .block-appointment__button(@click='showModal')
       | {{ props.link }}
       svg
         rect(x='0' y='0' width='100%' height='100%')

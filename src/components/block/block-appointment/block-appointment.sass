@@ -2,6 +2,24 @@
   position: relative
   overflow: hidden
 
+  .page-getting &,
+  .page-treatments &
+    background: $cloudy-blue
+
+  &__overlay
+
+    .page-getting &,
+    .page-treatments &
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 99
+      background: $white
+      width: 100%
+      height: 100%
+      clip-path: polygon(0 70%, 0 100%, 100% 100%)
+
+
   &__image
     position: absolute
     top: 0

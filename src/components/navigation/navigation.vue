@@ -1,7 +1,7 @@
 <template lang='pug' src='./navigation.pug'></template>
 
 <script>
-import { openModal } from '@/mixins.js'
+import { showModal } from '@/mixins.js'
 
 import NavDesktop from 'components/navigation/nav-desktop/nav-desktop'
 import NavTablet from 'components/navigation/nav-tablet/nav-tablet'
@@ -13,7 +13,7 @@ export default {
       return this.$store.state.app.nav
     }
   },
-  mixins: [openModal],
+  mixins: [showModal],
   components: {
     NavDesktop,
     NavTablet,

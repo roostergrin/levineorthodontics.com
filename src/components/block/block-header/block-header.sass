@@ -1,6 +1,10 @@
 .block-header
   position: relative
   background: $pale-violet
+
+  .page-getting &
+    background: $cloudy-blue
+
   &__overlay
     position: absolute
     top: 0
@@ -20,7 +24,9 @@
     padding: 7rem 0 4rem
     max-width: 50%
 
-    .page-about-us &
+    .page-about-us &,
+    .page-getting &,
+    .page-treatments &
       padding-top: 4.5rem
       padding-bottom: 0
 
@@ -35,7 +41,9 @@
     text-transform: uppercase
     color: $lavender
 
-    .page-about-us &
+    .page-about-us &,
+    .page-getting &,
+    .page-treatments &
       color: $grape
 
   &__body

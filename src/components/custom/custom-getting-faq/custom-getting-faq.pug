@@ -1,0 +1,13 @@
+.custom-getting-faq
+  .custom-getting-faq__title(v-html='props.title')
+  .custom-getting-faq__container
+    .custom-getting-faq__qa-box(v-for='(item, i) in props.accordion', :key='i' @click='showAccordion(i)')
+      .custom-getting-faq__question(:class="{ 'custom-getting-faq__question--active': accordion === i }")
+        | {{ item.question }}
+        .custom-getting-faq__indicator
+          span
+          span
+      transition(name='fade')
+        .custom-getting-faq__answer(v-show='accordion === i')
+          | {{ item.answer }}
+          hr.custom-getting-faq__dash(:class="{ 'custom-getting-faq__dash--active': accordion === i }")
