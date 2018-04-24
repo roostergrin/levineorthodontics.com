@@ -2,7 +2,8 @@
   position: relative
   background: $pale-violet
 
-  .page-getting &
+  .page-getting &,
+  .page-invisalign &
     background: $cloudy-blue
 
   &__overlay
@@ -26,7 +27,8 @@
 
     .page-about-us &,
     .page-getting &,
-    .page-treatments &
+    .page-treatments &,
+    .page-invisalign &
       padding-top: 4.5rem
       padding-bottom: 0
 
@@ -34,6 +36,8 @@
     @extend h3
     padding-bottom: 1rem
     text-transform: uppercase
+    .page-invisalign &
+      padding-bottom: 4rem
 
   &__subtitle
     @extend h1

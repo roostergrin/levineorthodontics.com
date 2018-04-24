@@ -5,7 +5,6 @@
     @extend .container
 
   &__left
-    @extend .col-sm-offset-2
     @extend .col-sm-7
     @extend .flex-end-center
     position: relative
@@ -13,7 +12,7 @@
 
   &__right
     @extend .col-sm-9
-    @extend .col-sm-offset-9
+    @extend .col-sm-offset-8
 
   &__top
     @extend .flex-end-center
@@ -22,6 +21,11 @@
 
   &__bottom
     padding-top: 1rem
+
+    &--alt
+      position: relative
+      margin-top: 1rem
+      min-height: 14rem
 
   &__caption
     @extend .caption

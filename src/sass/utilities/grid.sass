@@ -81,7 +81,7 @@ $screen-xs-max: $screen-xs - 1
 
 // --- for fallbacks with floats
 
-.row
+.clearfix
   &:after,
   &:before
     display: table
@@ -100,21 +100,25 @@ $screen-xs-max: $screen-xs - 1
     grid-column-end: span #{$i}
 
   .col-sm-#{$i}
+    grid-column-end: span $columns
     @media screen and (min-width: $screen-sm)
       // width: calc(#{$columns} / #{$i} * 100%)
       grid-column-end: span #{$i}
 
   .col-md-#{$i}
+    grid-column-end: span $columns
     @media screen and (min-width: $screen-md)
       // width: calc(#{$columns} / #{$i} * 100%)
       grid-column-end: span #{$i}
 
   .col-lg-#{$i}
+    grid-column-end: span $columns
     @media screen and (min-width: $screen-lg)
       // width: calc(#{$columns} / #{$i} * 100%)
       grid-column-end: span #{$i}
 
   .col-xl-#{$i}
+    grid-column-end: span $columns
     @media screen and (min-width: $screen-xl)
       // width: calc(#{$columns} / #{$i} * 100%)
       grid-column-end: span #{$i}

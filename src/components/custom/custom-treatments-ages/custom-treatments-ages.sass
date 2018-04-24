@@ -1,0 +1,64 @@
+.custom-treatments-ages
+  padding: 4rem 0
+
+  &__container
+    @extend .container
+
+  &__left
+    @extend .col-sm-offset-2
+    @extend .col-sm-7
+    position: relative
+
+  &__right
+    @extend .col-sm-offset-10
+    @extend .col-sm-8
+    overflow: hidden
+
+  &__tabs
+    padding-bottom: 2rem
+
+  &__tab
+    @extend .flex-center-start
+    @extend h3-alt
+    padding-bottom: 1rem
+    text-transform: uppercase
+    color: $blue-grey
+
+    &--active
+      color: $grape
+
+  &__image
+    @extend .img-norm
+
+  &__indicator
+    margin-right: 3rem
+    width: 2rem
+    height: 3px
+
+    &--active
+      background: $grape
+
+
+  &__dash
+    transition: all .5s ease-in-out
+    margin-top: 1rem
+    margin-bottom: 2rem
+    background: $lavender
+    width: 119px
+    height: 3px
+
+  .slide-in-enter-active,
+  .slide-in-leave-active
+    transition: all .5s ease-in-out
+
+  .slide-in-enter,
+  .slide-in-leave-to
+    transform: translateX(-100%)
+
+  .fade-enter-active,
+  .fade-leave-active
+    transition: all .5s ease-in-out
+
+  .fade-enter,
+  .fade-leave-to
+    opacity: 0

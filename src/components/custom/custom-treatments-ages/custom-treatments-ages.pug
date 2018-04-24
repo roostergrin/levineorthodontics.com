@@ -1,0 +1,14 @@
+.custom-treatments-ages
+  .custom-treatments-ages__container
+    .custom-treatments-ages__left
+      .custom-treatments-ages__image(v-show='tab === i' v-for='(item, i) in props', :key='i', :style="{ backgroundImage: 'url(' + item.image + ')' }")
+    .custom-treatments-ages__right
+      .custom-treatments-ages__tabs
+        .custom-treatments-ages__tab(v-for='(item, i) in props', :key='i' @click='showTab(i)', :class="{ 'custom-treatments-ages__tab--active': tab === i }")
+          hr.custom-treatments-ages__indicator(:class="{ 'custom-treatments-ages__indicator--active': tab === i }")
+          | {{ item.title }}
+      .custom-treatments-ages__content
+        .custom-treatments-ages__body(v-show='tab === i' v-for='(item, i) in props', :key='i')
+          .custom-treatments-ages__text(v-html='item.body')
+          transition(name='slide-in')
+            hr.custom-treatments-ages__dash(v-show='tab === i', :class="{ 'custom-treatments-ages__dash--active': tab === i }")

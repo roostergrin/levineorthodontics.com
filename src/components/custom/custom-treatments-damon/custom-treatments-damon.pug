@@ -1,0 +1,17 @@
+.custom-treatments-damon
+  .custom-treatments-damon__title(v-html='props.title')
+  .custom-treatments-damon__container
+    .custom-treatments-damon__subtitle(v-html='props.subtitle')
+  .custom-treatments-damon__container
+    .custom-treatments-damon__left
+      .custom-treatments-damon__image(:style="{ backgroundImage: 'url(' + props.image + ')'}")
+    .custom-treatments-damon__right
+      .custom-treatments-damon__body
+        .custom-treatments-damon__text(v-html='props.body')
+        hr.custom-treatments-damon__dash
+  .custom-treatments-damon__container
+    .custom-treatments-damon__tile(v-for='(tile, i) in props.tiles')
+      .custom-treatments-damon__image-box
+        .custom-treatments-damon__image(:style="{ backgroundImage: 'url(' + tile.image + ')' }")
+      .custom-treatments-damon__tile-title(v-html='tile.title')
+      .custom-treatments-damon__tile-body(v-html='tile.body')

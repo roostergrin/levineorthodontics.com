@@ -9,5 +9,5 @@
           span
       transition(name='fade')
         .custom-getting-faq__answer(v-show='accordion === i')
-          | {{ item.answer }}
+          .custom-getting-faq__text(v-html='item.answer')
           hr.custom-getting-faq__dash(:class="{ 'custom-getting-faq__dash--active': accordion === i }")

@@ -78,13 +78,12 @@ export const scrollNav = {
 export const showTab = {
   data () {
     return {
-      tab: 1
+      tab: 0
     }
   },
   methods: {
     showTab (i) {
       this.tab = i
-      console.log(this.tab)
     }
   }
 }

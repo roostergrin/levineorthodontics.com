@@ -14,4 +14,4 @@
             span.block-imagegrid__bullet
             | {{ item.text }}
       .block-imagegrid__bottom--alt(v-if='!props.body')
-        .block-imagegrid__text
+        .block-imagegrid__image(:style="{ backgroundImage: 'url(' + props.marketing + ')' }")
