@@ -1,49 +1,143 @@
-*
-  font-family: $font-family-sans-serif
+.app > *
+  line-height: 1.38
+  letter-spacing: normal
+  color: $black
+  font-family: $font1
+  font-size: 16px
+  font-weight: normal
+  font-style: normal
+  font-stretch: normal
 
-h1, .h1, %h1
-  margin: 0
-  line-height: 1.2
-  font-family: $font-family-sans-serif
-  font-size: rem-calc(40)
+.header-small
+  text-align: left
+  line-height: 1.38
+  color: $blue-grey
+  font-family: $font2
+  font-size: 16px
 
-  @media (min-width: $screen-md-min)
-    font-size: rem-calc(55)
+.caption
+  text-align: left
+  line-height: 1.27
+  letter-spacing: normal
+  font-family: $font2
+  font-size: 30px
+  font-weight: 500
+  font-style: normal
+  font-stretch: normal
 
-h2, .h2, %h2
-  margin: 0
-  line-height: 1.4
-  font-family: $font-family-sans-serif
-  font-size: rem-calc(26)
+.faq
+  text-align: left
+  color: $grape
+  font-family: $font1
+  font-size: 18px
 
-  @media (min-width: $screen-md-min)
-    font-size: rem-calc(32)
+.testimonials
+  font-family: $font1
+  font-size: 16px
+  font-weight: 300
 
-h3, .h3, %h3
-  margin: 0
-  line-height: 1.4
-  font-size: rem-calc(24)
+.footer-text
+  font-family: $font2
+  font-size: 14px
 
-  @media (min-width: $screen-md-min)
-    font-size: rem-calc(30)
+.tagline
+  letter-spacing: 1.6px
+  color: $dark-lavender
+  font-family: $font2
+  font-size: 28px
 
-h4, .h4, %h4
-  margin: 0
-  line-height: 1.6
-  font-size: rem-calc(20)
+body
+  line-height: 1.38
+  letter-spacing: normal
+  color: $black
+  font-family: $font1
+  font-size: 16px
+  font-weight: normal
+  font-style: normal
+  font-stretch: normal
 
-  @media (min-width: $screen-md-min)
-    font-size: rem-calc(22)
 
-%p1
-  line-height: 1.618
-  font-size: rem-calc(18)
+h3-alt
+  @include fade-in-up(.5s)
+  line-height: normal
+  color: $black
+  font-family: $font2
+  font-size: 20px
+  font-weight: 600
+  font-style: normal
+  font-stretch: normal
 
-%p2
-  line-height: 1.618
-  font-size: rem-calc(16)
 
-%p3
-  line-height: 1.618
-  font-size: rem-calc(15)
+h3-non-fade
+  line-height: normal
+  letter-spacing: 5px
+  color: $black
+  font-family: $font2
+  font-size: 20px
+  font-weight: 600
+  font-style: normal
+  font-stretch: normal
 
+
+h3
+  @include fade-in-up(.5s)
+  line-height: normal
+  letter-spacing: 5px
+  color: $black
+  font-family: $font2
+  font-size: 20px
+  font-weight: 600
+  font-style: normal
+  font-stretch: normal
+
+
+h1
+  @include fade-in-up(.5s)
+  line-height: normal
+  letter-spacing: normal
+  font-family: $font2
+  font-size: 26px
+  font-weight: normal
+  font-style: normal
+  font-stretch: normal
+
+
+h1-non-fade
+  line-height: normal
+  letter-spacing: normal
+  font-family: $font2
+  font-size: 26px
+  font-weight: normal
+  font-style: normal
+  font-stretch: normal
+
+
+h2
+  @include fade-in-up(.5s)
+  line-height: normal
+  letter-spacing: normal
+  font-family: $font2
+  font-size: 20px
+  font-weight: 600
+  font-style: normal
+  font-stretch: normal
+
+
+h2-non-fade
+  line-height: normal
+  letter-spacing: normal
+  font-family: $font2
+  font-size: 20px
+  font-weight: 600
+  font-style: normal
+  font-stretch: normal
+
+
+h4
+  line-height: normal
+  letter-spacing: normal
+  font-family: $font2
+  font-size: 14px
+  font-weight: 500
+  font-style: normal
+  font-stretch: normal
