@@ -18,6 +18,8 @@
       width: 100%
       height: 100%
       clip-path: polygon(0 70%, 0 100%, 100% 100%)
+      @media screen and (max-width: $screen-sm)
+        display: none
 
     .page-treatments &
       background: $pale-lavender
@@ -31,20 +33,29 @@
     background-position: center
     background-size: cover
     width: 100%
+    height: 100%
     min-height: 10rem
 
   &__container
     @extend .container
     @extend .flex-center
     padding: 3rem 0
+    @media screen and (max-width: $screen-sm)
+      padding: 1rem
 
   &__text
-    @extend .col-sm-10
-    @extend .col-sm-offset-2
-    @extend h3
+    @extend .col-md-10
+    @extend .col-md-offset-2
+    @extend h3-non-fade
     text-transform: uppercase
     color: $petrol
+    @media screen and (max-width: $screen-sm)
+      padding-bottom: 1rem
+      text-align: center
 
   &__button
-    @extend .col-sm-3
+    @extend .col-md-3
     @include button-outline-draw(280px, 51px, $petrol, 1rem)
+    text-decoration: none
+    @media screen and (max-width: $screen-sm)
+      margin: auto

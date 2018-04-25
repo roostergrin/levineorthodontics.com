@@ -1,5 +1,6 @@
 .custom-treatments-braces
-  .custom-treatments-braces__title(v-html='props.title')
+  .custom-treatments-braces__title(v-html='props.title', :class="{ 'fade': active >= 1 }")
+  Trigger(:props='1' v-if='active <= 1' style="top: 10%")
   .custom-treatments-braces__container
     .custom-treatments-braces__subtitle(v-html='props.subtitle')
   .custom-treatments-braces__container.custom-treatments-braces__container--alt

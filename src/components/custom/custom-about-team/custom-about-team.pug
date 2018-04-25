@@ -1,5 +1,6 @@
 .custom-about-team
-  .custom-about-team__title(v-html='props.title')
+  .custom-about-team__title(v-html='props.title', :class="{ 'fade': active >= 1 }")
+  Trigger(:props='1' v-if='active <= 1' style="top: 10%")
   .custom-about-team__container
     .custom-about-team__subtitle(v-html='props.subtitle')
   .custom-about-team__container

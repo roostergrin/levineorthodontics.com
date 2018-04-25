@@ -15,7 +15,12 @@ export default {
         autoplay: {
           delay: 3000
         },
-        freeMode: true
+        freeMode: true,
+        breakpoints: {
+          768: {
+            slidesPerView: 1
+          }
+        }
       }
     }
   },

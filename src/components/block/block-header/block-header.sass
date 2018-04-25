@@ -22,33 +22,30 @@
     position: relative
     flex-direction: column
     z-index: 9
-    padding: 7rem 0 4rem
+    padding: 4.5rem 0 4rem
     max-width: 50%
 
     .page-about-us &,
     .page-getting &,
     .page-treatments &,
     .page-invisalign &
-      padding-top: 4.5rem
       padding-bottom: 0
 
   &__title
     @extend h3
+    position: relative
     padding-bottom: 1rem
     text-transform: uppercase
-    .page-invisalign &
+    .page-invisalign &,
+    .page-contact &
       padding-bottom: 4rem
 
   &__subtitle
     @extend h1
+    position: relative
     padding-bottom: 1.5rem
     text-transform: uppercase
-    color: $lavender
-
-    .page-about-us &,
-    .page-getting &,
-    .page-treatments &
-      color: $grape
+    color: $grape
 
   &__body
     text-align: center

@@ -9,6 +9,8 @@
     @extend .flex-end-center
     position: relative
     min-height: 40rem
+    @media screen and (max-width: $screen-sm)
+      margin-bottom: 1rem
 
   &__right
     @extend .col-sm-9
@@ -29,6 +31,7 @@
 
   &__caption
     @extend .caption
+    @include fade-in-up(.5s)
     position: relative
     z-index: 9
     padding: 1rem

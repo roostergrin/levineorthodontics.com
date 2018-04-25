@@ -41,6 +41,14 @@ export const toggleNav = {
   }
 }
 
+export const toggleAcive = {
+  methods: {
+    toggleAcive (i) {
+      this.$parent.active = i
+    }
+  }
+}
+
 export const showMenu = {
   data () {
     return {

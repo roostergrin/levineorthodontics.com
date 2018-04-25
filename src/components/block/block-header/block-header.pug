@@ -1,6 +1,8 @@
 .block-header
   .block-header__overlay
   .block-header__container
-    .block-header__title(v-html='props.title' v-if='props.title')
-    .block-header__subtitle(v-html='props.subtitle' v-if='props.subtitle')
+    .block-header__title(v-html='props.title' v-if='props.title', :class="{ 'fade': active >= 1 }")
+    Trigger(:props='1' v-if='active <= 1' style='top: 10%;')
+    .block-header__subtitle(v-html='props.subtitle' v-if='props.subtitle', :class="{ 'fade': active >= 2 }")
+    Trigger(:props='2' v-if='active <= 2' style='top: 20%;')
     .block-header__body(v-html='props.body' v-if='props.body')

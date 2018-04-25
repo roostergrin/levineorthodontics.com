@@ -9,5 +9,5 @@
       span
   
   .nav-mobile__drawer(:class="{ 'nav-mobile__drawer--active': navActive }")
-    .nav-mobile__links
+    .nav-mobile__links(@click='toggleNav')
       router-link.nav-mobile__link(v-for='(link, i) in links', :key='i' v-if='link.navigation', :to='link.path' v-html='link.name', :class="{ 'nav-mobile__link--active': navActive }")

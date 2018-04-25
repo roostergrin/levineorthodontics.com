@@ -1,5 +1,6 @@
 .custom-treatments-damon
-  .custom-treatments-damon__title(v-html='props.title')
+  .custom-treatments-damon__title(v-html='props.title', :class="{ 'fade': active >= 1 }")
+  Trigger(:props='1' v-if='active <= 1' style="top: 10%")
   .custom-treatments-damon__container
     .custom-treatments-damon__subtitle(v-html='props.subtitle')
   .custom-treatments-damon__container

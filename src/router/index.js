@@ -11,8 +11,26 @@ import PageNotFound from '@/pages/404/404'
 
 Vue.use(VueRouter)
 
+const scrollBehavior = function (to, from, savedPosition) {
+  if (savedPosition) {
+    return { x: 0, y: 0 }
+  } else {
+    const position = {}
+    if (to.hash) {
+      position.selector = to.hash
+      position.offset = { x: 0, y: 200 }
+      return position
+    } else {
+      position.x = 0
+      position.y = 0
+      return position
+    }
+  }
+}
+
 const router = new VueRouter({
   mode: 'history',
+  scrollBehavior,
   routes: [
     {
       path: '/',
@@ -48,7 +66,13 @@ const router = new VueRouter({
       path: '/contact',
       name: 'contact',
       navigation: true,
-      component: Contact
+      component: Contact,
+      children: [
+        {
+          path: '/contact#form',
+          name: 'contact form'
+        }
+      ]
     },
     {
       path: '/*',
@@ -57,11 +81,6 @@ const router = new VueRouter({
       component: PageNotFound
     }
   ]
-})
-
-router.beforeEach((to, from, next) => {
-  window.scrollTo(0, 0)
-  next()
 })
 
 export default router

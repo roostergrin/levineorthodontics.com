@@ -1,8 +1,10 @@
 .custom-home-icons
-  .custom-home-icons__title(v-html='props.title')
+  .custom-home-icons__title(v-html='props.title', :class="{ 'fade': active >= 1 }")
+  Trigger(:props='1' v-if='active <= 1' style="top: 10%")
   .custom-home-icons__subtitle(v-html='props.body')
   .custom-home-icons__container
-    .custom-home-icons__tile(v-for='(tile, i) in props.tiles', :key='i')
+    .custom-home-icons__tile(v-for='(tile, i) in props.tiles', :key='i', :class="{ 'link-fade': active >= 2 }")
       Icon.custom-home-icons__icon(:name='tile.icon')
       .custom-home-icons__tile-title(v-html='tile.title')
       .custom-home-icons__tile-body(v-html='tile.body')
+    Trigger(:props='2' v-if='active <= 2' style="top: 10%")

@@ -168,31 +168,51 @@
 //======== Fades
 
 @mixin fade-in($duration)
-  animation: fade-in $duration ease-in-out forwards
+  opacity: 0
+  &.fade
+    animation: fade-in $duration ease-in-out forwards
 
 @mixin fade-out($duration)
-  animation: fade-out $duration ease-in-out forwards
+  opacity: 0
+  &.fade
+    animation: fade-out $duration ease-in-out forwards
 
 @mixin fade-in-up($duration)
-  animation: fade-in-up $duration ease-in-out forwards
+  opacity: 0
+  &.fade
+    animation: fade-in-up $duration ease-in-out forwards
 
 @mixin fade-out-up($duration)
-  animation: fade-out-up $duration ease-in-out forwards
+  opacity: 0
+  &.fade
+    animation: fade-out-up $duration ease-in-out forwards
 
 @mixin fade-in-down($duration)
-  animation: fade-in-down $duration ease-in-out forwards
+  opacity: 0
+  &.fade
+    animation: fade-in-down $duration ease-in-out forwards
 
 @mixin fade-out-down($duration)
-  animation: fade-out-down $duration ease-in-out forwards
+  opacity: 0
+  &.fade
+    animation: fade-out-down $duration ease-in-out forwards
 
 @mixin fade-right($duration)
-  animation: fade-in-left $duration ease-in-out forwards
+  opacity: 0
+  &.fade
+    animation: fade-in-left $duration ease-in-out forwards
 
 @mixin fade-out-right($duration)
-  animation: fade-out-right $duration ease-in-out forwards
+  opacity: 0
+  &.fade
+    animation: fade-out-right $duration ease-in-out forwards
 
 @mixin fade-in-left($duration)
-  animation: fade-in-left $duration ease-in-out forwards
+  opacity: 0
+  &.fade
+    animation: fade-in-left $duration ease-in-out forwards
 
 @mixin fade-out-left($duration)
-  animation: fade-out-left $duration ease-in-out forwards
+  opacity: 0
+  &.fade
+    animation: fade-out-left $duration ease-in-out forwards

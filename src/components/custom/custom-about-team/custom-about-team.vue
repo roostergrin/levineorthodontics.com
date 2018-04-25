@@ -2,10 +2,12 @@
 
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import Trigger from 'components/block/block-trigger/block-trigger'
 
 export default {
   data () {
     return {
+      active: 0,
       activeIndex: 0,
       swiperOptions: {
         effect: 'fade'
@@ -20,7 +22,8 @@ export default {
   },
   components: {
     swiper,
-    swiperSlide
+    swiperSlide,
+    Trigger
   },
   methods: {
     slideTo (i) {

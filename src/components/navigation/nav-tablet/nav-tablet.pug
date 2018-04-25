@@ -13,5 +13,5 @@
         span
   
   .nav-tablet__drawer(:class="{ 'nav-tablet__drawer--active': navActive }")
-    .nav-tablet__links
+    .nav-tablet__links(@click='toggleNav')
       router-link.nav-tablet__link(v-for='(link, i) in links', :key='i' v-if='link.navigation', :to='link.path' v-html='link.name', :class="{ 'nav-tablet__link--active': navActive }")

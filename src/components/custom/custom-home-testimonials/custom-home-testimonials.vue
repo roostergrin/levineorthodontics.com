@@ -2,10 +2,12 @@
 
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import Trigger from 'components/block/block-trigger/block-trigger'
 
 export default {
   data () {
     return {
+      active: 0,
       swiperOption: {
         loop: true,
         navigation: {
@@ -18,7 +20,8 @@ export default {
   props: ['props'],
   components: {
     swiper,
-    swiperSlide
+    swiperSlide,
+    Trigger
   }
 }
 </script>

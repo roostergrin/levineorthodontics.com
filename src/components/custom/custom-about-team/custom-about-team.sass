@@ -1,19 +1,27 @@
 .custom-about-team
+  position: relative
   background: $pale-lavender
   padding: 7rem 0
 
   &__container
     @extend .container
+    @media screen and (max-width: $screen-sm)
+      display: block
 
   &__image-box
     position: relative
     width: 34.5%
     min-height: 27.5rem
+    @media screen and (max-width: $screen-sm)
+      width: 100%
 
   &__content
     @extend .flex-center-end
     flex-direction: column
     width: 63.5%
+    @media screen and (max-width: $screen-sm)
+      padding-top: 10rem
+      width: 100%
 
   &__text-box
     @extend .flex-center-between
@@ -32,6 +40,8 @@
 
   &__slide
     @extend .flex-stretch-between
+    @media screen and (max-width: $screen-sm)
+      flex-direction: column
 
     &.swiper-slide
       opacity: 0 !important
@@ -47,6 +57,9 @@
     right: 0
     width: 63.5%
     height: 10%
+    @media screen and (max-width: $screen-sm)
+      top: 28rem
+      width: 100%
 
   &__tile
     position: relative
@@ -111,3 +124,6 @@
     padding-left: 5rem
     max-height: 10rem
     overflow: scroll
+    @media screen and (max-width: $screen-sm)
+      padding-left: 0
+      max-height: none

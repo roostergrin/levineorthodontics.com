@@ -1,4 +1,5 @@
 .custom-home-icons
+  position: relative
   padding: 4rem 0
 
   &__container
@@ -18,10 +19,10 @@
     text-align: center
 
   &__tile
-    // @include link-fade()
     @extend .col-sm-4
     @extend .flex-center-start
     flex-direction: column
+    opacity: 0
     padding: 3rem 0
 
     &:nth-child(3n-2)
@@ -33,11 +34,14 @@
     &:nth-child(3n)
       @extend .col-sm-offset-12
 
-    &:nth-last-child(2)
+    &:nth-last-child(3)
       @extend .col-sm-offset-4
 
-    &:last-child
+    &:nth-last-child(2)
       @extend .col-sm-offset-10
+
+    &.link-fade
+      @include link-fade(8, fade-in-up, .35s, .25s, .5s)
 
   &__icon
     width: 4rem
