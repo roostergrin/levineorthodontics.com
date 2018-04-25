@@ -1,9 +1,6 @@
 <template lang='pug' src='./invisalign.pug'></template>
 
 <script>
-import BlockAppt from 'components/block/block-appointment/block-appointment'
-import BlockHeader from 'components/block/block-header/block-header'
-import BlockImggrid from 'components/block/block-imagegrid/block-imagegrid'
 import Hero from 'components/hero/hero'
 import Loader from 'components/loader/loader'
 
@@ -18,9 +15,6 @@ export default {
     }
   },
   components: {
-    BlockAppt,
-    BlockHeader,
-    BlockImggrid,
     Hero,
     Loader
   }

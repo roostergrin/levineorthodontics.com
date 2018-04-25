@@ -1,8 +1,0 @@
-.custom-contact-section
-  .custom-contact-section__container
-    .custom-contact-section__left
-      .custom-contact-section__contact(v-for='(item, i) in props', :key='i', :href='item.href')
-        Icon.custom-contact-section__icon(:name='item.icon')
-        .custom-contact-section__label(v-html='item.label')
-    .custom-contact-section__right
-      ContactForm

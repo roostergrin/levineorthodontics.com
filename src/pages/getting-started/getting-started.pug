@@ -1,10 +1,5 @@
 .page-getting
   Loader(v-show='loading')
-  div(v-if='props')
+  div(v-if='props && !loading')
     Hero(:props='props.acf.hero')
-    BlockHeader(:props='props.acf.header')
-    BlockImageGrid(:props='props.acf.initial')
-    BlockAppt(:props='props.acf.appointment')
-    GettingFinance(:props='props.acf.finance')
-    GettingForms(:props='props.acf.forms')
-    GettingFAQ(:props='props.acf.faq')
+    pre {{ props }}
