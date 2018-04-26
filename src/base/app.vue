@@ -21,6 +21,9 @@ export default {
       return this.$store.state
     }
   },
+  created () {
+    console.log(this.$store.state)
+  },
   components: {
     Navigation,
     Revisions,
