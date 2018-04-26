@@ -1,0 +1,177 @@
+@mixin animation-fade-up
+  animation: fadeUp .65s ease-out forwards
+  backface-visibility: hidden
+  @keyframes fadeUp
+    0%
+      transform: translateY(15%)
+      opacity: 0
+    50%
+      opacity: 1
+    100%
+      transform: translateY(0)
+      opacity: 1
+
+@mixin animation-fade-up-delay
+  animation: fadeUpDelay .7s ease-in-out
+  backface-visibility: hidden
+  @keyframes fadeUpDelay
+    0%
+      opacity: 0
+    35%
+      transform: translateY(10%)
+      opacity: 0
+    100%
+      transform: translateY(0)
+      opacity: 1
+
+@mixin animation-pop-in
+  animation: funFade .6s ease-out forwards
+  @keyframes funFade
+    0%
+      transform: translateY(12%) scale(.75)
+      opacity: 0
+    75%
+      transform: scale(1.05)
+    85%
+      opacity: 1
+    100%
+      transform: translateY(0) scale(1)
+      opacity: 1
+
+  @for $i from 1 through 5
+    &:nth-child(#{$i})
+      animation-delay: ($i * .11s)
+
+//button background hover effect
+@mixin slide-hover
+  position: relative
+  overflow: hidden
+
+  &:before
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    transform: translateX(-100%)
+    transition: all .35s ease-out
+    z-index: -1
+    width: 400px
+    height: 60px
+    content: ''
+
+  &:hover
+    transition: color .35s ease
+
+    &:before
+      transform: translateX(0)
+
+  &:active
+    opacity: .75
+
+// custom spinner
+@mixin spinner
+  position: absolute
+  top: 0
+  right: 50%
+  bottom: 0
+  left: 47.255%
+  border-radius: 50%
+  width: 100%
+  height: 100%
+
+  &:before
+    display: block
+    position: absolute
+    top: -2px
+    left: -2px
+    animation: spin 1.4s linear infinite
+    border: 2px solid transparent
+    border-bottom: 2px solid $hero-blue
+    border-radius: 50%
+    width: 33px
+    height: 33px
+    content: ''
+
+
+  &:after
+    display: block
+    position: absolute
+    top: 2px
+    left: 2px
+    animation: spin 1s linear infinite
+    border: 2px solid transparent
+    border-top: 2px solid $light-blue
+    border-radius: 50%
+    width: 25px
+    height: 25px
+    content: ''
+
+    @keyframes spin
+      0%
+        transform: rotate(0deg)
+      100%
+        transform: rotate(360deg)
+
+// hamburger animation for mobile nav
+@mixin hamburger
+  position: relative
+  transform: rotate(0deg)
+  transition: .5s ease-in-out
+  z-index: 999
+  cursor: pointer
+  width: 40px
+  height: 30px
+
+  @media screen and (max-width: $break-sm)
+    height: 16px
+
+  // background color specific to project
+  span
+    display: block
+    position: absolute
+    left: 0
+    transform: rotate(0deg)
+    transition: .25s ease-in-out
+    opacity: 1
+    border-radius: 3px
+    width: 100%
+    height: 6px
+
+    &:nth-child(1)
+      top: 0
+
+      &.active
+        top: 13px
+        left: 50%
+        width: 0%
+
+    &:nth-child(2),
+    &:nth-child(3)
+      top: 13px
+
+      @media screen and (max-width: $break-sm)
+        top: 8px
+
+    &:nth-child(2)
+      &.active
+        transform: rotate(45deg)
+
+    &:nth-child(3)
+      &.active
+        transform: rotate(-45deg)
+
+    &:nth-child(4)
+      top: 27px
+
+      @media screen and (max-width: $break-sm)
+        top: 16px
+
+      &.active
+        top: 13px
+        left: 50%
+        width: 0
+
+    @media screen and (max-width: $break-sm)
+      width: 28px
+      height: 2px```
