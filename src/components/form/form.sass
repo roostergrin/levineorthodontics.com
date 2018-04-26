@@ -1,41 +1,34 @@
 .form-main
-  
 
   &__group
-    margin-bottom: 8px
-    // border: 1px solid #ccc
-    border-radius: 3px
-    padding: 20px
+    padding-bottom: 1rem
 
-    // &--error
-    //   border: 1px solid tomato
-
-  &__label
-    display: block
-    margin-bottom: 8px
-  
   &__input
     margin-bottom: 8px
-    border: 1px solid #ececec
+    border: none
     border-radius: 3px
-    padding: 0 10px
+    padding: 1rem
     width: 100%
-    max-width: 300px
     height: 40px
     line-height: 40px
+    // &::placeholder
 
     &:focus
       outline: none
 
-    // &--error
-    //   border-color: tomato
+    &--error
+      border-color: $danger
 
+    &--textarea
+      border-radius: 3px
+      padding: 0 10px
+      width: 100%
+      height: 6rem
+
+  // &__submit-button
+    @include button-background-draw-2(305px, 51px, $white, $lavender, $lavender, 1rem)
   span
     display: block
 
-  &__textarea
-    border: 1px solid #ececec
-    border-radius: 3px
-    padding: 0 10px
-    width: 100%
-    max-width: 300px
+    &.is-danger
+      color: $danger

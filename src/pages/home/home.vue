@@ -1,6 +1,7 @@
 <template lang='pug' src='./home.pug'></template>
 
 <script>
+import Hero from 'components/hero/hero'
 import Loader from 'components/loader/loader'
 
 export default {
@@ -14,6 +15,7 @@ export default {
     }
   },
   components: {
+    Hero,
     Loader
   }
 }

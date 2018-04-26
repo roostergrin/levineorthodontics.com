@@ -5,7 +5,10 @@
 export default {
   computed: {
     props () {
-      return this.$router.options.routes
+      return this.$store.state.app.nav
+    },
+    links () {
+      return this.$router
     }
   }
 }

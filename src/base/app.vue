@@ -4,6 +4,7 @@
 // components
 import Navigation from 'components/navigation/navigation'
 import Revisions from 'revisions'
+import Footer from 'components/footer/footer'
 
 export default {
   created () {
@@ -17,7 +18,8 @@ export default {
   },
   components: {
     Navigation,
-    Revisions
+    Revisions,
+    Footer
   },
   name: 'app'
 }

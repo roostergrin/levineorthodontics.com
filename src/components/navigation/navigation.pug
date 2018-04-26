@@ -1,4 +1,1 @@
-nav.navigation
-  span.navigation__link(v-for='nav in props', v-if='nav.navigation')
-    router-link(:to='nav.path')
-      a {{ nav.name }}
+nav.navigation(v-if='props')
