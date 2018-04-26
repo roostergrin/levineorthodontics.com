@@ -16,6 +16,11 @@ export default {
     this.$store.dispatch('VIEW_SHOWMODAL', false)
     this.$store.dispatch('VIEW_MODALCONTENT', false)
   },
+  computed: {
+    props () {
+      return this.$store.state
+    }
+  }
   components: {
     Navigation,
     Revisions,
