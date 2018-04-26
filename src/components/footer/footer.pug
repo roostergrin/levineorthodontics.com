@@ -1,17 +1,1 @@
 .footer(v-if='props')
-  .footer__mask
-  .footer__container
-    .footer__container--left
-      router-link.footer__sponsor(:to='props.acf.request_href' v-html='props.acf.request')
-      a.footer__link(v-for='(link, i) in props.acf.contact', :key='i', :href='link.href' v-html='link.label')
-    .footer__container--center
-      .footer__review
-        | {{ props.acf.review }}
-        svg
-          rect(x='0' y='0' width='100%' height='100%')
-    .footer__container--right
-      a.footer__icons(v-for='(link, i) in props.acf.social', :href='link.href')
-        Icon.footer__icon(:name='link.icon')
-    
-    .footer__rooster
-      | Online Advantage by Rooster Grin

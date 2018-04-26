@@ -2,6 +2,12 @@
 
 @mixin sticky-nav
 
+
+//====== Modals
+
+@mixin modal-open($animation, $duration)
+  animation: $animation $duration ease-in-out forwards
+
 //======= Buttons
 
 @mixin button-outline-draw($width, $height, $color, $padding)
@@ -85,7 +91,7 @@
   //  | content
   //  svg
   //    rect(x='0' y='0' width='100%' height='100%')
-  // used on Spielberg Ortho
+  // Spielberg Ortho
   $hoverline: calc(#{$width} / 2)
   $hoveroffset: calc(#{$width} + #{$height} + calc(#{$width} / 4))
   position: relative
@@ -118,45 +124,280 @@
       stroke-dasharray: $hoverline, $hoveroffset
       stroke-dashoffset: $hoverline
 
+@mixin button-slide-hover($background, $padding, $width, $color, $color-bg, $color-bg-2, $height, $slant-height)
+  // Razi Ortho
+  position: relative
+  background: $color-bg
+  cursor: pointer
+  padding: $padding
+  width: 100%
+  max-width: $width
+  height: auto
+  overflow: hidden
+  color: $color
+
+  &:before
+    position: absolute
+    top: 0
+    right: calc($slant-height * -1)
+    bottom: 0
+    left: 0
+    transform: translateX(-100%)
+    transition: all .4s ease-in-out
+    z-index: 1
+    border-right: $slant-height solid transparent
+    border-bottom: $height solid $color-bg-2
+    content: ''
+
+  span
+    position: relative
+    transition: all .35s ease-in-out
+    z-index: 2
+
+  &:hover
+    transition: all .35s ease
+
+    span
+      transition: all .45s ease-in-out
+      letter-spacing: .3px
+      transition-timing-function: cubic-bezier(.51, -.105, .43, 2)
+
+    &:before
+      transform: translateX(0)
+
+@mixin button-position-aware($color, $color-2, $width, $padding, $padding-sm, $border-width)
+  //  used in conjunction with getPosition and following pug
+  //  maybe make this a component
+  //  .button-position-aware(@click='openApptModal', @mouseenter='mouseEnter' @mouseleave='mouseEnter')
+        span.button-position-aware--background(:style='styleObject')
+        span.button-position-aware--text {{data.button}}
+  position: relative
+  z-index: 2
+  border: $border-width solid $color
+  cursor: pointer
+  padding: $padding
+  width: 100%
+  max-width: $width
+  overflow: hidden
+
+  @media (max-width: $screen-sm)
+    transition: all .45s ease-in-out
+    padding: $padding-sm
+    color: $color
+
+  &:hover
+    .button-position-aware--text
+      color: $color-2
+
+    span
+      width: 225%
+      height: calc($width * 2.25)
+
+  span
+    display: block
+    position: absolute
+    transform: translate(-50%, -50%)
+    transition: height .45s ease-in-out, width .45s ease-in-out
+    z-index: 1
+    border-radius: 50%
+    background-color: $color
+    width: 0
+    height: 0
+
+@mixin button-circle-phil($width, $color, $color2, $duration, $border-width, $border-color, $border-radius, $padding, $svg-size, $after-top, $after-left)
+  display: block
+  position: relative
+  transition: all $duration ease-in-out
+  border: solid $border-color $border-width
+  border-radius: $border-radius
+  cursor: pointer
+  padding: $padding
+  width: 100%
+  max-width: $width
+  overflow: hidden
+  text-align: center
+  color: $color
+
+  span
+    display: inline-block
+    transition: color $duration ease-in-out
+
+  &-icon
+    display: inline-block
+    transition: all $duration ease-in-out
+    margin-left: 20px
+    width: $svg-size
+    height: $svg-size
+    vertical-align: middle
+
+    svg
+      fill: $border-color
+
+  &:after
+    position: absolute
+    top: $after-top
+    left: $after-left
+    transform: scale(.01)
+    transition: all $duration ease-in-out
+    z-index: -1
+    border-radius: 50%
+    background: $border-color
+    width: calc($width * 2)
+    height: calc($width * 2)
+    content: ''
+    transform-origin: center center
+
+  &:hover
+    transition: all $duration ease-in-out
+    box-shadow: 0 2px 4px 0 rgba($black, .33)
+
+    span
+      transition: color $duration ease-in-out
+      color: $color2
+
+    &:after
+      transform: scale(1)
+      transition: all $duration ease-in-out
+
 //======== Hamburgers
 
 @mixin hamburger-basic($color, $timing, $width, $height)
-    position: relative
-    width: $width
-    height: $height
-    overflow: hidden
+  // Spielberg Ortho
+  position: relative
+  width: $width
+  height: $height
+  overflow: hidden
+  span
+    display: block
+    position: absolute
+    transform: translate(0, -50%)
+    transition: all #{$timing} ease-in-out
+    background: $color
+    width: 100%
+    height: .25rem
+    &:first-child
+      top: 25%
+
+    &:nth-child(2)
+      top: 50%
+
+    &:last-child
+      top: 75%
+  &--active
     span
-      display: block
-      position: absolute
-      transform: translate(0, -50%)
-      transition: all #{$timing} ease-in-out
-      background: $color
-      width: 100%
-      height: .25rem
       &:first-child
-        top: 25%
+        top: 50%
+        transform: rotate(-45deg)
 
       &:nth-child(2)
-        top: 50%
+        transform: translate(100%, -50%)
 
       &:last-child
-        top: 75%
-    &--active
-      span
-        &:first-child
-          top: 50%
-          transform: rotate(-45deg)
+        top: 50%
+        transform: rotate(45deg)
 
-        &:nth-child(2)
-          transform: translate(100%, -50%)
+@mixin hamburger-collapse-center($color, $timing, $width, $height)
+  // Razi Ortho
+  transform: rotate(0deg)
+  transition: .5s ease-in-out
+  z-index: 999
+  cursor: pointer
+  width: $width
+  height: $height
 
-        &:last-child
-          top: 50%
-          transform: rotate(45deg)
+  // background color specific to project
+  span
+    display: block
+    position: absolute
+    left: 0
+    transform: rotate(0deg)
+    transition: .25s ease-in-out
+    opacity: 1
+    border-radius: 3px
+    width: 100%
+    height: 2px
 
-//======== iterators
+    &:nth-child(1)
+      top: 0
+
+      &.active
+        top: 13px
+        left: 50%
+        width: 0%
+
+    &:nth-child(2),
+    &:nth-child(3)
+      top: 8px
+
+    &:nth-child(2)
+      &.active
+        transform: rotate(45deg)
+
+    &:nth-child(3)
+      &.active
+        transform: rotate(-45deg)
+
+    &:nth-child(4)
+      top: 16px
+
+      &.active
+        top: 8px
+        left: 50%
+        width: 0
+
+//======== Spinners
+
+@mixin spinner
+  // Razi Ortho - axios spinner
+  position: absolute
+  top: 0
+  right: 50%
+  bottom: 0
+  left: 47.255%
+  z-index: 9
+  border-radius: 50%
+  width: 100%
+  height: 100%
+
+  &:before
+    display: block
+    position: absolute
+    top: -2px
+    left: -2px
+    animation: spin 1.4s linear infinite
+    z-index: 9
+    border: 2px solid transparent
+    border-bottom: 2px solid $black
+    border-radius: 50%
+    width: 33px
+    height: 33px
+    content: ''
+
+
+  &:after
+    display: block
+    position: absolute
+    top: 2px
+    left: 2px
+    animation: spin 1s linear infinite
+    z-index: 9
+    border: 2px solid transparent
+    border-top: 2px solid lighten($black, 20)
+    border-radius: 50%
+    width: 25px
+    height: 25px
+    content: ''
+
+    @keyframes spin
+      0%
+        transform: rotate(0deg)
+      100%
+        transform: rotate(360deg)
+
+//======== iterator
 
 @mixin link-fade($amount, $animation, $duration, $timing, $delay)
+  // Spielberg Ortho
   animation: $animation $duration ease forwards
   animation-delay: $delay
   opacity: 0

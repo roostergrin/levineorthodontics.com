@@ -4,8 +4,6 @@ import Home from '@/pages/home/home'
 // const AboutUs = () => import(/* webpackChunkName: "group" */ '@/pages/about-us/about-us')
 import AboutUs from '@/pages/about-us/about-us'
 import GettingStarted from '@/pages/getting-started/getting-started'
-import Treatments from '@/pages/treatments/treatments'
-import Invisalign from '@/pages/invisalign/invisalign'
 import Contact from '@/pages/contact/contact'
 import PageNotFound from '@/pages/404/404'
 
@@ -49,18 +47,6 @@ const router = new VueRouter({
       name: 'getting started',
       navigation: true,
       component: GettingStarted
-    },
-    {
-      path: '/treatments',
-      name: 'treatments',
-      navigation: true,
-      component: Treatments
-    },
-    {
-      path: '/invisalign',
-      name: 'invisalign',
-      navigation: true,
-      component: Invisalign
     },
     {
       path: '/contact',

@@ -1,6 +1,4 @@
 .form-main
-  .form-main__success-message(v-if='formSubmitted')
-    h2 Thanks for submitting our form!
   form.form-main__form(@submit.prevent='validateBeforeSubmit', v-if='!formSubmitted')
     //- name field
     .form-main__group

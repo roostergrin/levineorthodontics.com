@@ -108,3 +108,26 @@ export const showAccordion = {
     }
   }
 }
+
+export const getPosition = {
+  data () {
+    return {
+      styleLeft: '',
+      styleTop: ''
+    }
+  },
+  computed: {
+    styleObject () {
+      return {
+        left: this.styleLeft,
+        top: this.styleTop
+      }
+    }
+  },
+  methods: {
+    mouseEnter (e) {
+      this.styleLeft = e.offsetX + 'px'
+      this.styleTop = e.offsetY + 'px'
+    }
+  }
+}
