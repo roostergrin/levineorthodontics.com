@@ -7,11 +7,11 @@ import VeeValidate from 'vee-validate'
 import store from './shared/store'
 // import VueCookies from 'vue-cookies'
 import * as customFilters from './shared/filters/filters'
-import VueParallaxJs from 'vue-parallax-js'
+// import VueParallaxJs from 'vue-parallax-js'
 // import VueScrollTo from 'vue-scrollto'
-import VueWaypoint from 'vue-waypoint'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'swiper/dist/css/swiper.css'
+// import VueWaypoint from 'vue-waypoint'
+// import VueAwesomeSwiper from 'vue-awesome-swiper'
+// import 'swiper/dist/css/swiper.css'
 
 // Vue config
 Vue.config.productionTip = false
@@ -23,9 +23,9 @@ Object.keys(customFilters).forEach(key => {
 
 // Vue use
 Vue.use(VeeValidate)
-Vue.use(VueParallaxJs, { minWidth: 1024 })
+// Vue.use(VueParallaxJs, { minWidth: 1024 })
 
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
+// Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 // Vue.use(VueScrollTo, {
 //   container: 'body',
@@ -39,7 +39,7 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */)
 //   y: true
 // })
 
-Vue.use(VueWaypoint)
+// Vue.use(VueWaypoint)
 
 // Vue.use(VueCookies)
 
