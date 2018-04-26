@@ -1,7 +1,7 @@
 export const client = {
   lint: {
     styles: {
-      input: ['src/main.sass', 'src/**/*.{scss,sass}', '!src/sass/vendors/bootstrap-variables.scss']
+      input: ['src/main.sass', 'src/**/*.{scss,sass}', '!src/sass/vendors/*.{scss,sass}']
     }
   },
   styles: {
