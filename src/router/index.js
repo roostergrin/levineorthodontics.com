@@ -9,26 +9,26 @@ import PageNotFound from '@/pages/404/404'
 
 Vue.use(VueRouter)
 
-const scrollBehavior = function (to, from, savedPosition) {
+const scrollBehavior = (to, from, savedPosition) => {
   if (savedPosition) {
     return { x: 0, y: 0 }
   } else {
-    const position = {}
     if (to.hash) {
-      position.selector = to.hash
-      position.offset = { x: 0, y: 200 }
-      return position
+      return {
+        selector: to.hash,
+        offset: { x: 0, y: 200 }
+      }
     } else {
-      position.x = 0
-      position.y = 0
-      return position
+      return {
+        x: 0,
+        y: 0
+      }
     }
   }
 }
 
 const router = new VueRouter({
   mode: 'history',
-  scrollBehavior,
   routes: [
     {
       path: '/',
@@ -66,7 +66,8 @@ const router = new VueRouter({
       navigation: false,
       component: PageNotFound
     }
-  ]
+  ],
+  scrollBehavior
 })
 
 export default router

@@ -7,8 +7,8 @@
 add_action( 'init', 'remove_wysiwyg_editor' );
 
 function remove_wysiwyg_editor () {
-  remove_post_type_support( 'page', 'editor');
   remove_post_type_support( 'post', 'editor');
+  remove_post_type_support( 'page', 'editor');
 }
 
 /**

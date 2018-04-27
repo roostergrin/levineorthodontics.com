@@ -14,10 +14,7 @@ function rg_serve_route () {
   $from = 'info@wordpress.com';
   $to = 'matt@roostergrin.com';
   $subject = 'API Contact Form';
-  $headers = $from . "\r\n";
-  // $headers .= "Reply-To: " . "\r\n";
-  $headers .= "MIME-Version: 1.0\r\n";
-  $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+  $headers = array('Content-Type: text/html; charset=UTF-8');
   $message = '<html><body>';
   $message .= '<p><h4><strong>Form Submission by: </strong></h4>' . $data['fullname'] . '</p>';
   $message .= '<p><h4><strong>Email: </strong></h4>' . $data['email'] . '</p>';

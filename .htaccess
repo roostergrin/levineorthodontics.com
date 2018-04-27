@@ -38,6 +38,12 @@ BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 Header append Vary User-Agent
 </IfModule>
 
+<files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</files>
+
 # Block WordPress xmlrpc.php requests
 <Files xmlrpc.php>
 order deny,allow
@@ -45,8 +51,21 @@ deny from all
 allow from 69.181.69.121
 </Files>
 
+<files wp-config.php>
+order allow,deny
+deny from all
+</files>
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
+
+# BEGIN block author scans
+RewriteEngine On
+RewriteBase /
+RewriteCond %{QUERY_STRING} (author=\d+) [NC]
+RewriteRule .* - [F]
+# END block author scans 
+
 RewriteEngine On
 RewriteBase /
 RewriteCond %{QUERY_STRING} (.*)

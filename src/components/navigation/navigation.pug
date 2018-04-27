@@ -1,1 +1,6 @@
-nav.navigation(v-if='props')
+nav.navigation
+  router-link(v-for='(link, i) in links', :to='link.path', v-if='link.navigation', :key='i') 
+    | {{ link.name }}
+  
+  
+    

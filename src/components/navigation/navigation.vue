@@ -8,7 +8,7 @@ export default {
       return this.$store.state.app.nav
     },
     links () {
-      return this.$router
+      return this.$router.options.routes
     }
   }
 }

@@ -10,7 +10,7 @@
   <?php wp_footer(); ?>
   <script type="text/javascript">
     WebFontConfig = {
-      google: { families: [ 'OpenSans:400,600' ] }
+      google: { families: [ 'Open+Sans:400,600' ] }
     };
     (function() {
       var wf = document.createElement('script');
