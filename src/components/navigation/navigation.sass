@@ -11,6 +11,34 @@
     background: $white
     height: 100vh
 
+  &__container-lg
+    @extend .container-large
+    margin: rem-calc(32) auto
+
+  &__menu
+    span
+      &:hover
+        cursor: pointer
+
+  &__logo
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+
+  &__container
+    @extend .flex-container
+
+  &__left
+    @extend .col-flex-6
+    text-align: right
+
+  &__right
+    @extend .col-flex-6
+    @extend h3
+    margin: rem-calc(16) auto
+    text-align: left
+
   &__body
     position: absolute
     top: -100%
@@ -24,13 +52,21 @@
       height: auto
       overflow: visible
 
-  &__container-lg
-    @extend .container-large
-    margin: rem-calc(32) auto
+  &__link
+    @extend h3
+    margin: rem-calc(16) auto
 
-  &__container
-    @extend .flex-container
-    @extend .col-flex-offset-6 
+  &__button
+    @extend .button
+    margin: rem-calc(16) auto
+    width: rem-calc(250)
 
-  &__left
-    @extend .col-flex-6
+  &__bottom
+    width: 100%
+    text-align: center
+
+  &__contact, &__social
+    @extend h3
+
+  &__contact
+    margin: rem-calc(16) auto

@@ -62,7 +62,7 @@ export const showMenu = {
     }
   }
 }
-
+// NOTE: Why have a close method when you can toggle the show nav properties
 export const closeMenu = {
   methods: {
     closeMenu () {
@@ -128,6 +128,29 @@ export const getPosition = {
     mouseEnter (e) {
       this.styleLeft = e.offsetX + 'px'
       this.styleTop = e.offsetY + 'px'
+    }
+  }
+}
+
+export const buttonOver = {
+  methods: {
+    buttonAnimate (e) {
+      this.styleLeft = e.offsetX + 'px'
+      this.styleTop = e.offsetY + 'px'
+    }
+  },
+  data () {
+    return {
+      styleLeft: '',
+      styleTop: ''
+    }
+  },
+  computed: {
+    styleObject () {
+      return {
+        left: this.styleLeft,
+        top: this.styleTop
+      }
     }
   }
 }

@@ -1,17 +1,39 @@
 nav.navigation(:class="{'navigation--active': $store.state.nav}")
   .navigation__container-lg
     .navigation__border
-      .navigation__button(@click='activate')
+      .navigation__menu(@click='activate')
         span(v-show='!$store.state.nav') Menu
         span(v-show='$store.state.nav') Exit
+        
+    router-link(to='/').navigation__logo
+      | Logo     
         
   .navigation__container
     .navigation__left
       .navigation__body(:class="{'navigation__body--active': $store.state.nav}")
-        router-link(to='/') 
-          | home
           
         router-link(v-for='(link, i) in links', :to='link.path', v-if='link.navigation', :key='i')
-          .navigation__link
+          .navigation__link(@mouseenter='activeLinks(i)')
             | {{ link.name }}
-    
+            
+    .navigation__right
+      .navigation__body(:class="{'navigation__body--active': $store.state.nav}")
+        div(v-for='(sub, j) in links', v-if='activeSub === j')
+          | {{ sub.name }}
+  
+  .navigation__container
+    .navigation__bottom 
+      .navigation__body(:class="{'navigation__body--active': $store.state.nav}")
+        .navigation__button(@mouseenter='buttonAnimate', @mouseleave='buttonAnimate')
+          span(:style='styleObject')
+          | Button
+          
+        .navigation__social
+          | Social
+          
+        .navigation__contact
+          .navigation__contact--phone
+            | Phone
+          .navigation__contact--address    
+            | Address
+        

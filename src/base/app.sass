@@ -1,0 +1,31 @@
+// APP LEVEL STYLING
+.button
+  position: relative
+  transition: color .45s ease-in-out
+  border: 1px solid $black
+  cursor: pointer
+  padding: 11px 20px
+  overflow: hidden
+
+  &:hover
+    color: lighten($black, 50%)
+
+    span
+      width: 225%
+      height: calc(200px*2.25)
+
+  &:active
+    opacity: .7
+
+  span
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    transform: translate(-50%, -50%)
+    transition: height .45s ease-in-out, width .45s ease-in-out
+    z-index: -1
+    border-radius: 50%
+    background-color: $black
+    width: 0
+    height: 0

@@ -39,13 +39,13 @@ const router = new VueRouter({
     },
     {
       path: '/about-us',
-      name: 'about us',
+      name: 'About Us',
       navigation: true,
       component: AboutUs
     },
     {
       path: '/patient-info',
-      name: 'patient info',
+      name: 'Patient Info',
       navigation: true,
       component: PatientInfo
     },
@@ -57,7 +57,7 @@ const router = new VueRouter({
     },
     {
       path: '/contact-us',
-      name: 'contact us',
+      name: 'Contact Us',
       navigation: true,
       component: Contact,
       children: [
