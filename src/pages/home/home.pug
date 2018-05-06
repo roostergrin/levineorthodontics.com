@@ -1,5 +1,10 @@
 .pages-home
   Loader(v-show='loading')
+  Hero(:props='props')
   div(v-if='props && !loading')
+    BlockText
+    CustomHomeDoctor
+    TabHomeTeam 
+    CustomContact
     pre {{ props }}
       

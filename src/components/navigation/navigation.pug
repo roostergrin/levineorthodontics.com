@@ -1,6 +1,17 @@
-nav.navigation
-  router-link(v-for='(link, i) in links', :to='link.path', v-if='link.navigation', :key='i') 
-    | {{ link.name }}
-  
-  
+nav.navigation(:class="{'navigation--active': $store.state.nav}")
+  .navigation__container-lg
+    .navigation__border
+      .navigation__button(@click='activate')
+        span(v-show='!$store.state.nav') Menu
+        span(v-show='$store.state.nav') Exit
+        
+  .navigation__container
+    .navigation__left
+      .navigation__body(:class="{'navigation__body--active': $store.state.nav}")
+        router-link(to='/') 
+          | home
+          
+        router-link(v-for='(link, i) in links', :to='link.path', v-if='link.navigation', :key='i')
+          .navigation__link
+            | {{ link.name }}
     

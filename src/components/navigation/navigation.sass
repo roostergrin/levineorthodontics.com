@@ -2,7 +2,35 @@
   position: fixed
   top: 0
   left: 0
-  z-index: 9997
-  box-shadow: 0 1px 1px $shadow
-  background: $white
+  transition: all .3s ease-in-out
+  z-index: 9994
   width: 100%
+
+  &--active
+    box-shadow: 0 1px 1px $shadow
+    background: $white
+    height: 100vh
+
+  &__body
+    position: absolute
+    top: -100%
+    transition: all .5s ease-in-out
+    height: 0
+    overflow: hidden
+
+    &--active
+      position: relative
+      top: 0
+      height: auto
+      overflow: visible
+
+  &__container-lg
+    @extend .container-large
+    margin: rem-calc(32) auto
+
+  &__container
+    @extend .flex-container
+    @extend .col-flex-offset-6 
+
+  &__left
+    @extend .col-flex-6

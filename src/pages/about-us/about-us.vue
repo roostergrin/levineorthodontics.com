@@ -1,6 +1,7 @@
 <template lang='pug' src='./about-us.pug'></template>
 
 <script>
+import Loader from 'components/loader/loader'
 
 export default {
   name: 'about-us',
@@ -13,6 +14,7 @@ export default {
     }
   },
   components: {
+    Loader
   }
 }
 </script>

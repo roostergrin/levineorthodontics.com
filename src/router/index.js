@@ -3,8 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '@/pages/home/home'
 // const AboutUs = () => import(/* webpackChunkName: "group" */ '@/pages/about-us/about-us')
 import AboutUs from '@/pages/about-us/about-us'
-import GettingStarted from '@/pages/getting-started/getting-started'
-import Contact from '@/pages/contact/contact'
+import PatientInfo from '@/pages/patient-info/patient-info'
+import TreatmentOptions from '@/pages/treatment-options/treatment-options'
+import Contact from '@/pages/contact-us/contact-us'
 import PageNotFound from '@/pages/404/404'
 
 Vue.use(VueRouter)
@@ -43,14 +44,20 @@ const router = new VueRouter({
       component: AboutUs
     },
     {
-      path: '/getting-started',
-      name: 'getting started',
+      path: '/patient-info',
+      name: 'patient info',
       navigation: true,
-      component: GettingStarted
+      component: PatientInfo
     },
     {
-      path: '/contact',
-      name: 'contact',
+      path: '/treatment-options',
+      name: 'Treatment Options',
+      navigation: true,
+      component: TreatmentOptions
+    },
+    {
+      path: '/contact-us',
+      name: 'contact us',
       navigation: true,
       component: Contact,
       children: [

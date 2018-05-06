@@ -1,4 +1,4 @@
-<template lang='pug' src='./contact.pug'></template>
+<template lang='pug' src='./contact-us.pug'></template>
 
 <script>
 import Hero from 'components/hero/hero'
@@ -8,7 +8,7 @@ export default {
   name: 'contact',
   computed: {
     props () {
-      return this.$store.state.pages.contact
+      return this.$store.state.pages['contact-us']
     },
     loading () {
       return this.$store.state.loading

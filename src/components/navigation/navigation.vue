@@ -10,6 +10,11 @@ export default {
     links () {
       return this.$router.options.routes
     }
+  },
+  methods: {
+    activate () {
+      this.$store.state.nav ? this.$store.dispatch('VIEW_NAV', false) : this.$store.dispatch('VIEW_NAV', true)
+    }
   }
 }
 

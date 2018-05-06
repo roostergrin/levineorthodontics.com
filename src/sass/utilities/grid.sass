@@ -6,9 +6,9 @@ $width-large: 1330px
 
 // --- for the standard container
 
-$width: 1180px
+$width: 1240px
 $gutter: 22px
-$columns: 16
+$columns: 12
 
 // --- not used yet finding ways to implement a responsive height structure for larger templating issues
 
@@ -51,6 +51,8 @@ $screen-xs-max: $screen-xs - 1
 // --- container for just a basic one column container
 .flex-container
   display: flex
+  flex-direction: row
+  flex-wrap: wrap
   margin: 0 auto
   width: 100%
   max-width: $width
@@ -71,6 +73,7 @@ $screen-xs-max: $screen-xs - 1
 
 // --- allows for a container that's larger than the standard for the website useful for having columns in a header or footer that you still want content constrained by
 
+// NOTE: -- This should maybe flex-container-lg -- the naming convention makes dev seem like it would be a grid and not a flex grid system
 .container-large
   display: flex
   justify-content: space-between
@@ -96,33 +99,21 @@ $screen-xs-max: $screen-xs - 1
 @for $i from 1 through $columns
   .col-xs-#{$i}
     transition: all .35s ease-in-out
-    // width: calc(#{$columns} / #{$i} * 100%)
     grid-column-end: span #{$i}
 
-  .col-sm-#{$i}
-    grid-column-end: span $columns
-    @media screen and (min-width: $screen-sm)
-      // width: calc(#{$columns} / #{$i} * 100%)
-      grid-column-end: span #{$i}
+@for $n from 1 through $columns
 
-  .col-md-#{$i}
-    grid-column-end: span $columns
-    @media screen and (min-width: $screen-md)
-      // width: calc(#{$columns} / #{$i} * 100%)
-      grid-column-end: span #{$i}
+  $col-width: calc((#{$n}/#{$columns}) * 100%)
 
-  .col-lg-#{$i}
-    grid-column-end: span $columns
-    @media screen and (min-width: $screen-lg)
-      // width: calc(#{$columns} / #{$i} * 100%)
-      grid-column-end: span #{$i}
+  .col-flex-#{$n}
+    flex: 0 0 auto
+    flex-basis: $col-width
+    flex-grow: 0
+    width: $col-width
+    box-sizing: border-box
 
-  .col-xl-#{$i}
-    grid-column-end: span $columns
-    @media screen and (min-width: $screen-xl)
-      // width: calc(#{$columns} / #{$i} * 100%)
-      grid-column-end: span #{$i}
-
+  .col-flex-offset-#{$n}
+    margin-left: $col-width
 
 // --- Offsets
 // --- responsive cascades to largest screen size can't be done with max-widths

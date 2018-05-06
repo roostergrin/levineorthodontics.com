@@ -1,0 +1,13 @@
+.pages-patient-info
+  Loader(v-show='loading')
+  Hero
+  div(v-if='props')
+    BlockText
+    CustomPatientInfoSection
+    DividerTextButton
+    BlockText
+    RepeaterSectionsImage
+    BlockText
+    CustomPatientInfoSection
+    
+    pre {{ props }}
