@@ -12,7 +12,7 @@
     height: 100vh
 
   &__container-lg
-    @extend .container-large
+    @extend .container
     margin: rem-calc(32) auto
 
   &__menu
@@ -30,13 +30,13 @@
     @extend .flex-container
 
   &__left
-    @extend .col-flex-6
+    @extend .col-flex-8
     text-align: right
 
   &__right
-    @extend .col-flex-6
+    @extend .col-flex-4
     @extend h3
-    margin: rem-calc(16) auto
+    position: relative
     text-align: left
 
   &__body
@@ -52,21 +52,34 @@
       height: auto
       overflow: visible
 
+    &--option
+      text-align: right
+
+    &--right
+      position: absolute
+      top: 0
+      left: 16px
+
   &__link
     @extend h3
     margin: rem-calc(16) auto
 
   &__button
     @extend .button
+    display: inline-block
     margin: rem-calc(16) auto
     width: rem-calc(250)
+    text-align: center
 
   &__bottom
-    width: 100%
-    text-align: center
+    @extend .col-flex-8
+    text-align: right
 
   &__contact, &__social
     @extend h3
 
   &__contact
     margin: rem-calc(16) auto
+
+  &__image
+    margin-top: rem-calc(16)

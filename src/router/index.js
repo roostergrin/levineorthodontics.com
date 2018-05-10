@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/pages/home/home'
 // const AboutUs = () => import(/* webpackChunkName: "group" */ '@/pages/about-us/about-us')
-import AboutUs from '@/pages/about-us/about-us'
+// import AboutUs from '@/pages/about-us/about-us'
 import PatientInfo from '@/pages/patient-info/patient-info'
 import TreatmentOptions from '@/pages/treatment-options/treatment-options'
 import Contact from '@/pages/contact-us/contact-us'
@@ -34,38 +34,70 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'home',
-      navigation: false,
-      component: Home
-    },
-    {
-      path: '/about-us',
-      name: 'About Us',
       navigation: true,
-      component: AboutUs
+      component: Home
     },
     {
       path: '/patient-info',
       name: 'Patient Info',
       navigation: true,
-      component: PatientInfo
+      component: PatientInfo,
+      children: [
+        {
+          path: '/patient-info#new-patients',
+          name: 'New Patients'
+        },
+        {
+          path: '/patient-info#orthofi',
+          name: 'OrthoFi'
+        },
+        {
+          path: '/patient-info#orthodontic-care',
+          name: 'Orthodontic Care'
+        },
+        {
+          path: '/patient-info#eating-with-braces',
+          name: 'Eating with Braces'
+        }
+      ]
     },
     {
       path: '/treatment-options',
       name: 'Treatment Options',
       navigation: true,
-      component: TreatmentOptions
+      component: TreatmentOptions,
+      children: [
+        {
+          path: '/treatment-options#damon-system',
+          name: 'Damon System'
+        },
+        {
+          path: '/treatment-options#damon-clear',
+          name: 'Damon Clear'
+        },
+        {
+          path: '/treatment-options#invisalign',
+          name: 'Invisalign'
+        },
+        {
+          path: '/treatment-options#lingual-braces',
+          name: 'Lingual Braces'
+        },
+        {
+          path: '/treatment-options#accelerated-orthodontics',
+          name: 'Accelerated Orthodontics'
+        },
+        {
+          path: '/treatment-options#transfer-cases',
+          name: 'Transfer Cases'
+        }
+      ]
     },
     {
       path: '/contact-us',
       name: 'Contact Us',
       navigation: true,
-      component: Contact,
-      children: [
-        {
-          path: '/contact#form',
-          name: 'contact form'
-        }
-      ]
+      component: Contact
     },
     {
       path: '/*',

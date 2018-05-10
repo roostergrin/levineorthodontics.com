@@ -1,0 +1,40 @@
+.divider-text-button
+  &__bg
+    background-position: center center
+    background-size: cover
+    height: rem-calc(250)
+
+  &__overlay
+    background-color: $shadow
+    padding: rem-calc(24) 0
+    width: 100%
+    height: 100%
+
+  &__container
+    @extend .flex-container
+
+  &__body
+    @extend .col-flex-6
+    @extend .col-flex-offset-3
+    text-align: center
+    color: $white
+
+  &__title
+    @extend h2
+    letter-spacing: 2px
+    font-weight: 500
+
+  &__cta
+    @extend p
+    margin: rem-calc(24) auto
+    color: $white
+
+  &__button
+    @extend .button
+    margin-top: rem-calc(24)
+    border-color: $white
+    color: $white
+
+    &:hover
+      border-color: $c1
+      color: $c1

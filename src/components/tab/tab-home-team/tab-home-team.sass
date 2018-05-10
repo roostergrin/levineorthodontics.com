@@ -1,0 +1,31 @@
+.tab-home-team
+
+  &__team
+    @extend .flex-container
+    margin: rem-calc(64) auto
+
+  &__body
+    @extend .col-flex-3
+
+  &__title
+    @extend h2
+    margin-bottom: 0
+
+  &__position
+    @extend p
+    margin: rem-calc(8) auto
+    font-size: rem-calc(20)
+
+  &__content
+    @extend p
+    margin-top: rem-calc(24)
+
+  &__images
+    @extend .col-flex-9
+
+  &__image
+    @extend .col-flex-3
+    display: inline-block
+    background-color: $c1
+    padding: 0 rem-calc(8)
+    height: 100%

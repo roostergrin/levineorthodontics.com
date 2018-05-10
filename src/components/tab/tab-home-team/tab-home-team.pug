@@ -1,2 +1,19 @@
-.tab-home-team 
-  h1 Tab Home Team Component
+.tab-home-team
+  .tab-home-team__container
+    .tab-home-team__team
+      .tab-home-team__body(v-for='(team, i) in props.team', v-if='top === i')
+        .tab-home-team__title(v-html='team.name')
+        .tab-home-team__position(v-html='team.position')
+        .tab-home-team__content(v-html='team.bio')
+        
+      .tab-home-team__images
+        .tab-home-team__image(v-for='(team, k) in props.team', v-if='k <= 3', @mouseenter='top = k')
+          
+    .tab-home-team__team
+      .tab-home-team__images
+        .tab-home-team__image(v-for='(team, k) in props.team', v-if='k >= 4', @mouseenter='bottom = k')
+    
+      .tab-home-team__body(v-for='(team, j) in props.team', v-if='bottom === j')
+        .tab-home-team__title(v-html='team.name')
+        .tab-home-team__position(v-html='team.position')
+        .tab-home-team__content(v-html='team.bio')

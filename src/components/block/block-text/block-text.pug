@@ -1,2 +1,5 @@
 .block-text
-  h1 Block Text Component 
+  .block-text__container
+    .block-text__subtitle(v-html='props.subtitle')
+    .block-text__title(v-html='props.title')
+    .block-text__content(v-html='props.content') 

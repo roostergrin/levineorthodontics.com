@@ -1,2 +1,11 @@
 .custom-home-doctor 
-  h1 Custom Home Doctor Component
+  .custom-home-doctor__container
+    .custom-home-doctor__left
+      .custom-home-doctor__image(:style="{ backgroundImage: 'url(' + props.image + ')' }")
+        
+    .custom-home-doctor__right
+      .custom-home-doctor__body
+        .custom-home-doctor__subtitle(v-html='props.subtitle')
+        .custom-home-doctor__title(v-html='props.title')
+        .custom-home-doctor__content(v-html='props.content')
+  

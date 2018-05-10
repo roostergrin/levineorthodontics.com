@@ -1,10 +1,9 @@
 .pages-home
-  Loader(v-show='loading')
-  Hero(:props='props')
+  Hero
   div(v-if='props && !loading')
-    BlockText
-    CustomHomeDoctor
-    TabHomeTeam 
-    CustomContact
-    pre {{ props }}
+    BlockText(:props='props.acf.block_text')
+    CustomHomeDoctor(:props='props.acf.custom_home_doctor')
+    TabHomeTeam(:props='props.acf.tabs_home_team')
+    BlockTextButton(:props='props.acf.block_text_button')  
+    CustomHomeContact
       

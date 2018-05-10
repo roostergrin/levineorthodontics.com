@@ -75,6 +75,7 @@ $screen-xs-max: $screen-xs - 1
 // --- allows for a container that's larger than the standard for the website useful for having columns in a header or footer that you still want content constrained by
 
 // NOTE: -- This should maybe flex-container-lg -- the naming convention makes dev seem like it would be a grid and not a flex grid system
+
 .container-large
   display: flex
   position: relative
@@ -108,6 +109,8 @@ $screen-xs-max: $screen-xs - 1
   $col-width: calc((#{$n}/#{$columns}) * 100%)
 
   .col-flex-#{$n}
+    display: inline-block
+    position: relative
     flex: 0 0 auto
     flex-basis: $col-width
     flex-grow: 0

@@ -1,3 +1,5 @@
 .repeater-sections-image 
-  h1 Repeater Sections Image Component 
-  
+  .repeater-sections-image__container(v-for='(section, i) in props.sections')
+    .repeater-sections-image__content(v-html='section.content', v-if='!i % 2')
+    .repeater-sections-image__image(:style="{ backgroundImage: 'url(' + section.image + ')'}")  
+    .repeater-sections-image__content(v-html='section.content', v-if='i % 2')

@@ -21,7 +21,7 @@ export default {
   methods: {
     activate () {
       this.$store.state.nav ? this.$store.dispatch('VIEW_NAV', false) : this.$store.dispatch('VIEW_NAV', true)
-      this.showMenu()
+      this.$store.state.nav ? this.showMenu(false) : this.showMenu()
     },
     activeLinks (e) {
       this.activeSub = e

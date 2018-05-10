@@ -1,2 +1,8 @@
 .divider-text-button
-  h1 Divider Text Button Component 
+  .divider-text-button__bg(:style="{ backgroundImage: 'url(' + props.image + ')' }")
+    .divider-text-button__overlay
+      .divider-text-button__container 
+        .divider-text-button__body
+          .divider-text-button__title(v-html='props.title')
+          .divider-text-button__cta(v-html='props.cta')
+          a.divider-text-button__button(v-html='props.button', :href='props.link')  

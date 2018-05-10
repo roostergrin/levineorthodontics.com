@@ -1,3 +1,5 @@
 .custom-patient-info-section
-  h1 Custom Patient Info Section Component
+  .custom-patient-info-section__container
+    .custom-patient-info-section__image(:style="{ backgroundImage: 'url('+ props.image +')'}")
+    .custom-patient-info-section__body(v-html='props.content')
   

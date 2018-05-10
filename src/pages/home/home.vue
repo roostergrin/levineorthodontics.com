@@ -6,7 +6,8 @@ import Hero from 'components/hero/hero'
 import BlockText from 'components/block/block-text/block-text'
 import CustomHomeDoctor from 'components/custom/custom-home-doctor/custom-home-doctor'
 import TabHomeTeam from 'components/tab/tab-home-team/tab-home-team'
-import CustomContact from 'components/custom/custom-contact/custom-contact'
+import BlockTextButton from 'components/block/block-text-button/block-text-button'
+import CustomHomeContact from 'components/custom/custom-home-contact/custom-home-contact'
 
 export default {
   name: 'home',
@@ -24,7 +25,8 @@ export default {
     BlockText,
     CustomHomeDoctor,
     TabHomeTeam,
-    CustomContact
+    BlockTextButton,
+    CustomHomeContact
   }
 }
 </script>

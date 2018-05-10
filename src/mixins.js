@@ -56,8 +56,8 @@ export const showMenu = {
     }
   },
   methods: {
-    showMenu () {
-      this.menu = true
+    showMenu (e) {
+      this.menu = e
       this.menu ? document.body.classList.add('body-stop') : document.body.classList.remove('body-stop')
     }
   }
