@@ -3,7 +3,7 @@
 function load_scripts() {
 	wp_enqueue_script( 'main-manifest', get_template_directory_uri() . '/static/js/manifest.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'main-vendor', get_template_directory_uri() . '/static/js/vendor.js', array(), '1.0.0', true );
-	// wp_enqueue_script( 'main-scripts', get_template_directory_uri() . '/static/js/app.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'main-scripts', get_template_directory_uri() . '/static/js/app.js', array(), '1.0.0', true );
 	wp_enqueue_style('main-styles', get_template_directory_uri() . '/static/css/app.css', array(), '1.0.0', 'all');
 
 	remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -12,23 +12,30 @@ function load_scripts() {
 	remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 	// $gz = gzopen(get_template_directory_uri() . '/static/js/app.js.gz', 'rb');
-	$file_name = get_template_directory_uri() . '/static/js/app.js.gz';
-	echo '<script>console.log("' . $file_name . '")</script>';
-
-	$out_file_name = str_replace('.gz', '', $file_name);
-	echo '<script>console.log("' . $out_file_name . '")</script>';
-
-	$file = gzopen($file_name, 'rb');
-	$out_file = fopen($out_file_name, 'wb');
-
-	while(!gzeof($file)) {
-		$final = fwrite($out_file, gzread($file));
-	}
-
-	wp_enqueue_script( 'main-scripts', $final, array(), '1.0.0', true );
+	// $file_name = get_template_directory_uri() . '/static/js/app.js.gz';
+	// echo '<script>console.log("' . $file_name . '")</script>';
+	//
+	// $out_file_name = str_replace('.gz', '', $file_name);
+	// echo '<script>console.log("' . $out_file_name . '")</script>';
+	//
+	// $file = gzopen($file_name, 'rb');
+	// $out_file = fopen($out_file_name, 'wb');
+	//
+	// while(!gzeof($file)) {
+	// 	fwrite($out_file, gzread($file, $buffer_size));
+	// }
+	//
+	// $dest = fopen(get_template_directory_uri() . '/static/js/app.js', 'wb');
+	// $out_file_name = str_replace('.gz', '', $file_name);
+	//
+	// wp_enqueue_script( 'main-scripts', $dest, array(), '1.0.0', true );
+	//
+	// while (!gzeof($gz)) {
+  //   fwrite($dest, gzread($gz, 4096));
+	// }
 
 	gzclose($out_file);
-	fclose($file);
+	fclose($dest);
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 
