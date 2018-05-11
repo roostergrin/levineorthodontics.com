@@ -34,8 +34,8 @@ function load_scripts() {
   //   fwrite($dest, gzread($gz, 4096));
 	// }
 
-	gzclose($out_file);
-	fclose($dest);
+	// gzclose($out_file);
+	// fclose($dest);
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 
