@@ -10,6 +10,9 @@ function load_scripts() {
 	remove_action('wp_print_styles', 'print_emoji_styles');
 	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+	$gz = gzopen(get_template_directory_uri() . '/static/js/app.js.gz', 'rb');
+	echo '<script>console.log(' . $gz . ')</script>';
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 

@@ -1,2 +1,13 @@
 .footer(v-if='props')
-  h1 Footer Component
+  .footer__bg
+    .footer__container
+      .footer__title
+        | Levine Orthodontics
+      .footer__location(v-html='props.acf.location')
+  .footer__divder
+    .footer__container
+      .footer__tm
+        | Rooster Grin Media
+    
+  
+  

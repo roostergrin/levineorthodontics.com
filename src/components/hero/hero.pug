@@ -1,3 +1,3 @@
 .hero
-  .hero__image
-  .hero__image--option(:style="{ backgroundImage: 'url(' + props.image + ')' }")
+  .hero__image(v-if='$route.name === "home"')
+  .hero__image--option(:style="{ backgroundImage: 'url(' + props.image + ')' }", v-if='$route.name !== "home"')
