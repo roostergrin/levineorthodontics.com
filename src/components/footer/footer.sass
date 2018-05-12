@@ -1,1 +1,36 @@
+.footer
+  &__bg
+    background-color: $c2
+    padding: rem-calc(24)
 
+  &__container
+    @extend .flex-container
+    @extend p
+
+  &__title, &__location, &__social
+    @extend .col-flex-12
+    text-align: center
+
+  &__title
+    margin-bottom: rem-calc(24)
+
+    &:after
+      position: absolute
+      bottom: -10px
+      transform: translateX(-125%)
+      border-bottom: 3px solid $c1
+      width: 100px
+      content: ''
+
+  &__social
+    margin-top: rem-calc(16)   
+
+  &__divider
+    border-top: 3px solid $white
+    background-color: $c2
+
+  &__trade
+    @extend .p3
+    padding: rem-calc(8) rem-calc(16)
+    width: 100%
+    text-align: right

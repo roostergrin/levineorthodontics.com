@@ -1,10 +1,8 @@
 .pages-treatment-options 
   Loader(v-if='!props')
   div(v-if='props')
-    Hero 
-    BlockText
-    CustomPatientInfoSection
-    DividerTextButton
-    
-    pre {{ props }}
+    Hero(:props='props.acf.hero')
+    BlockText(:props='props.acf.block_text')
+    CustomPatientInfoSection(:props='props.acf.custom_patient_info_section')
+    DividerTextButton(:props='props.acf.divider_text_button')
   
