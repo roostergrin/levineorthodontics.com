@@ -6,9 +6,9 @@ nav.navigation(:class="{'navigation--active': $store.state.nav}")
         span(v-show='$store.state.nav') Exit
         
     router-link(to='/').navigation__logo
-      | Logo     
+      img(src='/static/logo-png.png')
         
-  .navigation__container
+  .navigation__container.navigation__container--body
     .navigation__left
       .navigation__body(:class="{'navigation__body--active': $store.state.nav}")
           
@@ -29,7 +29,7 @@ nav.navigation(:class="{'navigation--active': $store.state.nav}")
       .navigation__body.navigation__body--option(:class="{'navigation__body--active': $store.state.nav}")
         .navigation__button(@mouseenter='buttonAnimate', @mouseleave='buttonAnimate')
           span(:style='styleObject')
-          | Button
+          | book appointment
           
         .navigation__social
           | Social

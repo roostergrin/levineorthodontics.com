@@ -1,0 +1,26 @@
+.form-home-contact
+  width: 100%
+
+  &__group
+    @extend .col-flex-6
+    @extend .col-flex-offset-3
+
+  &__input
+    margin: rem-calc(8) auto
+    border: none
+    border-radius: 1px
+    padding: rem-calc(16)
+    width: 100%
+    letter-spacing: rem-calc(1)
+
+    &--button
+      @extend .button
+      margin-left: 25%
+      background-color: $c1
+      width: 50%
+      letter-spacing: rem-calc(3)
+      color: $white
+
+      &:hover
+        background-color: $c1-hover
+        color: $c2

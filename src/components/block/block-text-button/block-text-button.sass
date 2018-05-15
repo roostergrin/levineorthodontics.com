@@ -1,7 +1,7 @@
 .block-text-button
   &__container
     @extend .flex-container
-    margin: rem-calc(64) auto
+    margin-top: rem-calc(64)
     text-align: center
 
   &__subtitle
@@ -19,10 +19,15 @@
     @extend .col-flex-offset-3
     @extend p
 
+    .pages-home &
+      @extend .col-flex-8
+      @extend .col-flex-offset-2
+
   &__container-option
     @extend .flex-container
     justify-content: center
     margin-bottom: rem-calc(64)
 
   &__button
-    @extend .button
+    @extend .button-main
+    margin-top: rem-calc(24)

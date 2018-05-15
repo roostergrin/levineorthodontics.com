@@ -4,6 +4,8 @@
   left: 0
   transition: all .3s ease-in-out
   z-index: 9994
+  // background-color: $c1
+  padding: rem-calc(32) 0
   width: 100%
 
   &--active
@@ -13,7 +15,6 @@
 
   &__container-lg
     @extend .container
-    margin: rem-calc(32) auto
 
   &__menu
     span
@@ -29,8 +30,11 @@
   &__container
     @extend .flex-container
 
+    &--body
+      margin-top: rem-calc(96)
+
   &__left
-    @extend .col-flex-8
+    @extend .col-flex-7
     text-align: right
 
   &__right
@@ -38,6 +42,7 @@
     @extend h3
     position: relative
     text-align: left
+    font-weight: 300
 
   &__body
     position: absolute
@@ -63,20 +68,24 @@
   &__link
     @extend h3
     margin: rem-calc(16) auto
+    font-weight: 300
 
   &__button
     @extend .button
     display: inline-block
-    margin: rem-calc(16) auto
+    margin: rem-calc(32) auto
     width: rem-calc(250)
     text-align: center
 
   &__bottom
-    @extend .col-flex-8
+    @extend .col-flex-7
     text-align: right
 
   &__contact, &__social
-    @extend h3
+    @extend h4
+    color: $black
+    font-size: 20px
+    font-weight: 300
 
   &__contact
     margin: rem-calc(16) auto

@@ -8,10 +8,12 @@
         
       .tab-home-team__images
         .tab-home-team__image(v-for='(team, k) in props.team', v-if='k <= 3', @mouseenter='top = k')
+          .tab-home-team__bg(:style="{ backgroundImage: 'url('+ team.image +')'}")
           
     .tab-home-team__team
       .tab-home-team__images
         .tab-home-team__image(v-for='(team, k) in props.team', v-if='k >= 4', @mouseenter='bottom = k')
+          .tab-home-team__bg(:style="{ backgroundImage: 'url('+ team.image +')'}")
     
       .tab-home-team__body(v-for='(team, j) in props.team', v-if='bottom === j')
         .tab-home-team__title(v-html='team.name')

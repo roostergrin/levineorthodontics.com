@@ -1,17 +1,16 @@
 .custom-home-doctor
   &__container
     @extend .flex-container
+    margin-bottom: rem-calc(64)
 
   &__left
-    @extend .col-flex-3
+    @extend .col-flex-4
     @extend .col-flex-offset-1
 
   &__right
     @extend .col-flex-7
-    @extend .col-flex-offset-1
-
-  &__body
-    margin: rem-calc(96) auto
+    align-self: center
+    margin-top: rem-calc(16)
 
   &__subtitle
     @extend h4

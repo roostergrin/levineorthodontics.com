@@ -5,4 +5,4 @@
         .divider-text-button__body
           .divider-text-button__title(v-html='props.title')
           .divider-text-button__cta(v-html='props.cta')
-          a.divider-text-button__button(v-html='props.button', :href='props.link')  
+          a.divider-text-button__button(v-html='props.button', :href='props.link', v-if='props.button')  

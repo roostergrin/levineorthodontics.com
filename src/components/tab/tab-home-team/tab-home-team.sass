@@ -1,8 +1,7 @@
 .tab-home-team
-
   &__team
     @extend .flex-container
-    margin: rem-calc(64) auto
+    margin: rem-calc(32) auto
 
   &__body
     @extend .col-flex-3
@@ -26,6 +25,14 @@
   &__image
     @extend .col-flex-3
     display: inline-block
-    background-color: $c1
+    // background-color: $c1
     padding: 0 rem-calc(8)
+    height: rem-calc(275)
+
+    &:hover
+      cursor: pointer
+
+  &__bg
+    background-position: center center
+    background-size: cover
     height: 100%

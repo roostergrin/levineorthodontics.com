@@ -14,7 +14,7 @@ export default {
   },
   data () {
     return {
-      activeSub: 0
+      activeSub: ''
     }
   },
   mixins: [showMenu, buttonOver],
