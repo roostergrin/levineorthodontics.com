@@ -118,8 +118,15 @@ $screen-xs-max: $screen-xs - 1
     width: $col-width
     box-sizing: border-box
 
+    @media screen and (max-width: $screen-sm)
+      flex-basis: 100%
+      width: 100%
+
   .col-flex-offset-#{$n}
     margin-left: $col-width
+
+    @media screen and (max-width: $screen-sm)
+      margin-left: 0
 
 // --- Offsets
 // --- responsive cascades to largest screen size can't be done with max-widths

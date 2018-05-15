@@ -8,7 +8,15 @@
 
   &__body
     margin: rem-calc(32) auto
+    padding: 0 rem-calc(24)
+
+    @media screen and (max-width: $screen-sm)
+      padding: 0 rem-calc(16)
 
   &__image
     background-position: center center
     background-size: cover
+    min-height: rem-calc(350)
+
+    @media screen and (max-width: $screen-sm)
+      height: rem-calc(300)
