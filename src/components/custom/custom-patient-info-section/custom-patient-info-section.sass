@@ -9,8 +9,12 @@
     @extend .col-flex-6
 
   &__body
+    align-self: center
     margin: rem-calc(32) auto
     padding: 0 rem-calc(24)
+
+    ul
+      margin-bottom: rem-calc(48)
 
     @media screen and (max-width: $screen-sm)
       padding: 0 rem-calc(16)

@@ -2,7 +2,7 @@
   &__bg
     background-position: center center
     background-size: cover
-    height: rem-calc(250)
+    min-height: rem-calc(250)
 
   &__overlay
     background-color: $shadow
@@ -16,6 +16,8 @@
   &__body
     @extend .col-flex-6
     @extend .col-flex-offset-3
+    flex-basis: auto
+    align-self: center
     text-align: center
     color: $white
 
@@ -31,8 +33,9 @@
 
   &__button
     @extend .button
-    margin-top: rem-calc(24)
+    display: inline-block
     border-color: $white
+    width: rem-calc(200)
     color: $white
 
     &:hover

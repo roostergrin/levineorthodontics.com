@@ -2,9 +2,7 @@
   position: fixed
   top: 0
   left: 0
-  transition: all .3s ease-in-out
   z-index: 9994
-  // background-color: $c1
   padding: rem-calc(32) 0
   width: 100%
 
@@ -31,17 +29,19 @@
     @extend .flex-container
 
     &--body
-      margin-top: rem-calc(96)
+      .navigation--active &
+        margin-top: rem-calc(96)
 
   &__left
     @extend .col-flex-7
     text-align: right
 
   &__right
-    @extend .col-flex-4
+    @extend .col-flex-5
     @extend h3
     position: relative
-    text-align: left
+    padding-left: rem-calc(64)
+    // text-align: left
     font-weight: 300
 
   &__body
@@ -91,4 +91,6 @@
     margin: rem-calc(16) auto
 
   &__image
+    display: inline-block
+    position: relative
     margin-top: rem-calc(16)

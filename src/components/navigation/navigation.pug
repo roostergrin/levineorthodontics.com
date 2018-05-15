@@ -18,11 +18,11 @@ nav.navigation(:class="{'navigation--active': $store.state.nav}")
             
     .navigation__right
       .navigation__body.navigation__body--right(:class="{'navigation__body--active': $store.state.nav}")
-        div(v-for='(sub, j) in links', v-if='activeSub === j')
-          .navigation__link(v-for='(sublink, k) in sub.children', v-if='sub.children')
+        div(v-for='(sub, j) in links', v-show='activeSub === j')
+          .navigation__link(v-for='(sublink, k) in sub.children', v-show='sub.children')
             | {{ sublink.name }}
-          .navigation__image
-            | Image
+          .navigation__image Image
+            
           
   .navigation__container
     .navigation__bottom 
