@@ -1,23 +1,52 @@
 .tab-home-team
+  position: relative
+  min-height: 100vh
+
+  &__container
+    @extend .flex-container
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
   &__team
     @extend .flex-container
     margin: rem-calc(32) auto
 
   &__body
     @extend .col-flex-3
+    padding: 0 rem-calc(24)
+
+  &__subtitle
+    @extend h4
+    width: 100%
+    text-align: center
 
   &__title
     @extend h2
     margin-bottom: 0
 
+  &__team-title
+    @extend h2
+    color: $c1
+    font-size: 24px
+
   &__position
     @extend p
-    margin: rem-calc(8) auto
-    font-size: rem-calc(20)
+    margin-top: rem-calc(-24)
 
   &__content
     @extend p
+    position: relative
     margin-top: rem-calc(24)
+
+    &::after
+      position: absolute
+      bottom: -16px
+      left: 0
+      border: 1.5px solid $c1
+      width: 36px
+      content: ''
 
   &__images
     @extend .col-flex-9
@@ -25,14 +54,19 @@
   &__image
     @extend .col-flex-3
     display: inline-block
-    // background-color: $c1
-    padding: 0 rem-calc(8)
-    height: rem-calc(275)
+    padding: 0 rem-calc(16)
+    height: 100%
 
     &:hover
       cursor: pointer
 
   &__bg
+    transition: .5s all ease-in-out
+    background-repeat: no-repeat
     background-position: center center
-    background-size: cover
+    background-size: contain
     height: 100%
+    filter: grayscale(1)
+
+    &--active
+      filter: grayscale(0)

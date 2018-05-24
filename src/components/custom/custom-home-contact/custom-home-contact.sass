@@ -1,8 +1,12 @@
 .custom-home-contact
   &__bg
-    background-color: $c1
-    padding: rem-calc(64) 0
+    position: relative
+    background-size: cover
+    min-height: 100vh
 
   &__form
     @extend .flex-container
-    margin: rem-calc(64) auto
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)

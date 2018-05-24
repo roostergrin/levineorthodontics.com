@@ -1,4 +1,4 @@
 .pages-contact-us
   Loader(v-show='loading')
   div(v-if='props')
-    pre {{ props }}
+    CustomContact(:props='props.acf.custom_contact')

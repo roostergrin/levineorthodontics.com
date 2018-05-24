@@ -1,9 +1,13 @@
 .custom-patient-info-section
-  min-height: 50vh
+  position: relative
+  min-height: 100vh
 
   &__container
     @extend .flex-container
-    margin-bottom: rem-calc(64)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
 
   &__image, &__body
     @extend .col-flex-6

@@ -1,21 +1,7 @@
-.form-main
-  form.form-main__form(@submit.prevent='validateBeforeSubmit', v-if='!formSubmitted')
-    //- name field
-    .form-main__group
-      input.form-main__input(name='name', v-model='fullname', :validate="'required|alpha'", :class="{ 'form-main__input--error': errors.has('name') }", type='text', placeholder='First and Last Name')
-      span.form-main__group__message(v-show="errors.has('name')") Please Input Your First and Last Name
-    //- email field
-    .form-main__group
-      input.form-main__input(name='email', v-model='email', v-validate="'required|email'", :class="{ 'input': true, 'form-main__input--error': errors.has('email') }", placeholder='Email')
-      span.help.is-danger(v-show="errors.has('email')") Please Input a Valid Email
-    //- phone field
-    .form-main__group
-      input.form-main__input(name='phone', v-model='phone', v-validate="'required|numeric'", :class="{ 'input': true, 'form-main__input--error': errors.has('phone') }", placeholder='Phone Number')
-      span.help.is-danger(v-show="errors.has('phone')") Please Input a Valid Phone Number
-    //- message field
-    .form-main__group
-      textarea.form-main__input.form-main__input--textarea(name='message', v-model='message' placeholder='Message')
-    .form-main__submit-button(@click='validate')
-      | Send
-      svg
-        rect(x='0' y='0' width='100%' height='100%')
+form.form-contact
+  .form-contact__group
+    input.form-contact__input(placeholder='First and Last Name')
+    input.form-contact__input(placeholder='Email')
+    input.form-contact__input(placeholder='Phone')
+    textarea.form-contact__input.form-contact__input--textarea(rows='8' placeholder='Message')
+    input.form-contact__input.form-home-contact__input--button(type='submit' value='send')

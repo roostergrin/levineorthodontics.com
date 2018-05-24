@@ -1,7 +1,13 @@
 .block-text-button
+  position: relative
+  min-height: 100vh
+
   &__container
     @extend .flex-container
-    margin-top: rem-calc(64)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
     text-align: center
 
   &__subtitle

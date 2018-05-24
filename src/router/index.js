@@ -58,6 +58,10 @@ const router = new VueRouter({
         {
           path: '/patient-info#eating-with-braces',
           name: 'Eating with Braces'
+        },
+        {
+          path: '/patient-info#events',
+          name: 'Events'
         }
       ]
     },

@@ -3,6 +3,7 @@
 <script>
 import Hero from 'components/hero/hero'
 import Loader from 'components/loader/loader'
+import CustomContact from 'components/custom/custom-contact/custom-contact'
 
 export default {
   name: 'contact',
@@ -16,7 +17,8 @@ export default {
   },
   components: {
     Hero,
-    Loader
+    Loader,
+    CustomContact
   }
 }
 </script>
