@@ -1,5 +1,6 @@
 .block-text
   .block-text__container
+    div(v-waypoint='{ active: true, callback: change }')
     .block-text__subtitle(v-html='props.subtitle')
     .block-text__title(v-html='props.title')
     .block-text__content(v-html='props.content') 

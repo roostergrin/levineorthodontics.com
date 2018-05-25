@@ -9,7 +9,7 @@ import store from './shared/store'
 import * as customFilters from './shared/filters/filters'
 // import VueParallaxJs from 'vue-parallax-js'
 // import VueScrollTo from 'vue-scrollto'
-// import VueWaypoint from 'vue-waypoint'
+import VueWaypoint from 'vue-waypoint'
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // import 'swiper/dist/css/swiper.css'
 
@@ -39,8 +39,7 @@ Vue.use(VeeValidate)
 //   y: true
 // })
 
-// Vue.use(VueWaypoint)
-
+Vue.use(VueWaypoint)
 // Vue.use(VueCookies)
 
 /* eslint-disable no-new */
