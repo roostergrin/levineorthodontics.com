@@ -2,6 +2,7 @@
 
 <script>
 import { showMenu, buttonOver } from '@/mixins'
+import Icon from 'components/icon/icon'
 
 export default {
   computed: {
@@ -10,12 +11,18 @@ export default {
     },
     links () {
       return this.$router.options.routes
+    },
+    images () {
+      return this.$store.state.pages
     }
   },
   data () {
     return {
       activeSub: ''
     }
+  },
+  async created () {
+    console.log(this.images)
   },
   mixins: [showMenu, buttonOver],
   methods: {
@@ -26,6 +33,9 @@ export default {
     activeLinks (e) {
       this.activeSub = e
     }
+  },
+  components: {
+    Icon
   }
 }
 

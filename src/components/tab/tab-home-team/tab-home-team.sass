@@ -11,7 +11,12 @@
 
   &__team
     @extend .flex-container
+    transform: translateY(50px)
+    transition: all 2s ease-in-out
     margin: rem-calc(32) auto
+
+    &--active
+      transform: none
 
   &__body
     @extend .col-flex-3
@@ -19,12 +24,26 @@
 
   &__subtitle
     @extend h4
+    transform: translateY(-10px)
+    transition: all 1.2s ease-in-out
+    opacity: 0
     width: 100%
     text-align: center
 
+    &--active
+      transform: none
+      opacity: 1
+
   &__title
     @extend h2
+    transform: translateY(10px)
+    transition: all 1.5s ease-in-out
+    opacity: 0
     margin-bottom: 0
+
+    &--active
+      transform: none
+      opacity: 1
 
   &__team-title
     @extend h2
@@ -71,3 +90,6 @@
 
     &--active
       filter: grayscale(0)
+
+  &__waypoint
+    transform: translateY(100px)

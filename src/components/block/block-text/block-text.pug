@@ -1,6 +1,6 @@
 .block-text
-  .block-text__container
-    div(v-waypoint='{ active: true, callback: change }')
+  .block-text__container(:class="{'block-text__container--active': active}")
     .block-text__subtitle(v-html='props.subtitle')
     .block-text__title(v-html='props.title')
+    .block-text__waypoint(v-waypoint='{ active: true, callback: change }')
     .block-text__content(v-html='props.content') 

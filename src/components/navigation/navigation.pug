@@ -2,22 +2,28 @@ nav.navigation(:class="{'navigation--active': $store.state.nav}")
   .navigation__container-lg
     .navigation__border
       .navigation__menu(@click='activate')
-        span(v-show='!$store.state.nav') Menu
-        span(v-show='$store.state.nav') Exit
+        span(v-show='!$store.state.nav') MENU
+        span(v-show='$store.state.nav') EXIT
+        Icon(name='rectangle').navigation__menu--icon
         
     router-link(to='/').navigation__logo
-      img(src='/static/logo-png.png')
+      img(src='/static/LevineOrthoLogo.png').navigation__logo--img
+      
+    .navigation__call
+      span CALL
+      Icon(name='rectangle').navigation__menu--icon.navigation__menu--icon--option
+      
         
   .navigation__container.navigation__container--body
     .navigation__left
-      .navigation__body(:class="{'navigation__body--active': $store.state.nav}")
+      .navigation__body(:class="{'navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav}")
           
         router-link(v-for='(link, i) in links', :to='link.path', v-if='link.navigation', :key='i')
           .navigation__link(@mouseenter='activeLinks(i)', @click='activate')
             | {{ link.name }}
             
     .navigation__right
-      .navigation__body.navigation__body--right(:class="{'navigation__body--active': $store.state.nav}")
+      .navigation__body.navigation__body--right(:class="{'navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav}")
         div(v-for='(sub, j) in links', v-show='activeSub === j')
           .navigation__link(v-for='(sublink, k) in sub.children', v-show='sub.children')
             | {{ sublink.name }}
@@ -26,7 +32,7 @@ nav.navigation(:class="{'navigation--active': $store.state.nav}")
           
   .navigation__container
     .navigation__bottom 
-      .navigation__body.navigation__body--option(:class="{'navigation__body--active': $store.state.nav}")
+      .navigation__body.navigation__body--option(:class="{' navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav }")
         .navigation__button(@mouseenter='buttonAnimate', @mouseleave='buttonAnimate')
           span(:style='styleObject')
           | book appointment

@@ -1,8 +1,9 @@
 .tab-home-team
   .tab-home-team__container
-    .tab-home-team__subtitle(v-html='props.subtitle')
-    .tab-home-team__title(v-html='props.title')  
-    .tab-home-team__team
+    .tab-home-team__subtitle(v-html='props.subtitle', :class="{'tab-home-team__subtitle--active': active}")
+    .tab-home-team__title(v-html='props.title', :class="{'tab-home-team__title--active': active}")
+    .tab-home-team__waypoint(v-waypoint='{ active: true, callback: change }')  
+    .tab-home-team__team(:class="{'tab-home-team__team--active': active}")
       .tab-home-team__body(v-for='(team, i) in props.team', v-if='top === i')
         .tab-home-team__team-title(v-html='team.name')
         .tab-home-team__position(v-html='team.position')
@@ -12,7 +13,7 @@
         .tab-home-team__image(v-for='(team, k) in props.team', v-if='k <= 3', @mouseenter='top = k')
           .tab-home-team__bg(:style="{ backgroundImage: 'url('+ team.image +')'}", :class="{'tab-home-team__bg--active': top === k}")
           
-    .tab-home-team__team
+    .tab-home-team__team(:class="{'tab-home-team__team--active': active}")
       .tab-home-team__images
         .tab-home-team__image(v-for='(team, m) in props.team', v-if='m >= 4', @mouseenter='bottom = m')
           .tab-home-team__bg(:style="{ backgroundImage: 'url('+ team.image +')'}", :class="{'tab-home-team__bg--active': bottom === m}")

@@ -1,7 +1,8 @@
 .block-text-button
   .block-text-button__container
-    .block-text-button__subtitle(v-html='props.subtitle')
-    .block-text-button__title(v-html='props.title')
-    .block-text-button__content(v-html='props.content')
+    .block-text-button__subtitle(v-html='props.subtitle', :class="{'block-text-button__subtitle--active': active}")
+    .block-text-button__title(v-html='props.title', :class="{'block-text-button__title--active': active}")
+    .block-text-button__waypoint(v-waypoint='{ active: true, callback: change }')
+    .block-text-button__content(v-html='props.content', :class="{'block-text-button__content--active': active}")
     .block-text-button__container-option
       .block-text-button__button(v-html='props.button' @click='$router.push(props.link)')

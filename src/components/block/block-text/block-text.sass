@@ -7,8 +7,14 @@
     position: absolute
     top: 50%
     left: 50%
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -25%)
+    transition: all 1.2s ease-in-out
+    opacity: 0
     text-align: center
+
+    &--active
+      transform: translate(-50%, -50%)
+      opacity: 1
 
   &__subtitle
     @extend h4
@@ -18,3 +24,6 @@
 
   &__content
     @extend p
+
+  &__waypoint
+    transform: translateY(80px)

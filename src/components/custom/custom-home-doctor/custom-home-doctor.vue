@@ -2,6 +2,16 @@
 
 <script>
 export default {
-  props: ['props']
+  props: ['props'],
+  data () {
+    return {
+      active: false
+    }
+  },
+  methods: {
+    change ({ direction, going }) {
+      going === this.$waypointMap.GOING_IN ? this.active = true : ''
+    }
+  }
 }
 </script>

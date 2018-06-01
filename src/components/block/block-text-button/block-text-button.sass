@@ -14,16 +14,36 @@
     @extend .col-flex-6
     @extend .col-flex-offset-3
     @extend h4
+    transform: translateY(-20px)
+    transition: 1s all ease-in-out
+    opacity: 0
+
+    &--active
+      transform: none
+      opacity: 1
 
   &__title
     @extend .col-flex-6
     @extend .col-flex-offset-3
     @extend h2
+    transform: translateY(-20px)
+    transition: .8s all ease-in-out
+    opacity: 0
+
+    &--active
+      transform: none
+      opacity: 1
 
   &__content
     @extend .col-flex-6
     @extend .col-flex-offset-3
     @extend p
+    transform: translateY(20px)
+    transition: all 1.5s ease-in-out
+
+    &--active
+      transform: none
+
 
     .pages-home &
       @extend .col-flex-8
@@ -37,3 +57,6 @@
   &__button
     @extend .button-main
     margin-top: rem-calc(24)
+
+  &__waypoint
+    transform: translateY(115px)

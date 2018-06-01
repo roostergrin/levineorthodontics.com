@@ -6,7 +6,13 @@ export default {
   data () {
     return {
       top: 0,
-      bottom: 4
+      bottom: 4,
+      active: false
+    }
+  },
+  methods: {
+    change ({ direction, going }) {
+      going === this.$waypointMap.GOING_IN ? this.active = true : ''
     }
   }
 }
