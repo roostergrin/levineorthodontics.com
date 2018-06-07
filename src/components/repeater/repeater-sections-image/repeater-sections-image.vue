@@ -2,6 +2,17 @@
 
 <script>
 export default {
-  props: ['props']
+  props: ['props'],
+  data: () => {
+    return {
+      j: false,
+      k: false
+    }
+  },
+  methods: {
+    change ({ direction, going }) {
+      if (direction === 'top') { this.j ? this.k = true : this.j = true }
+    }
+  }
 }
 </script>

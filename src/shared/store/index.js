@@ -10,6 +10,7 @@ const store = new Vuex.Store({
     app: {},
     pages: {},
     nav: {},
+    scrolled: {},
     // blog: {},
     body: {},
     types: {},

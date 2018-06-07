@@ -1,4 +1,4 @@
-import { GET_PAGES, GET_APP, VIEW_NAV, VIEW_BODY, VIEW_TYPES, VIEW_SHOWMODAL, VIEW_MODALCONTENT } from './mutation-types.js'
+import { GET_PAGES, GET_APP, SCROLLED_NAV, VIEW_NAV, VIEW_BODY, VIEW_TYPES, VIEW_SHOWMODAL, VIEW_MODALCONTENT } from './mutation-types.js'
 
 const mutations = {
   [GET_PAGES] (state, data) {
@@ -13,6 +13,9 @@ const mutations = {
   // },
   [GET_APP] (state, data) {
     state.app = data
+  },
+  [SCROLLED_NAV] (state, data) {
+    state.scrolled = data
   },
   [VIEW_NAV] (state, data) {
     state.nav = data

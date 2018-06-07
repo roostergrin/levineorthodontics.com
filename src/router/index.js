@@ -35,17 +35,19 @@ const router = new VueRouter({
       path: '/',
       name: 'home',
       navigation: true,
-      component: Home
+      component: Home,
+      image: '/static/home.jpg'
     },
     {
       path: '/patient-info',
-      name: 'Patient Info',
+      name: 'patient info',
       navigation: true,
       component: PatientInfo,
+      image: '/static/patient_info.jpg',
       children: [
         {
           path: '/patient-info#new-patients',
-          name: 'New Patients'
+          name: 'new patients'
         },
         {
           path: '/patient-info#orthofi',
@@ -70,6 +72,7 @@ const router = new VueRouter({
       name: 'Treatment Options',
       navigation: true,
       component: TreatmentOptions,
+      image: '/static/treatment_options.jpg',
       children: [
         {
           path: '/treatment-options#damon-system',
@@ -101,7 +104,8 @@ const router = new VueRouter({
       path: '/contact-us',
       name: 'Contact Us',
       navigation: true,
-      component: Contact
+      component: Contact,
+      image: '/static/contact_us.jpg'
     },
     {
       path: '/*',

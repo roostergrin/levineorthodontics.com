@@ -4,6 +4,7 @@ import {
   GET_PAGES,
   // GET_BLOG,
   GET_APP,
+  SCROLLED_NAV,
   VIEW_NAV,
   VIEW_BODY,
   VIEW_TYPES,
@@ -48,6 +49,9 @@ const actions = {
   //     }
   //   })()
   // },
+  SCROLLED_NAV ({ commit }, data) {
+    commit(SCROLLED_NAV, data)
+  },
   VIEW_NAV ({ commit }, data) {
     commit(VIEW_NAV, data)
   },

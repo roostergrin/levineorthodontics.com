@@ -2,6 +2,16 @@
 
 <script>
 export default {
-  props: ['props']
+  props: ['props'],
+  data: () => {
+    return {
+      active: false
+    }
+  },
+  methods: {
+    activate ({direction, going}) {
+      going === 'in' ? this.active = true : ''
+    }
+  }
 }
 </script>

@@ -1,48 +1,52 @@
-nav.navigation(:class="{'navigation--active': $store.state.nav}")
+nav.navigation(:class="{'navigation--active': $store.state.nav, 'navigation--scrolled': $store.state.scrolled}")
   .navigation__container-lg
     .navigation__border
       .navigation__menu(@click='activate')
-        span(v-show='!$store.state.nav') MENU
-        span(v-show='$store.state.nav') EXIT
+        span.navigation__menu--text(:class="{'navigation__menu--text--active': $store.state.nav }", v-html='menu')
         Icon(name='rectangle').navigation__menu--icon
+        Icon(name='rectangle', :class="{'navigation__menu--bg--active': $store.state.nav }").navigation__menu--bg
         
-    router-link(to='/').navigation__logo
-      img(src='/static/LevineOrthoLogo.png').navigation__logo--img
+    router-link(to='/')
+      Icon(name='logo', :class="{'navigation__logo--scrolled': $store.state.scrolled}").navigation__logo
       
     .navigation__call
-      span CALL
+      span(@mouseenter='callFunc', v-show='!call') CALL
+      span(@mouseleave='callFunc', v-show='call', :class="{'navigation__call--active': call}") 781. 860. 9473
       Icon(name='rectangle').navigation__menu--icon.navigation__menu--icon--option
-      
-        
-  .navigation__container.navigation__container--body
+  
+  .navigation__container.navigation__container--body(@mouseleave='activeLinks(0)')
     .navigation__left
       .navigation__body(:class="{'navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav}")
-          
         router-link(v-for='(link, i) in links', :to='link.path', v-if='link.navigation', :key='i')
-          .navigation__link(@mouseenter='activeLinks(i)', @click='activate')
-            | {{ link.name }}
+          div
+            .navigation__link(:class="{'navigation__link--opacity': activeSub, 'navigation__link--active': activeSub === i && activeSub !== 0}" @mouseenter='activeLinks(i)', @click='activate', v-html='link.name')
             
     .navigation__right
       .navigation__body.navigation__body--right(:class="{'navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav}")
-        div(v-for='(sub, j) in links', v-show='activeSub === j')
-          .navigation__link(v-for='(sublink, k) in sub.children', v-show='sub.children')
-            | {{ sublink.name }}
-          .navigation__image Image
-            
+        .navigation__body-animation(v-for='(sub, j) in links', :class="{'navigation__body-animation--active': activeSub === j}")
+          .navigation__sublink(v-for='(sublink, k) in sub.children', v-show='sub.children', @click='activate')
+            router-link(:to='sublink.path') {{ sublink.name }}
+          .navigation__image(:style="{ backgroundImage: 'url(' + sub.image + ')'}")
           
   .navigation__container
-    .navigation__bottom 
+    .navigation__bottom(:class="{'navigation__bottom--opacity': activeSub}")
       .navigation__body.navigation__body--option(:class="{' navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav }")
         .navigation__button(@mouseenter='buttonAnimate', @mouseleave='buttonAnimate')
           span(:style='styleObject')
           | book appointment
           
         .navigation__social
-          | Social
-          
+          a(href='#', target='_blank')
+            Icon(name='youtube').navigation__social--icon 
+          a(href='#', target='_blank')  
+            Icon(name='facebook').navigation__social--icon
+
         .navigation__contact
           .navigation__contact--phone
-            | Phone
+            a(href='tel:+17818609473')
+              | 781. 860. 9473
           .navigation__contact--address    
-            | Address
+            | 18 Muzzey Street
+          .navigation__contact--address 
+            | Lexington, MA 02421
         

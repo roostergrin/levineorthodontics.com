@@ -1,5 +1,6 @@
 .custom-patient-info-section
   .custom-patient-info-section__container
-    .custom-patient-info-section__image(:style="{ backgroundImage: 'url('+ props.image +')'}")
-    .custom-patient-info-section__body(v-html='props.content')
+    .custom-patient-info-section__waypoint(v-waypoint='{ active: true, callback: change }')
+    .custom-patient-info-section__image(:style="{ backgroundImage: 'url('+ props.image +')'}", :class="{ 'custom-patient-info-section__image--active': active }")
+    .custom-patient-info-section__body(v-html='props.content', :class="{ 'custom-patient-info-section__body--active': active }")
   

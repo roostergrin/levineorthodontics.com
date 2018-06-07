@@ -14,8 +14,14 @@
 
   &__body
     align-self: center
+    transition: all 1s ease-in-out
+    opacity: 0
     margin: rem-calc(32) auto
     padding: 0 rem-calc(24)
+    overflow: hidden
+
+    &--active
+      opacity: 1
 
     ul
       margin-bottom: rem-calc(48)
@@ -24,9 +30,20 @@
       padding: 0 rem-calc(16)
 
   &__image
-    background-position: center center
+    transform: translateX(-25px)
+    transition: all 1s ease-in-out
+    opacity: 0
+    background-position: top center
     background-size: cover
-    min-height: rem-calc(350)
+    min-height: rem-calc(425)
+
+    &--active
+      transform: none
+      opacity: 1
 
     @media screen and (max-width: $screen-sm)
       height: rem-calc(300)
+
+  &__waypoint
+    position: relative
+    top: rem-calc(200)

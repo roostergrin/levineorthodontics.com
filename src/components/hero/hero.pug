@@ -1,3 +1,7 @@
 .hero
   .hero__image(v-if='$route.name === "home"')
+    .hero__title(:class="{'hero__title--loaded': loaded}") 
+      .hero__title--subtitle making your smile
+      .hero__title--maintitle the best it can be
   .hero__image--option(:style="{ backgroundImage: 'url(' + props.image + ')' }", v-if='$route.name !== "home"')
+  .hero__waypoint(v-waypoint='{ active: true, callback: changeNav }')

@@ -4,14 +4,20 @@
   left: 0
   transition: .5s all ease-in-out
   z-index: 9994
-  background: linear-gradient(180deg, rgba(229, 229, 229, 1) 0%, rgba(249, 249, 249, 0) 100%, rgba(255, 255, 255, 0) 100%)
+  background: linear-gradient(180deg, rgba(145, 145, 145, .5) 0%, rgba(145, 145, 145, 0) 100%, rgba(145, 145, 145, 0) 100%)
   padding: rem-calc(32) 0
   width: 100%
+  height: auto
 
   &--active
+    transition: .5s all ease-in-out
     box-shadow: 0 1px 1px $shadow
     background: $white
     height: 100vh
+
+  &--scrolled
+    box-shadow: 0 -1px 8px $shadow
+    background: $white
 
   &__container-lg
     @extend .container
@@ -19,16 +25,32 @@
   &__menu
     position: relative
 
-    span
+    &--bg
+      position: absolute
+      top: -5px
+      left: 0
+      transform: rotate(180deg)
+      transition: all .5s ease-in-out
+      opacity: 0
+
+      &--active
+        opacity: 1
+        width: rem-calc(50)
+
+    &--text
       position: absolute
       top: 50%
       left: 50%
       transform: translate(-50%, -60%)
+      transition: all .4s ease-in-out
       color: $c1
       font-size: 18px
 
       &:hover
         cursor: pointer
+
+      &--active
+        transform: translate(-84%, -60%)
 
     &--icon
       width: rem-calc(50)
@@ -43,20 +65,27 @@
     top: 0
     left: 50%
     transform: translateX(-50%)
+    transition: .5s all ease-in-out
+    width: rem-calc(300)
 
-    &--img
-      height: rem-calc(70)
+    &--scrolled
+      width: rem-calc(250)
 
   &__call
     position: relative
     grid-column-end: 14
 
     span
+      display: inline-block
       position: absolute
       top: 50%
       transform: translate(-50%, -60%)
       color: $c1
       font-size: 18px
+
+      &.navigation__call--active
+        transform: translate(-70%, -60%)
+        width: 125px
 
   &__container
     @extend .flex-container
@@ -68,6 +97,7 @@
 
   &__left
     @extend .col-flex-7
+    padding-right: rem-calc(32)
     text-align: right
 
   &__right
@@ -96,12 +126,47 @@
     &--right
       position: absolute
       top: 0
-      left: 16px
+      left: 64px
 
   &__link
     @extend h3
-    margin: rem-calc(16) auto
+    display: inline-block
+    position: relative
+    transition: all .25s ease-in-out
+    z-index: 9997
+    margin: rem-calc(8) auto
+    text-transform: lowercase
     font-weight: 300
+
+    &--opacity
+      opacity: .2
+
+    &--active
+      position: relative
+      opacity: 1
+      color: $black
+      font-weight: bold
+
+      &:after
+        position: absolute
+        right: -90px
+        bottom: 0
+        transform: translateX(-50%)
+        border-bottom: 3px solid $black
+        width: rem-calc(45)
+        content: ''
+
+    &:hover
+      opacity: 1
+      color: $black
+      font-weight: bold
+
+  &__sublink
+    transition: all .5s ease-in-out
+    margin-top: rem-calc(16)
+    margin-bottom: rem-calc(-10)
+    text-transform: lowercase
+    font-size: 20px
 
   &__button
     @extend .button
@@ -112,7 +177,11 @@
 
   &__bottom
     @extend .col-flex-7
+    padding-right: rem-calc(32)
     text-align: right
+
+    &--opacity
+      opacity: .2
 
   &__contact, &__social
     @extend h4
@@ -120,10 +189,35 @@
     font-size: 20px
     font-weight: 300
 
+  &__social
+    &--icon
+      display: inline-block
+      margin-left: rem-calc(8)
+      width: rem-calc(32)
+
   &__contact
-    margin: rem-calc(16) auto
+    margin: rem-calc(32) auto
+
+    &--phone
+      margin-bottom: rem-calc(24)
+
+    &--address
+      margin-bottom: rem-calc(6)
 
   &__image
     display: inline-block
     position: relative
-    margin-top: rem-calc(16)
+    margin-top: rem-calc(32)
+    background-position: center center
+    background-size: cover
+    width: rem-calc(500)
+    height: rem-calc(350)
+
+  &__body-animation
+    position: absolute
+    transition: all .5s ease-in-out
+    opacity: 0
+
+    &--active
+      opacity: 1
+      z-index: 9997

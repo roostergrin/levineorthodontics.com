@@ -3,15 +3,19 @@
     @extend .flex-container
     margin: rem-calc(124) auto
 
-  &__content, &__image
-    @extend .col-flex-6
-
   &__image
+    @extend .col-flex-6
     background-position: center center
     background-size: cover
     min-height: rem-calc(300)
 
   &__content
+    @extend .col-flex-6
     @extend p
     align-self: center
+    transition: all 1s ease-in-out
+    opacity: 0
     padding: rem-calc(96) rem-calc(16)
+
+    &--active
+      opacity: 1
