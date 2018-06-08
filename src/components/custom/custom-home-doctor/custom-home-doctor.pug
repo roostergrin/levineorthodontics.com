@@ -1,7 +1,7 @@
 .custom-home-doctor 
   .custom-home-doctor__container
     .custom-home-doctor__waypoint(v-waypoint='{ active: true, callback: change }')
-    .custom-home-doctor__left(:class="{ 'custom-home-doctor__left--active': active }")
+    .custom-home-doctor__left
       .custom-home-doctor__image(:style="{ backgroundImage: 'url(' + props.image + ')' }")
         
     .custom-home-doctor__right(:class="{ 'custom-home-doctor__right--active': active }")

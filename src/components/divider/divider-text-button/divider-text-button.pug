@@ -1,7 +1,7 @@
 .divider-text-button
   .divider-text-button__bg(:style="{ backgroundImage: 'url(' + props.image + ')' }")
     .divider-text-button__overlay
-      .divider-text-button__container(:class="{ 'divider-text-button__container--active': active }")
+      .divider-text-button__container(:class="{ 'divider-text-button__container--active': active, 'divider-text-button__container--left': props.location === 'Left', 'divider-text-button__container--right': props.location === 'Right' }")
         .divider-text-button__waypoint(v-waypoint='{ active: true, callback: activate }')
         .divider-text-button__body
           .divider-text-button__subtitle(v-html='props.subtitle')
