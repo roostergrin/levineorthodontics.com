@@ -1,0 +1,45 @@
+.modal
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 9999
+  width: 100%
+  height: 100vh
+
+  &__bg
+    background-color: $ol4
+    height: 100%
+
+  &__container
+    @extend .flex-container
+    height: 100%
+    overflow: scroll
+
+  &__body
+    @extend .col-flex-8
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background-color: $white
+
+  &__title
+    @extend h2
+    text-align: center
+
+  &__close
+    position: absolute
+    top: 16px
+    right: 16px
+
+  &__images
+    position: relative
+
+    .swiper-button-prev, .swiper-button-next
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      width: 28px
+
+      svg
+        fill: $c1

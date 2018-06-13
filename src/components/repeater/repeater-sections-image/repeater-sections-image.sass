@@ -4,18 +4,19 @@
     margin: rem-calc(124) auto
 
   &__image
-    @extend .col-flex-6
+    @extend .col-flex-5
+    align-self: center
     background-position: center center
     background-size: cover
-    min-height: rem-calc(300)
+    height: rem-calc(400)
 
   &__content
-    @extend .col-flex-6
+    @extend .col-flex-7
     @extend p
     align-self: center
     transition: all 1s ease-in-out
     opacity: 0
-    padding: rem-calc(96) rem-calc(16)
+    padding: rem-calc(96) rem-calc(52)
 
     &--active
       opacity: 1

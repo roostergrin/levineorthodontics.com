@@ -8,6 +8,7 @@ import CustomHomeDoctor from 'components/custom/custom-home-doctor/custom-home-d
 import TabHomeTeam from 'components/tab/tab-home-team/tab-home-team'
 import BlockTextButton from 'components/block/block-text-button/block-text-button'
 import CustomHomeContact from 'components/custom/custom-home-contact/custom-home-contact'
+import Modal from 'components/modal/modal'
 
 export default {
   name: 'home',
@@ -26,7 +27,8 @@ export default {
     CustomHomeDoctor,
     TabHomeTeam,
     BlockTextButton,
-    CustomHomeContact
+    CustomHomeContact,
+    Modal
   }
 }
 </script>
