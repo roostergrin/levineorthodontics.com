@@ -1,17 +1,18 @@
 .repeater-sections-image
   &__container
     @extend .flex-container
-    margin: rem-calc(124) auto
+    margin: rem-calc(108) auto
 
   &__image
-    @extend .col-flex-5
+    @extend .col-flex-6
     align-self: center
+    border-radius: 5px
     background-position: center center
     background-size: cover
     height: rem-calc(400)
 
   &__content
-    @extend .col-flex-7
+    @extend .col-flex-6
     @extend p
     align-self: center
     transition: all 1s ease-in-out
@@ -20,3 +21,7 @@
 
     &--active
       opacity: 1
+
+  &__scroll
+    position: absolute
+    top: 200px

@@ -1,11 +1,11 @@
-.modal(v-if='$store.state.showModal')
+.modal(v-if='$store.state.showModal === "gallery"')
   .modal__bg
     .modal__container
-      .modal__body
+      .modal__body(v-if='props.gallery')
         .modal__close(@click='close') close
-        .modal__title Title
+        .modal__title {{ props.button }}
         swiper.modal__images(:options="swiperOption")
-          swiper-slide(v-for='(image, i) in props', :key='i')
+          swiper-slide(v-for='(image, i) in props.gallery', :key='i')
             img.modal__image(:src='image.url', width='100%')
           
           .swiper-button-prev(slot='button-prev')
@@ -13,4 +13,7 @@
             
           .swiper-button-next(slot='button-next')
             Icon(name='arrow-right')
-            
+      
+      .modal__body(v-if='!props.gallery')
+        .modal__close(@click='close') close
+        .modal__content(v-html='props')

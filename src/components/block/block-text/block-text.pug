@@ -1,5 +1,5 @@
 .block-text
-  .block-text__container(:class="{'block-text__container--active': active}")
+  .block-text__container(:class="{'block-text__container--active': active}", :id='props.id')
     .block-text__subtitle(v-html='props.subtitle')
     .block-text__title(v-html='props.title')
     .block-text__waypoint(v-waypoint='{ active: true, callback: change }')

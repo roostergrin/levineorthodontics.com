@@ -7,11 +7,6 @@ import Revisions from 'revisions'
 import Footer from 'components/footer/footer'
 
 export default {
-  computed: {
-    props () {
-      return this.$state.store
-    }
-  },
   created () {
     this.$store.dispatch('GET_PAGES')
     this.$store.dispatch('GET_APP')

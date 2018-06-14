@@ -3,8 +3,10 @@
 <script>
 import { showMenu, buttonOver } from '@/mixins'
 import Icon from 'components/icon/icon'
+import Modal from 'components/modal/modal-form-appointment/modal-form-appointment'
 
 export default {
+  mixins: [showMenu, buttonOver],
   computed: {
     props () {
       return this.$store.state.app.nav
@@ -23,10 +25,6 @@ export default {
       menu: 'MENU'
     }
   },
-  async created () {
-    // console.log(this.$router.history.current.path)
-  },
-  mixins: [showMenu, buttonOver],
   methods: {
     activate () {
       this.$store.state.nav ? this.$store.dispatch('VIEW_NAV', false) : this.$store.dispatch('VIEW_NAV', true)
@@ -38,10 +36,14 @@ export default {
     },
     callFunc () {
       this.call ? this.call = false : this.call = true
+    },
+    modal (props) {
+      this.$store.dispatch('VIEW_SHOWMODAL', 'appointment')
     }
   },
   components: {
-    Icon
+    Icon,
+    Modal
   }
 }
 

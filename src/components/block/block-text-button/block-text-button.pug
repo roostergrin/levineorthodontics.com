@@ -6,5 +6,5 @@
     .block-text-button__content(v-html='props.content', :class="{'block-text-button__content--active': active}")
     .block-text-button__container-option
       .block-text-button__button(v-html='props.button', @click='$router.push(props.link)', v-if='!props.modal')
-      .block-text-button__button(v-html='props.button', @click='modal(props.gallery)', v-if='props.modal')  
+      .block-text-button__button(v-html='props.button', @click='modal(props)', v-if='props.modal')  
     

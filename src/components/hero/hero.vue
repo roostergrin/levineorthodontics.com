@@ -13,7 +13,8 @@ export default {
   },
   methods: {
     changeNav ({ direction, going }) {
-      going === 'in' ? this.$store.dispatch('SCROLLED_NAV', false) : this.$store.dispatch('SCROLLED_NAV', true)
+      // if (going === 'out' || direction === 'top') { this.$store.dispatch('SCROLLED_NAV', false) }
+      going === 'in' && direction !== 'top' ? this.$store.dispatch('SCROLLED_NAV', false) : this.$store.dispatch('SCROLLED_NAV', true)
     }
   }
 }

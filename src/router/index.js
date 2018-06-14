@@ -7,23 +7,18 @@ import PatientInfo from '@/pages/patient-info/patient-info'
 import TreatmentOptions from '@/pages/treatment-options/treatment-options'
 import Contact from '@/pages/contact-us/contact-us'
 import PageNotFound from '@/pages/404/404'
+import VueScrollTo from 'vue-scrollto'
 
 Vue.use(VueRouter)
 
-const scrollBehavior = (to, from, savedPosition) => {
+const scrollBehavior = function (to, from, savedPosition) {
   if (savedPosition) {
     return { x: 0, y: 0 }
   } else {
     if (to.hash) {
-      return {
-        selector: to.hash,
-        offset: { x: 0, y: 200 }
-      }
+      VueScrollTo.scrollTo(to.hash, { offset: -400, easing: 'ease-in-out' })
     } else {
-      return {
-        x: 0,
-        y: 0
-      }
+      return { x: 0, y: 0 }
     }
   }
 }
@@ -87,16 +82,16 @@ const router = new VueRouter({
           name: 'Invisalign'
         },
         {
-          path: '/treatment-options#lingual-braces',
-          name: 'Lingual Braces'
+          path: '/treatment-options#invisalign-teen',
+          name: 'Invisalign Teen'
         },
         {
           path: '/treatment-options#accelerated-orthodontics',
           name: 'Accelerated Orthodontics'
         },
         {
-          path: '/treatment-options#transfer-cases',
-          name: 'Transfer Cases'
+          path: '/treatment-options#insignia',
+          name: 'Insignia'
         }
       ]
     },

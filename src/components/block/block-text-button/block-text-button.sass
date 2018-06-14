@@ -1,6 +1,6 @@
 .block-text-button
   position: relative
-  min-height: 100vh
+  min-height: 80vh
 
   &__container
     @extend .flex-container
@@ -26,7 +26,7 @@
     @extend .col-flex-6
     @extend .col-flex-offset-3
     @extend h2
-    transform: translateY(-20px)
+    transform: translateY(20px)
     transition: .8s all ease-in-out
     opacity: 0
 
@@ -38,11 +38,11 @@
     @extend .col-flex-6
     @extend .col-flex-offset-3
     @extend p
-    transform: translateY(20px)
     transition: all 1.5s ease-in-out
+    opacity: 0
 
     &--active
-      transform: none
+      opacity: 1
 
     .pages-home &
       @extend .col-flex-8

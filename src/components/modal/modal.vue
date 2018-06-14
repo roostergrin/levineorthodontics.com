@@ -4,6 +4,7 @@
 import Icon from 'components/icon/icon'
 
 export default {
+  props: ['title', 'form'],
   computed: {
     props () {
       return this.$store.state.modalContent

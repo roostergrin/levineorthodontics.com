@@ -1,0 +1,8 @@
+.modal-form-appointment(v-if='$store.state.showModal === "appointment" && props')
+  .modal-form-appointment__bg
+    .modal-form-appointment__container
+      .modal-form-appointment__body
+        .modal-form-appointment__close(@click='$store.dispatch("VIEW_SHOWMODAL", false)') Close
+        .modal-form-appointment__title(v-html='props.title')
+        .modal-form-appointment__content
+          Form

@@ -8,16 +8,13 @@ export default {
       active: false
     }
   },
-  async created () {
-    console.log(this.props)
-  },
   methods: {
     change ({ direction, going }) {
       going === this.$waypointMap.GOING_IN ? this.active = true : ''
     },
     modal (props) {
       this.$store.dispatch('VIEW_MODALCONTENT', props)
-      this.$store.dispatch('VIEW_SHOWMODAL', true)
+      this.$store.dispatch('VIEW_SHOWMODAL', 'gallery')
     }
   }
 }
