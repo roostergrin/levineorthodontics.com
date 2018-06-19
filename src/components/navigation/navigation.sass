@@ -223,3 +223,20 @@
     &--active
       opacity: 1
       z-index: 9997
+
+  &__cta
+    @extend .button
+    position: absolute
+    top: 50%
+    right: 170px
+    transform: translateY(-50%)
+    transition: all .8s ease-in-out
+    opacity: 0
+    z-index: 1
+    border-radius: 5px
+    background-color: $c3
+    color: $c2
+    transition-delay: 1s
+
+    .navigation--scrolled &
+      opacity: 1

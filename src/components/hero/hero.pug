@@ -1,7 +1,15 @@
 .hero
-  .hero__image(v-if='$route.name === "home"')
-    .hero__title(:class="{'hero__title--loaded': loaded}") 
-      .hero__title--subtitle making your smile
-      .hero__title--maintitle the best it can be
+  swiper.hero__slider(v-if='$route.name === "home"', :options='swiperOption')
+    swiper-slide.hero__slide(v-for='i in 4', :key='i')
+      .hero__image(:class="'hero__image--' + i")
+  
+    .hero__slide-button-next(slot='button-next')
+      Icon(name='arrow-right')      
+    .hero__slide-button-prev(slot='button-prev')
+      Icon(name='arrow-left')
+          
+  .hero__title(:class="{'hero__title--loaded': loaded}")
+    .hero__button schedule you free consultation
+
   .hero__image--option(:style="{ backgroundImage: 'url(' + props.image + ')' }", v-if='$route.name !== "home"')
   .hero__waypoint(v-waypoint='{ active: true, callback: changeNav }')

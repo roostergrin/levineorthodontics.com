@@ -19,6 +19,7 @@ const mutations = {
   },
   [VIEW_NAV] (state, data) {
     state.nav = data
+    state.nav ? document.querySelector('body').classList.add('open') : document.querySelector('body').classList.remove('open')
   },
   [VIEW_BODY] (state, data) {
     state.body = data
@@ -28,6 +29,7 @@ const mutations = {
   },
   [VIEW_SHOWMODAL] (state, data) {
     state.showModal = data
+    state.showModal ? document.querySelector('body').classList.add('open') : document.querySelector('body').classList.remove('open')
   },
   [VIEW_MODALCONTENT] (state, data) {
     state.modalContent = data
