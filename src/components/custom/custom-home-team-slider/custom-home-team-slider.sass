@@ -6,6 +6,9 @@
     @extend .flex-container
     padding-top: rem-calc(108)
 
+    @media screen and (max-width: $screen-md)
+      padding-top: rem-calc(64)
+
   &__bg
     position: absolute
     top: 0
@@ -21,9 +24,17 @@
     background-size: contain
     height: rem-calc(690)
 
+    @media screen and (max-width: $screen-md)
+      height: auto
+      &:nth-child(1)
+        display: none
+
   &__content
     padding: rem-calc(64) 0
     text-align: center
+
+    @media screen and (max-width: $screen-md)
+      padding: rem-calc(16) 0
 
   &__subtitle
     @extend h3
@@ -38,8 +49,15 @@
     margin-top: rem-calc(40)
     padding-left: rem-calc(32)
 
+    @media screen and (max-width: $screen-md)
+      padding: rem-calc(16)
+
   &__slide
     background-position: center -100px
     background-size: cover
     width: 100%
     height: rem-calc(400)
+
+    @media screen and (max-width: $screen-md)
+      background-position: top center
+      height: rem-calc(350)

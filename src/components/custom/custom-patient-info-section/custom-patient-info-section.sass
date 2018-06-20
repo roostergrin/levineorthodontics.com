@@ -2,12 +2,21 @@
   position: relative
   min-height: 80vh
 
+  @media screen and (max-width: $screen-md)
+    height: auto
+
   &__container
     @extend .flex-container
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
+
+    @media screen and (max-width: $screen-md)
+      position: relative
+      top: 0
+      left: 0
+      transform: none
 
   &__image, &__body
     @extend .col-flex-6
@@ -29,7 +38,7 @@
     @media screen and (max-width: $screen-sm)
       padding: 0 rem-calc(16)
 
-  &__image  
+  &__image
     background-position: top center
     background-size: cover
     min-height: rem-calc(425)

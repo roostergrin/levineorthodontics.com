@@ -2,6 +2,9 @@
   position: relative
   min-height: 50vh
 
+  @media screen and (max-width: $screen-md)
+    height: auto
+
   .pages-treatment-options &
     min-height: 70vh
 
@@ -16,11 +19,20 @@
     padding: rem-calc(64) rem-calc(16)
     text-align: center
 
+    @media screen and (max-width: $screen-md)
+      position: relative
+      top: 0
+      left: 0
+      transform: none
+
     &--active
       opacity: 1
 
     .pages-patient-info &
       transform: translate(-50%, -40%)
+
+      @media screen and (max-width: $screen-md)
+        transform: none
 
   &__subtitle
     @extend h4

@@ -29,12 +29,19 @@
     padding: 0 rem-calc(64)
     text-align: center
 
+    @media screen and (max-width: $screen-md)
+      padding: 0 rem-calc(16)
+      width: 100%
+
   &__slide
     display: inline-block
     background-position: center center
     background-size: cover
     width: 100%
     height: rem-calc(500)
+
+    @media screen and (max-width: $screen-md)
+      height: rem-calc(300)
 
   &__button-next, &__button-prev
     position: absolute
@@ -45,6 +52,9 @@
 
     &:hover
       cursor: pointer
+
+    @media screen and (max-width: $screen-md)
+      display: none
 
     svg
       fill: $c1

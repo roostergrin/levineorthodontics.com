@@ -4,6 +4,9 @@
     background-size: cover
     min-height: 100vh
 
+    @media screen and (max-width: $screen-md)
+      height: auto
+
   &__overlay
     position: relative
     width: 100%
@@ -26,10 +29,18 @@
       transform: translateY(-50%)
       width: 50%
 
+      @media screen and (max-width: $screen-md)
+        left: 0
+        width: 100%
+
     &--right
       left: 45%
       transform: translateY(-50%)
       width: 50%
+
+      @media screen and (max-width: $screen-md)
+        left: 0
+        width: 100%
 
     &--active
       opacity: 1
@@ -38,6 +49,9 @@
     padding: rem-calc(32) rem-calc(48)
     text-align: center
     color: $white
+
+    @media screen and (max-width: $screen-md)
+      padding: rem-calc(32) rem-calc(16)
 
   &__subtitle
     margin-bottom: rem-calc(-20)

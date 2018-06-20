@@ -74,6 +74,9 @@
     &:hover
       cursor: pointer
 
+    @media screen and (max-width: $screen-md)
+      text-align: center 
+
   &__bg
     transition: .5s all ease-in-out
     background-repeat: no-repeat
@@ -84,6 +87,10 @@
 
     &--active
       filter: grayscale(0)
+
+    @media screen and (max-width: $screen-md)
+      display: inline-block
+      width: rem-calc(200)
 
   &__waypoint
     transform: translateY(100px)

@@ -37,6 +37,9 @@
         opacity: 1
         width: rem-calc(50)
 
+        @media screen and (max-width: $screen-md)
+          width: rem-calc(40)
+
     &--text
       position: absolute
       top: 50%
@@ -46,14 +49,24 @@
       color: $c1
       font-size: 18px
 
+      @media screen and (max-width: $screen-md)
+        transform: translate(-30%, -60%)
+        font-size: 14px
+
       &:hover
         cursor: pointer
 
       &--active
         transform: translate(-84%, -60%)
 
+        @media screen and (max-width: $screen-md)
+          transform: translate(-50%, -60%)
+
     &--icon
       width: rem-calc(50)
+
+      @media screen and (max-width: $screen-md)
+        width: rem-calc(40)
 
       &--option
         position: relative
@@ -71,6 +84,9 @@
     &--scrolled
       width: rem-calc(250)
 
+    @media screen and (max-width: $screen-md)
+      width: rem-calc(175)
+
   &__call
     position: relative
     grid-column-end: 14
@@ -79,13 +95,15 @@
       display: inline-block
       position: absolute
       top: 50%
-      transform: translate(-50%, -60%)
+      transform: translate(-55%, -60%)
       color: $c1
       font-size: 18px
 
-      &.navigation__call--active
-        transform: translate(-70%, -60%)
-        width: 125px
+      @media screen and (max-width: $screen-md)
+        font-size: 14px
+
+      &:hover
+        cursor: pointer
 
   &__container
     @extend .flex-container
@@ -138,6 +156,9 @@
     text-transform: lowercase
     font-weight: 300
 
+    @media screen and (max-width: $screen-md)
+      display: block
+
     &--opacity
       opacity: .2
 
@@ -162,9 +183,7 @@
       font-weight: bold
 
   &__sublink
-    // position: relative
     transition: all .5s ease-in-out
-    // z-index: 99999
     margin-top: rem-calc(16)
     margin-bottom: rem-calc(-10)
     text-transform: lowercase
@@ -214,6 +233,9 @@
     background-size: cover
     width: rem-calc(500)
     height: rem-calc(350)
+
+    @media screen and (max-width: $screen-md)
+      display: none
 
   &__body-animation
     position: absolute

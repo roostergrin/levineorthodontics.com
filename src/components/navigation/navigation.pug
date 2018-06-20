@@ -17,8 +17,7 @@ nav.navigation(:class="{'navigation--active': $store.state.nav, 'navigation--scr
     .navigation__left
       .navigation__body(:class="{'navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav}")
         router-link(v-for='(link, i) in links', :to='link.path', v-if='link.navigation', :key='i')
-          div
-            .navigation__link(:class="{'navigation__link--opacity': activeSub, 'navigation__link--active': activeSub === i && activeSub !== 0}", @mouseenter='activeLinks(i)', @click='activate', v-html='link.name')
+          .navigation__link(:class="{'navigation__link--opacity': activeSub, 'navigation__link--active': activeSub === i && activeSub !== 0}", @mouseenter='activeLinks(i)', @click='activate', v-html='link.name')
             
     .navigation__right
       .navigation__body.navigation__body--right(:class="{'navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav}")
