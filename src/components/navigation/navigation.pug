@@ -7,7 +7,7 @@ nav.navigation(:class="{'navigation--active': $store.state.nav, 'navigation--scr
         Icon(name='rectangle', :class="{'navigation__menu--bg--active': $store.state.nav }").navigation__menu--bg
         
     router-link(to='/')
-      Icon(name='logo', :class="{'navigation__logo--scrolled': $store.state.scrolled}").navigation__logo
+      Icon(name='logo-1', :class="{'navigation__logo--scrolled': $store.state.scrolled}").navigation__logo
       
     .navigation__call
       span(@click='modal', v-show='!call') CONTACT
