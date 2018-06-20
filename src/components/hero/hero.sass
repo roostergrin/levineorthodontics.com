@@ -1,6 +1,7 @@
 .hero
   height: 100vh
   overflow: hidden
+  text-align: center
 
   &__slider, &__slide
     position: relative
@@ -69,14 +70,14 @@
 
   &__title
     position: absolute
-    bottom: 10%
+    bottom: 15%
     left: 50%
     transform: translateX(-50%)
     transition: all 1s cubic-bezier(.4, .7, .8, .9)
     opacity: 0
     z-index: 1
     border-radius: 5px
-    background-color: $c1
+    background-color: none
     text-align: right
     font-weight: 200
 
@@ -86,7 +87,41 @@
   &__button
     @extend h3
     @extend .button
-    color: $c2
+    border: 2px solid $c1
+    border-radius: 5px
+    background-color: $c2
+    color: $c1
 
     &:hover
+      background-color: $c1
       cursor: pointer
+      color: $c2
+
+  &__scroll
+    display: inline-block
+    position: relative
+    bottom: rem-calc(60)
+    z-index: 1
+    border: 3px solid $c1
+    border-radius: 20px
+    width: rem-calc(30)
+    height: rem-calc(40)
+
+    &:after
+      position: absolute
+      top: 6px
+      left: 50%
+      transform: translateX(-50%)
+      animation: scroller infinite 2s
+      border-right: 3px solid $c1
+      border-radius: 5px
+      height: 8px
+      content: ''
+
+@keyframes scroller
+  from
+    top: 6px
+    opacity: 1
+  to
+    top: 12px
+    opacity: 0

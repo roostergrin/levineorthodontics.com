@@ -1,0 +1,45 @@
+.custom-home-team-slider
+  position: relative
+  margin-top: rem-calc(64)
+
+  &__container
+    @extend .flex-container
+    padding-top: rem-calc(108)
+
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    background-color: $c9
+    width: 100%
+    height: rem-calc(575)
+
+  &__col
+    @extend .col-flex-6
+    background-repeat: no-repeat
+    background-position: center -70px
+    background-size: contain
+    height: rem-calc(690)
+
+  &__content
+    padding: rem-calc(64) 0
+    text-align: center
+
+  &__subtitle
+    @extend h3
+    margin-bottom: rem-calc(-18)
+    color: $c2
+
+  &__title
+    @extend h2
+    text-shadow: none
+
+  &__slider
+    margin-top: rem-calc(40)
+    padding-left: rem-calc(32)
+
+  &__slide
+    background-position: center -100px
+    background-size: cover
+    width: 100%
+    height: rem-calc(400)

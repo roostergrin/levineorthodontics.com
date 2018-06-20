@@ -227,16 +227,17 @@
   &__cta
     @extend .button
     position: absolute
-    top: 50%
+    top: 45%
     right: 170px
     transform: translateY(-50%)
-    transition: all .8s ease-in-out
+    transition: all .5s ease-in-out
     opacity: 0
     z-index: 1
     border-radius: 5px
     background-color: $c3
+    padding: rem-calc(16)
     color: $c2
-    transition-delay: 1s
+    // transition-delay: 1s
 
     .navigation--scrolled &
       opacity: 1

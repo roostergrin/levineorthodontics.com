@@ -1,28 +1,19 @@
 .tab-home-team
   position: relative
-  min-height: 100vh
 
   &__container
     @extend .flex-container
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
 
   &__team
     @extend .flex-container
-    // transform: translateY(50px)
-    // transition: all 2s ease-in-out
-    // opacity: 0
     margin: rem-calc(32) auto
 
     &--active
       opacity: 1
-      // transform: none
 
   &__body
-    @extend .col-flex-3
-    padding: 0 rem-calc(24)
+    padding: 0 rem-calc(16)
+    text-align: center
 
   &__subtitle
     @extend h4
@@ -49,35 +40,36 @@
 
   &__team-title
     @extend h2
+    position: relative
     text-shadow: none
     color: $c1
     font-size: 24px
 
+    &::after
+      position: absolute
+      bottom: -4px
+      left: 50%
+      transform: translateX(-50%)
+      border: 1px solid $c1
+      width: 75px
+      content: ''
+
   &__position
-    @extend p
-    margin-top: rem-calc(-24)
+    margin-top: rem-calc(-8)
 
   &__content
     @extend p
     position: relative
     margin-top: rem-calc(24)
 
-    &::after
-      position: absolute
-      bottom: -16px
-      left: 0
-      border: 1.5px solid $c1
-      width: 36px
-      content: ''
-
   &__images
-    @extend .col-flex-9
+    @extend .col-flex-12
 
   &__image
     @extend .col-flex-3
     display: inline-block
+    margin-bottom: rem-calc(32)
     padding: 0 rem-calc(16)
-    height: 100%
 
     &:hover
       cursor: pointer
@@ -85,9 +77,9 @@
   &__bg
     transition: .5s all ease-in-out
     background-repeat: no-repeat
-    background-position: center center
-    background-size: contain
-    height: 100%
+    background-position: center -25px
+    background-size: cover
+    height: rem-calc(300)
     filter: grayscale(1)
 
     &--active

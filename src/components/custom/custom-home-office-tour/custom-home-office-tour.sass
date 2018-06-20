@@ -1,0 +1,56 @@
+.custom-home-office-tour
+  padding: rem-calc(96) 0
+
+  //-- body
+
+  &__container
+    @extend .flex-container
+
+  //-- titles
+
+  &__titles
+    @extend .col-flex-12
+    margin: rem-calc(32) auto
+    text-align: center
+
+  &__title
+    @extend h2
+
+  &__subtitle
+    @extend h4
+    margin-bottom: rem-calc(-8)
+
+  //-- slider
+
+  &__slider
+    @extend .col-flex-10
+    @extend .col-flex-offset-1
+    position: relative
+    padding: 0 rem-calc(64)
+    text-align: center
+
+  &__slide
+    display: inline-block
+    background-position: center center
+    background-size: cover
+    width: 100%
+    height: rem-calc(500)
+
+  &__button-next, &__button-prev
+    position: absolute
+    top: calc(50% - 15px)
+    z-index: 1
+    width: rem-calc(30)
+    height: rem-calc(30)
+
+    &:hover
+      cursor: pointer
+
+    svg
+      fill: $c1
+
+  &__button-next
+    right: 0
+
+  &__button-prev
+    left: 0

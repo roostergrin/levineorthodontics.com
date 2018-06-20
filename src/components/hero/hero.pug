@@ -9,7 +9,8 @@
       Icon(name='arrow-left')
           
   .hero__title(:class="{'hero__title--loaded': loaded}")
-    .hero__button schedule you free consultation
+    .hero__button schedule your free consultation
 
   .hero__image--option(:style="{ backgroundImage: 'url(' + props.image + ')' }", v-if='$route.name !== "home"')
   .hero__waypoint(v-waypoint='{ active: true, callback: changeNav }')
+  .hero__scroll

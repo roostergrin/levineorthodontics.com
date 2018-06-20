@@ -7,6 +7,9 @@ export default {
   computed: {
     props () {
       return this.$store.state.app['form-appointment'].acf.form_appointment
+    },
+    info () {
+      return this.$store.state.app.footer.acf
     }
   },
   components: {

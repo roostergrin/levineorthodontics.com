@@ -10,9 +10,7 @@ nav.navigation(:class="{'navigation--active': $store.state.nav, 'navigation--scr
       Icon(name='logo', :class="{'navigation__logo--scrolled': $store.state.scrolled}").navigation__logo
       
     .navigation__call
-      span(@mouseenter='callFunc', v-show='!call') CALL
-      a(href='tel:+17818609473')
-        span(@mouseleave='callFunc', v-show='call', :class="{'navigation__call--active': call}") 781. 860. 9473
+      span(@click='modal', v-show='!call') CONTACT
       Icon(name='rectangle').navigation__menu--icon.navigation__menu--icon--option
   
   .navigation__container.navigation__container--body(@mouseleave='activeLinks(0)')
@@ -51,6 +49,5 @@ nav.navigation(:class="{'navigation--active': $store.state.nav, 'navigation--scr
           .navigation__contact--address 
             | Lexington, MA 02421
   
-  .navigation__cta(@click='modal')
-    | free consultation
+  
   Modal

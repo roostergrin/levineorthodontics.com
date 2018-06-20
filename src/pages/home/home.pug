@@ -3,9 +3,9 @@
   div(v-if='props && !loading')
     BlockText(:props='props.acf.block_text')
     CustomHomeDoctor(:props='props.acf.custom_home_doctor')
-    BlockText(:props='props.acf.block_text_option')  
     TabHomeTeam(:props='props.acf.tabs_home_team')
-    BlockTextButton(:props='props.acf.block_text_button')  
+    CustomHomeTeamSlider(:props='props.acf.custom_home_team_slider')
+    CustomHomeOfficeTour(:props='props.acf.custom_home_office_tour')
     CustomHomeContact(:props='props.acf.custom_home_contact')
     Modal
       
