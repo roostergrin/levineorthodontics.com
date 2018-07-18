@@ -33,6 +33,9 @@ Vue.use(VueScrollTo, {
   easing: 'ease-in-out',
   offset: 0,
   cancelable: true,
+  onStart: function () {
+    return { x: 0, y: 0 }
+  },
   onDone: false,
   onCancel: false,
   x: false,

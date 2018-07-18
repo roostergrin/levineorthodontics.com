@@ -55,10 +55,6 @@ const router = new VueRouter({
         {
           path: '/patient-info#eating-with-braces',
           name: 'Eating with Braces'
-        },
-        {
-          path: '/patient-info#events',
-          name: 'Events'
         }
       ]
     },
@@ -69,14 +65,6 @@ const router = new VueRouter({
       component: TreatmentOptions,
       image: '/static/treatment_options.jpg',
       children: [
-        {
-          path: '/treatment-options#damon-system',
-          name: 'Damon System'
-        },
-        {
-          path: '/treatment-options#damon-clear',
-          name: 'Damon Clear'
-        },
         {
           path: '/treatment-options#invisalign',
           name: 'Invisalign'
@@ -90,8 +78,12 @@ const router = new VueRouter({
           name: 'Accelerated Orthodontics'
         },
         {
-          path: '/treatment-options#insignia',
-          name: 'Insignia'
+          path: '/treatment-options#damon-system',
+          name: 'Damon System'
+        },
+        {
+          path: '/treatment-options#damon-clear',
+          name: 'Damon Clear'
         }
       ]
     },

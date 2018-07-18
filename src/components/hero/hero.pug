@@ -11,3 +11,4 @@
   .hero__image--option(:style="{ backgroundImage: 'url(' + props.image + ')' }", v-if='$route.name !== "home"')
   .hero__waypoint(v-waypoint='{ active: true, callback: changeNav }')
   .hero__scroll
+    Icon(name='arrow-right', class='hero__scroll--arrow')

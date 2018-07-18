@@ -1,12 +1,27 @@
 .custom-home-contact
   &__bg
     position: relative
+    background-position: center center
     background-size: cover
-    min-height: 100vh
+    width: 100%
+    min-height: 90vh
 
   &__form
-    @extend .flex-container
     position: absolute
     top: 50%
+    right: 0
+    transform: translateY(-50%)
+    width: 50%
+
+  &__address
+    position: absolute
+    top: 12%
     left: 50%
-    transform: translate(-50%, -50%)
+    transform: translateX(-50%)
+    border-radius: 5px
+    background-color: $c2
+    padding: rem-calc(32) rem-calc(64)
+    text-align: center
+
+    h3
+      color: $c1

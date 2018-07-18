@@ -1,5 +1,5 @@
 .custom-home-contact
   .custom-home-contact__bg(:style="{ backgroundImage: 'url('+ props.background +')'}")
-    .custom-home-contact__container
-      .custom-home-contact__form
-        ContactForm
+    .custom-home-contact__address(v-html='props.address')
+    .custom-home-contact__form
+      ContactForm

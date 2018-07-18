@@ -106,7 +106,6 @@
     @extend .button
     border: 3px solid $c2
     border-radius: 5px
-    // background-color:
     color: $c2
     font-size: 32px
     font-weight: 600
@@ -119,32 +118,11 @@
   &__scroll
     display: inline-block
     position: relative
-    bottom: rem-calc(120)
+    bottom: rem-calc(80)
     z-index: 1
-    border: 3px solid $c1
-    border-radius: 20px
-    background-color: $ol3
-    width: rem-calc(40)
-    height: rem-calc(55)
 
-    @media screen and (max-width: $screen-md)
-      display: none
-
-    &:after
-      position: absolute
-      top: 6px
-      left: 50%
-      transform: translateX(-50%)
-      animation: scroller infinite 2s
-      border-right: 3px solid $c1
-      border-radius: 5px
-      height: 8px
-      content: ''
-
-@keyframes scroller
-  from
-    top: 6px
-    opacity: 1
-  to
-    top: 12px
-    opacity: 0
+    &--arrow
+      transform: rotate(90deg)
+      width: rem-calc(40)
+      height: auto
+      fill: $c1
