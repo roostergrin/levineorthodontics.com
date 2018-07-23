@@ -1,6 +1,6 @@
 .hero
   swiper.hero__slider(v-if='$route.name === "home"', :options='swiperOption')
-    swiper-slide.hero__slide(v-for='i in 6', :key='i')
+    swiper-slide.hero__slide(v-for='i in 5', :key='i')
       .hero__image(:class="'hero__image--' + i")
   
     .hero__slide-button-next(slot='button-next')
