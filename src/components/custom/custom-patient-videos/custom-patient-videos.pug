@@ -1,0 +1,8 @@
+.custom-patient-videos
+  .custom-patient-videos__container
+    .custom-patient-videos__title(v-html='props.title')
+    .custom-patient-videos__videos
+      .custom-patient-videos__button(v-for='(video, i) in props.videos', v-html='video.title', @click='active = i')
+      .custom-patient-videos__video(v-for='(src, j) in props.videos', v-if='active === j')
+        iframe(width="100%" height="315", :src="src.video", frameborder="0", allow="autoplay; encrypted-media", allowfullscreen)
+      

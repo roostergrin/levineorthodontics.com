@@ -1,0 +1,28 @@
+.custom-patient-videos
+  &__container
+    @extend .flex-container
+    text-align: center
+
+  &__title
+    @extend h4
+    @extend .col-flex-12
+
+  &__videos
+    @extend .col-flex-12
+    margin-top: rem-calc(24)
+    text-align: center
+
+  &__button
+    @extend .button
+    display: inline-block
+    margin: auto rem-calc(8)
+
+    &:hover
+      color: $c5
+
+  &__video
+    @extend .col-flex-5
+    margin: rem-calc(64) auto
+
+    @media screen and (max-width: $screen-sm)
+      width: 100%
