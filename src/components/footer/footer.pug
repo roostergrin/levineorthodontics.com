@@ -5,7 +5,10 @@ footer.footer(v-if='props')
         | Levine Orthodontics
       .footer__location(v-html='props.acf.location')
       .footer__social
-        | Social Media
+        a(href='http://facebook.com/levineorthodontics' target='_blank')
+          Icon(name='facebook').footer__icon
+        a(href='https://www.youtube.com/user/LevineOrtho' target='_blank')  
+          Icon(name='youtube').footer__icon  
       
   .footer__divider
     .footer__container
