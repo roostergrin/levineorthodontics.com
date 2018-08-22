@@ -12,8 +12,9 @@ function rg_serve_route () {
   require('wp-load.php');
   $data = json_decode(file_get_contents("php://input"), true);
   $from = 'info@levineorthodontics.com';
-  $to = 'matt@roostergrin.com';
-  $subject = 'Levine Orthodontics Contact Form';
+  // $to = 'matt@roostergrin.com';
+  $to = 'info@levineorthodontics.com';
+  $subject = 'Levine Orthodontics Form Submission';
   $headers = array('Content-Type: text/html; charset=UTF-8');
   $message = '<html><body>';
   $message .= '<p><h4><strong>Form Submission by: </strong></h4>' . $data['fullname'] . '</p>';

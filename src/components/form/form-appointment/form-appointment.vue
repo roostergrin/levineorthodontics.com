@@ -3,7 +3,6 @@
 <script>
 import api from 'api'
 import axios from 'axios'
-
 export default {
   data: () => {
     return {
@@ -31,17 +30,15 @@ export default {
       this.formSubmitted = true
       axios.post(this.postUrl, {
         fullname: this.fullname,
-        phone: this.phone,
         email: this.email,
-        message: this.message,
-        newPatient: this.newPatient
+        phone: this.phone,
+        message: this.message
       })
       .then(res => {
         this.formSubmitted = false
-        this.openModal()
         setTimeout(() => {
           this.$el.children[0].reset()
-        }, 500)
+        }, 2000)
       })
       .catch(e => { console.log(e) })
     }

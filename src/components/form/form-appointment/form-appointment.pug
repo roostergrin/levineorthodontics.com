@@ -1,7 +1,9 @@
-form.form-appointment
-  input(placeholder='Your Full Name*').form-appointment__input
-  input(placeholder='Your Email Address*').form-appointment__input
-  input(placeholder='Your Phone Number*').form-appointment__input
-  textarea(placeholder='Message*' rows='4').form-appointment__input.form-appointment__input--textarea
-  input(type='submit' value='Send').form-appointment__input.form-appointment__input--button
-    
+form.form-appointment(@submit.prevent='validate')
+  div(v-if='!formSubmitted')
+    input(placeholder='Your Full Name*', name='fullname', v-model='fullname', :validate="'required|alpha'", :class="{'form-home-contact__input--error': errors.has('name')}", type='text').form-appointment__input
+    input(placeholder='Your Email Address*', name='email', v-model='email', :validate="'required|email'", :class="{'form-home-contact__input--error': errors.has('email')}", type='email').form-appointment__input
+    input(placeholder='Your Phone Number*', name='phone', v-model='phone', :validate="'required|numeric'", :class="{'form-home-contact__input--error': errors.has('phone')}").form-appointment__input
+    textarea(placeholder='Message*' rows='4', name='message', v-model='message').form-appointment__input.form-appointment__input--textarea
+    input(type='submit' value='Send').form-appointment__input.form-appointment__input--button
+  h2(v-if='formSubmitted')
+    | Thank You For Your Submission
