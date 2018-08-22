@@ -1,7 +1,9 @@
-form.form-home-contact
-  .form-home-contact__group
-    input.form-home-contact__input(placeholder='First and Last Name')
-    input.form-home-contact__input(placeholder='Email')
-    input.form-home-contact__input(placeholder='Phone')
-    textarea.form-home-contact__input.form-home-contact__input--textarea(rows='8' placeholder='Message')
+form.form-home-contact(@submit.prevent='validate')
+  .form-home-contact__group(v-if='!formSubmitted')
+    input.form-home-contact__input(placeholder='First and Last Name', name='fullname', v-model='fullname', :validate="'required|alpha'", :class="{'form-home-contact__input--error': errors.has('name')}", type='text')
+    input.form-home-contact__input(placeholder='Email', name='email', v-model='email', :validate="'required|email'", :class="{'form-home-contact__input--error': errors.has('email')}", type='email')
+    input.form-home-contact__input(placeholder='Phone', name='phone', v-model='phone', :validate="'required|numeric'", :class="{'form-home-contact__input--error': errors.has('phone')}")
+    textarea.form-home-contact__input.form-home-contact__input--textarea(rows='8' placeholder='Message', name='message', v-model='message')
     input.form-home-contact__input.form-home-contact__input--button(type='submit' value='send')
+  .form-home-contact__group(v-if='formSubmitted')
+    h2 Thank You For Your Submission
