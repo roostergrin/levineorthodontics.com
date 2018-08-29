@@ -18,10 +18,12 @@ nav.navigation(:class="{'navigation--active': $store.state.nav, 'navigation--scr
       .navigation__body(:class="{'navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav}")
         router-link(v-for='(link, i) in links', :to='link.path', v-if='link.navigation', :key='i')
           .navigation__link(:class="{'navigation__link--opacity': activeSub, 'navigation__link--active': activeSub === i && activeSub !== 0}", @mouseenter='activeLinks(i)', @click='activate', v-html='link.name')
-            
+          span.subMenu_icon(v-if='link.children' v-bind:onclick='"return subMenu("+i+")"')
+            i.fa.fa-angle-right(aria-hidden='true')
+
     .navigation__right
       .navigation__body.navigation__body--right(:class="{'navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav}")
-        .navigation__body-animation(v-for='(sub, j) in links', :class="{'navigation__body-animation--active': activeSub === j}")
+        .navigation__body-animation(v-for='(sub, j) in links', :class="{'navigation__body-animation--active': activeSub === j}" v-bind:id='"subMenu-"+j')
           .navigation__sublink(v-for='(sublink, k) in sub.children', v-show='sub.children', @click='activate')
             router-link(:to='sublink.path') {{ sublink.name }}
           .navigation__image(:style="{ backgroundImage: 'url(' + sub.image + ')'}")

@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "gulp": "gulp",
-    "dev": "gulp & node build/dev-server.js",
-    "start": "gulp & node build/dev-server.js",
+    "dev": "node build/dev-server.js",
+    "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "rooster": "node build/build-dev.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",

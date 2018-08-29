@@ -16,7 +16,8 @@
 
     <!-- Google Tag Manager -->
     <!-- SET YOUR GOOGLE FONT IN THE ENQUEUE.PHP FILE FOR BEST SPEED -->
-
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body>
     <div id='app'></div>
@@ -34,6 +35,19 @@
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(wf, s);
       })();
+
+      function subMenu(val) { 
+        var x = document.getElementById("subMenu-"+val); 
+         if (x.classList.contains("navigation__body-animation--active")) {
+           x.classList.remove("navigation__body-animation--active");
+        } else {
+          x.nextElementSibling.classList.remove("navigation__body-animation--active");
+          x.previousElementSibling.classList.remove("navigation__body-animation--active");
+          x.classList.add("navigation__body-animation--active");
+        }
+        
+        return false;
+      }
     </script>
   </body>
 </html>
