@@ -23,7 +23,11 @@
     @extend .container
 
   &__menu
+    display: inline-block
     position: relative
+
+    @supports (display: grid)
+      display: block
 
     &--bg
       position: absolute
@@ -43,11 +47,14 @@
     &--text
       position: absolute
       top: 50%
-      left: 50%
+      left: 80%
       transform: translate(-50%, -60%)
       transition: all .4s ease-in-out
       color: $c1
       font-size: 18px
+
+      @supports (display: grid)
+        left: 50%
 
       @media screen and (max-width: $screen-md)
         transform: translate(-30%, -60%)
@@ -88,10 +95,12 @@
       width: rem-calc(175)
 
   &__call
-    position: relative
-    float: right
+    position: absolute
+    top: 0
+    right: 0
 
     @supports(display: grid)
+      position: relative
       grid-column-end: 14
 
     span
