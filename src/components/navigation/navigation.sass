@@ -15,6 +15,10 @@
     background: $white
     height: 100vh
 
+    @supports (height: 100vh)
+      height: 100vh
+
+
   &--scrolled
     box-shadow: 0 -1px 8px $shadow
     background: $white
@@ -124,7 +128,7 @@
     &--body
       .navigation--active &
         margin-top: rem-calc(24)
-        
+
         @supports (display: flex)
           margin-top: rem-calc(96)
 
@@ -137,9 +141,14 @@
   &__right
     @extend .col-flex-5
     @extend h3
-    position: relative
+    position: absolute
+    top: 0
+    right: 0
     padding-left: rem-calc(64)
     font-weight: 300
+    
+    @supports (display: flex)
+      position: relative
 
   &__body
     position: absolute
