@@ -59,7 +59,7 @@ $screen-xs-max: $screen-xs - 1
   max-width: $width
 
 .container
-  display: grid
+  display: block
   position: relative
   margin: 0 auto
   width: 100%
@@ -71,6 +71,9 @@ $screen-xs-max: $screen-xs - 1
   @media screen and (max-width: $width)
     padding: 0 calc(#{$gutter}/2)
     grid-template-columns: repeat($columns, [col-start] 1fr)
+
+  @supports (display: grid)
+    display: grid
 
 // --- allows for a container that's larger than the standard for the website useful for having columns in a header or footer that you still want content constrained by
 

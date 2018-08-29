@@ -89,7 +89,10 @@
 
   &__call
     position: relative
-    grid-column-end: 14
+    float: right
+
+    @supports(display: grid)
+      grid-column-end: 14
 
     span
       display: inline-block
