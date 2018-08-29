@@ -50,13 +50,16 @@ $screen-xs-max: $screen-xs - 1
 
 // --- container for just a basic one column container
 .flex-container
-  display: flex
+  display: block
   position: relative
   flex-direction: row
   flex-wrap: wrap
   margin: 0 auto
   width: 100%
   max-width: $width
+  
+  @supports(display: flex)
+    display: flex
 
 .container
   display: block
@@ -71,7 +74,7 @@ $screen-xs-max: $screen-xs - 1
   @media screen and (max-width: $width)
     padding: 0 calc(#{$gutter}/2)
     grid-template-columns: repeat($columns, [col-start] 1fr)
-  
+
   @supports (display: grid)
     display: grid
 
