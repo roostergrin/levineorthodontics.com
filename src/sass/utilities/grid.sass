@@ -57,7 +57,7 @@ $screen-xs-max: $screen-xs - 1
   margin: 0 auto
   width: 100%
   max-width: $width
-  
+
   @supports(display: flex)
     display: flex
 
@@ -117,12 +117,14 @@ $screen-xs-max: $screen-xs - 1
   .col-flex-#{$n}
     display: inline-block
     position: relative
-    flex: 0 0 auto
-    flex-basis: $col-width
-    flex-grow: 0
     padding: 0 calc(#{$gutter}/2)
     width: $col-width
     box-sizing: border-box
+
+    @supports (display: flex)
+      flex: 0 0 auto
+      flex-basis: $col-width
+      flex-grow: 0
 
     @media screen and (max-width: $screen-sm)
       flex-basis: 100%

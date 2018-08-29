@@ -123,7 +123,11 @@
 
     &--body
       .navigation--active &
-        margin-top: rem-calc(96)
+        margin-top: rem-calc(24)
+        
+        @supports (display: flex)
+          margin-top: rem-calc(96)
+
 
   &__left
     @extend .col-flex-7
