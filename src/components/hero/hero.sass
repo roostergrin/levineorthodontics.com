@@ -118,8 +118,12 @@
   &__scroll
     display: inline-block
     position: relative
-    bottom: rem-calc(80)
+    bottom: rem-calc(160)
     z-index: 1
+
+    @supports (height: 100vh)
+      bottom: rem-calc(80)
+
 
     &--arrow
       transform: rotate(90deg)
