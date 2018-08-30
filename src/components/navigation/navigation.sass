@@ -18,6 +18,7 @@
   &--scrolled
     box-shadow: 0 -1px 8px $shadow
     background: $white
+    max-height: rem-calc(120)
 
   &__container-lg
     @extend .container
@@ -25,9 +26,9 @@
   &__menu
     display: inline-block
     position: relative
-
-    @supports (display: grid)
-      display: block
+    //
+    // @supports (display: grid)
+    //   display: block
 
     &--bg
       position: absolute
@@ -53,8 +54,8 @@
       color: $c1
       font-size: 18px
 
-      @supports (display: grid)
-        left: 50%
+      // @supports (display: grid)
+      //   left: 50%
 
       @media screen and (max-width: $screen-md)
         transform: translate(-30%, -60%)
@@ -98,10 +99,10 @@
     position: absolute
     top: 0
     right: 0
-
-    @supports(display: grid)
-      position: relative
-      grid-column-end: 14
+    //
+    // @supports(display: grid)
+    //   position: relative
+    //   grid-column-end: 14
 
     span
       display: inline-block
@@ -140,8 +141,8 @@
     padding-left: rem-calc(64)
     font-weight: 300
 
-    @supports (display: flex)
-      position: relative
+    // @supports (display: flex)
+    //   position: relative
 
   &__body
     position: absolute

@@ -19,6 +19,10 @@
   &__left
     @extend .col-flex-4
     @extend .col-flex-offset-1
+    height: rem-calc(450)
+
+    @supports (display: flex)
+      height: auto
 
     @media screen and (max-width: $screen-md)
       margin-bottom: rem-calc(32)

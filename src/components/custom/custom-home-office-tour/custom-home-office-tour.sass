@@ -26,8 +26,12 @@
     @extend .col-flex-10
     @extend .col-flex-offset-1
     position: relative
+    margin: 0
     padding: 0 rem-calc(64)
     text-align: center
+
+    @supports(display: flex)
+      margin: auto
 
     @media screen and (max-width: $screen-md)
       padding: 0 rem-calc(16)
