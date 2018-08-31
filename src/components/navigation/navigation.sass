@@ -5,9 +5,13 @@
   transition: .5s all ease-in-out
   z-index: 9994
   background: linear-gradient(180deg, rgba(145, 145, 145, .5) 0%, rgba(145, 145, 145, 0) 100%, rgba(145, 145, 145, 0) 100%)
-  padding: rem-calc(32) 0
+  padding: 0
   width: 100%
   height: auto
+
+  @supports(display: grid)
+    padding: rem-calc(32) 0
+
 
   &--active
     transition: .5s all ease-in-out
@@ -281,3 +285,9 @@
 
     .navigation--scrolled &
       opacity: 1
+
+  &__border
+    max-height: rem-calc(95)
+
+    @supports (display: grid)
+      max-height: none
