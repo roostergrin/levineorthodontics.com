@@ -92,7 +92,7 @@ const router = new VueRouter({
       name: 'Contact Us',
       navigation: true,
       component: Contact,
-      image: '/static/contact_us.jpg'
+      image: '/static/hero-home-3.jpg'
     },
     {
       path: '/*',
