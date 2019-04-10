@@ -35,5 +35,23 @@
 
   <script id="rhinogram-embed" src="https://app.rhinogram.com/widget/embed.js?id=043a1ea3-aaca-416b-9670-f48459f57b12"></script>
 
+<script>
+
+(() => {
+  const element = document.querySelector('.rhinogram-widget-container');
+  const styles = {
+    bottom: 0,
+    right: 0
+  };
+  let interval = setInterval(() => {
+    if(element){
+      Object.assign(element.style, styles);
+      clearInterval(interval);
+    }
+  }, 10);
+})();
+
+</script>
+
 </body>
 </html>
