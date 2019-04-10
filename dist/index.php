@@ -37,21 +37,25 @@
 
 <script>
 
-  const moveElement = () => {
-    const element = document.querySelector('.rhinogram-widget-container');
+  function applyStyles(element) {
     const styles = {
       bottom: 0,
       right: 0
     };
-
-    let interval = setInterval(() => {
-      if(element){
-        Object.assign(element.style, styles);
-        clearInterval(interval);
-      }
-    }, 1);
+    Object.assign( element.style, styles )
   }
-  moveElement();
+
+  (function waitForElement(interval = 1) {
+    setTimeout(() => {
+      const element = document.querySelector('.rhinogram-widget-container');
+      if( element ){
+        applyStyles(element);
+      }
+      else{
+        waitForElement(1);
+      }
+    }, interval);
+  })();
 
 </script>
 
