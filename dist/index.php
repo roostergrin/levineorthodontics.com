@@ -43,6 +43,7 @@
     bottom: 0,
     right: 0
   };
+
   let interval = setInterval(() => {
     if(element){
       Object.assign(element.style, styles);
