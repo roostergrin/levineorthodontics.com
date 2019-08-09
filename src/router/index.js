@@ -6,7 +6,6 @@ import Home from '@/pages/home/home'
 import PatientInfo from '@/pages/patient-info/patient-info'
 import TreatmentOptions from '@/pages/treatment-options/treatment-options'
 import Contact from '@/pages/contact-us/contact-us'
-import PageNotFound from '@/pages/404/404'
 import VueScrollTo from 'vue-scrollto'
 
 Vue.use(VueRouter)
@@ -96,9 +95,9 @@ const router = new VueRouter({
     },
     {
       path: '/*',
-      name: 'page-not-found',
+      name: 'home',
       navigation: false,
-      component: PageNotFound
+      component: Home
     }
   ],
   scrollBehavior
