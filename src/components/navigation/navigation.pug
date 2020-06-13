@@ -12,6 +12,10 @@ nav.navigation(:class="{'navigation--active': $store.state.nav, 'navigation--scr
     .navigation__call
       span(@click='modal', v-show='!call') CONTACT
       Icon(name='rectangle').navigation__menu--icon.navigation__menu--icon--option
+    
+    .navigation__call--form
+      a(href='https://formsroostergrin.com/levineorthodontics/AAO/AAO-SHQ.html', target='_blank') AAO FORM
+      Icon(name='rectangle').navigation__menu--icon.navigation__menu--icon--option
   
   .navigation__container.navigation__container--body(@mouseleave='activeLinks(0)')
     .navigation__left
