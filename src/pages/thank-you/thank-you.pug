@@ -1,0 +1,6 @@
+.pages-thankyou
+  Loader(v-show='loading')
+  .custom-contact__bg(v-if='props')
+    .custom-contact__container
+      .custom-contact__title(v-if='props.acf.thank_you_title' v-html:p='props.acf.thank_you_title')
+      .thankyou_content(v-if='props.acf.thank_you_message' v-html:p='props.acf.thank_you_message')

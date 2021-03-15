@@ -19,7 +19,7 @@ function rg_serve_route () {
   $message = '<html><body>';
   $message .= '<p><h4><strong>Form Submission by: </strong></h4>' . $data['fullname'] . '</p>';
   $message .= '<p><h4><strong>Email: </strong></h4>' . $data['email'] . '</p>';
-  $message .= '<p><h4><strong>Phone: </strong></h4>' . $data['phone'] . '</p>';
+  $message .= '<p><h4><strong>Phone: </strong></h4>' . $data['phoneNumber'] . '</p>';
   $message .= '<p><h4><strong>Message:</strong></h4> ' . $data['message'] . '</p>';
   $message .= '</body></html>';
   $sent_message = wp_mail($to, $subject, $message, $headers);

@@ -1,7 +1,24 @@
-form.form-contact
-  .form-contact__group
-    input.form-contact__input(placeholder='First and Last Name')
-    input.form-contact__input(placeholder='Email')
-    input.form-contact__input(placeholder='Phone')
-    textarea.form-contact__input.form-contact__input--textarea(rows='8' placeholder='Message')
-    input.form-contact__input.form-contact__input--button(type='submit' value='send')
+.form-contact.referfriend_form_outer
+  form.form-home-contact(@submit.prevent='validate', method='post')  
+    .form-home-contact__group   
+      input.form-contact__input(name='fullname', placeholder='First and Last Name', v-model='fullname', v-validate="'required|alpha_spaces'", :class="{ 'form-contact__input--error': errors.has('fullname') }", type='text')
+      .form-contact__error-message(v-show="errors.has('fullname')") Your full name is required.
+
+    .form-home-contact__group   
+      input.form-contact__input(name='email', placeholder='Email', v-model='email', v-validate="'required|email'", :class="{ 'input': true, 'form-contact__input--error': errors.has('email') }")
+      .form-contact__error-message(v-show="errors.has('email')")  Please Input a Valid Email      
+    
+    .form-home-contact__group 
+      input.form-contact__input(name='phoneNumber', placeholder='Phone', v-model='phoneNumber', v-validate="'required|numeric'", :class="{ 'form-contact__input--error': errors.has('phoneNumber') }")
+      .form-contact__error-message(v-show="errors.has('phoneNumber')")  Please input a valid number       
+    
+    .form-home-contact__group 
+      textarea.form-contact__input.form-home-contact__input--textarea(name='message', rows='8', placeholder='Message' , v-model='message' :class="{ 'form-contact__input--error': errors.has('message') }", type='textarea')
+      .form-contact__error-message(v-show="errors.has('message')") Message is required.
+                 
+    .form-contact__group.form-contact__group--button
+      .form-contact__submit-button(:class="{ 'form-contact__submit-button--success': formSuccess }" @click='validate')
+        .form-contact__submit-overlay(:class="{ 'form-contact__submit-overlay--showing': formSubmitted  && !formSuccess }")
+        span.form-home-contact__input.form-home-contact__input--button.btnsubmit(:class="{ 'form-contact__submit-label--hidden': formSuccess }") Send
+        .form-contact__submit-success(:class="{ 'form-contact__submit-success--showing': formSuccess }")
+        span.form-contact__submit-check(:class="{ 'form-contact__submit-check--showing': formSuccess }")

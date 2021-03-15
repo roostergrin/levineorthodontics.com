@@ -2,10 +2,10 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">   
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php echo body_class();  ?>>
   <div id="app"></div>
   <?php wp_footer(); ?>
   <script type="text/javascript">
@@ -59,5 +59,12 @@
 
 </script>
 
+      <?php
+      if(is_page(391)){ ?>
+        <script>
+           gtag('event', 'conversion', {'send_to': 'AW-619810451/UM0qCMzV89UBEJOdxqcC'});
+        </script>
+    <?php }?> 
+    
 </body>
 </html>

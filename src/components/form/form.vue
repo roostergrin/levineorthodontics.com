@@ -7,42 +7,61 @@ export default {
   data: () => {
     return {
       fullname: '',
-      phone: '',
       email: '',
+      phoneNumber: '',
       message: '',
       postUrl: api + '/rg-mail/v1/contact',
-      formSubmitted: false
+      formSubmitted: false,
+      formSuccess: false,
+      modalShowing: false
     }
   },
   methods: {
     validate () {
       this.$validator.validateAll()
-      .then(result => {
-        if (result) {
-          this.onSubmit()
-        }
-      })
-      .catch((e) => {
-        console.log(e)
-      })
+        .then(result => {
+          if (result) {
+            this.onSubmit()
+          }
+        })
+        .catch((e) => {
+          console.log(e)
+        })
+    },
+    closeModal () {
+      this.formSuccess = false
+      this.formSubmitted = false
+      setTimeout(() => {
+        this.modalShowing = false
+      }, 150)
     },
     onSubmit () {
       this.formSubmitted = true
       axios.post(this.postUrl, {
         fullname: this.fullname,
-        phone: this.phone,
         email: this.email,
-        message: this.message,
-        newPatient: this.newPatient
+        phoneNumber: this.phoneNumber,
+        message: this.message
       })
-      .then(res => {
-        this.formSubmitted = false
-        this.openModal()
-        setTimeout(() => {
-          this.$el.children[0].reset()
-        }, 500)
-      })
-      .catch(e => { console.log(e) })
+        .then(res => {
+          this.formSuccess = true
+          setTimeout(() => {
+            window.location.href = 'https://levineorthodontics.com/thank-you'
+          }, 400)
+          setTimeout(() => {
+            this.fullname = ''
+            this.email = ''
+            this.phoneNumber = ''
+            this.radiographs = ''
+            this.message = ''
+          }, 1000)
+          setTimeout(() => {
+            this.errors.clear()
+          }, 1100)
+        })
+        .catch(e => {
+          console.log(e, 'submitted')
+        })
     }
   }
 }

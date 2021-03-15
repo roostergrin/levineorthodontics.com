@@ -2,10 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/pages/home/home'
 // const AboutUs = () => import(/* webpackChunkName: "group" */ '@/pages/about-us/about-us')
-// import AboutUs from '@/pages/about-us/about-us'
 import PatientInfo from '@/pages/patient-info/patient-info'
 import TreatmentOptions from '@/pages/treatment-options/treatment-options'
 import Contact from '@/pages/contact-us/contact-us'
+import ThankYou from '@/pages/thank-you/thank-you'
 import VueScrollTo from 'vue-scrollto'
 
 Vue.use(VueRouter)
@@ -92,6 +92,12 @@ const router = new VueRouter({
       navigation: true,
       component: Contact,
       image: '/static/hero-home-3.jpg'
+    },
+    {
+      path: '/thank-you',
+      name: 'Thank You',
+      navigation: false,
+      component: ThankYou
     },
     {
       path: '/*',

@@ -1,7 +1,11 @@
-const route = '//levineorthodontics.com/wp-json'
+const route = 'https://levineorthodontics.com/wp-json'
 
 const api = () => {
-  return document.location.hostname === 'localhost' || document.location.href.indexOf('rgwplogin.com') > -1 ? route : document.location.origin + '/wp-json'
+  try {
+    return document.location.hostname === 'localhost' ? route : document.location.origin + '/wp-json'
+  } catch (e) {
+    console.log(e)
+  }
 }
 
 export default api()

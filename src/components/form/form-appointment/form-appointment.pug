@@ -1,9 +1,24 @@
-form.form-appointment(@submit.prevent='validate')
-  div(v-if='!formSubmitted')
-    input(placeholder='Your Full Name*', name='fullname', v-model='fullname', :validate="'required|alpha'", :class="{'form-home-contact__input--error': errors.has('name')}", type='text').form-appointment__input
-    input(placeholder='Your Email Address*', name='email', v-model='email', :validate="'required|email'", :class="{'form-home-contact__input--error': errors.has('email')}", type='email').form-appointment__input
-    input(placeholder='Your Phone Number*', name='phone', v-model='phone', :validate="'required|numeric'", :class="{'form-home-contact__input--error': errors.has('phone')}").form-appointment__input
-    textarea(placeholder='Message*' rows='4', name='message', v-model='message').form-appointment__input.form-appointment__input--textarea
-    input(type='submit' value='Send').form-appointment__input.form-appointment__input--button
-  h2(v-if='formSubmitted')
-    | Thank You For Your Submission
+.form-contact.referfriend_form_outer
+  form.form-appointment(@submit.prevent='validate', method='post')  
+    .form-appoint-contact__group   
+      input.form-appointment__input(name='fullname', placeholder='Your Full Name *', v-model='fullname', v-validate="'required|alpha_spaces'", :class="{ 'form-contact__input--error': errors.has('fullname') }", type='text')
+      .form-contact__error-message(v-show="errors.has('fullname')") Your full name is required.
+
+    .form-appoint-contact__group   
+      input.form-appointment__input(name='email', placeholder='Your Email Address *', v-model='email', v-validate="'required|email'", :class="{ 'input': true, 'form-contact__input--error': errors.has('email') }")
+      .form-contact__error-message(v-show="errors.has('email')")  Please Input a Valid Email      
+    
+    .form-appoint-contact__group 
+      input.form-appointment__input(name='phoneNumber', placeholder='Your Phone Number *', v-model='phoneNumber', v-validate="'required|numeric'", :class="{ 'form-contact__input--error': errors.has('phoneNumber') }")
+      .form-contact__error-message(v-show="errors.has('phoneNumber')")  Please input a valid number       
+    
+    .form-appoint-contact__group 
+      textarea.form-appointment__input.form-appointment__input--textarea(name='message', rows='4', placeholder='Message' , v-model='message' :class="{ 'form-contact__input--error': errors.has('message') }", type='textarea')
+      .form-contact__error-message(v-show="errors.has('message')") Message is required.
+                 
+    .form-apoointt_group.form-contact__group--button
+      .form-contact__submit-button(:class="{ 'form-contact__submit-button--success': formSuccess }" @click='validate')
+        .form-contact__submit-overlay(:class="{ 'form-contact__submit-overlay--showing': formSubmitted  && !formSuccess }")
+        span.form-appointment__input.form-appointment__input--button(:class="{ 'form-contact__submit-label--hidden': formSuccess }") Send
+        .form-contact__submit-success(:class="{ 'form-contact__submit-success--showing': formSuccess }")
+        span.form-contact__submit-check(:class="{ 'form-contact__submit-check--showing': formSuccess }")
