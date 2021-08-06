@@ -65,6 +65,21 @@
            gtag('event', 'conversion', {'send_to': 'AW-619810451/UM0qCMzV89UBEJOdxqcC'});
         </script>
     <?php }?> 
-    
+    <script type="text/javascript">
+
+  (function(d){
+    var s = d.createElement("script");
+    s.setAttribute("data-account", "D3656BNpyD");
+    s.setAttribute("src", "https://cdn.userway.org/widget.js");
+    (d.body || d.head).appendChild(s);})(document);
+
+  (function(d){
+    var ns = d.createElement("noscript");
+    ns.innerHTML = `Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a>`;
+    (d.body || d.head).appendChild(ns);})(document);   
+
+</script>
+
+<div class="footer__container-userway-trigger" id="accessibilityWidget" tabindex="0">Click for Accessibility</div>
 </body>
 </html>
