@@ -6,6 +6,7 @@ import PatientInfo from '@/pages/patient-info/patient-info'
 import TreatmentOptions from '@/pages/treatment-options/treatment-options'
 import Contact from '@/pages/contact-us/contact-us'
 import ThankYou from '@/pages/thank-you/thank-you'
+import ThankYouContact from '@/pages/thankyou/thankyou'
 import VueScrollTo from 'vue-scrollto'
 
 Vue.use(VueRouter)
@@ -98,6 +99,12 @@ const router = new VueRouter({
       name: 'Thank You',
       navigation: false,
       component: ThankYou
+    },
+    {
+      path: '/thankyou',
+      name: 'Thank You',
+      navigation: false,
+      component: ThankYouContact
     },
     {
       path: '/*',

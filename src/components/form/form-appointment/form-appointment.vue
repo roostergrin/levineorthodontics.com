@@ -46,7 +46,7 @@ export default {
         .then(res => {
           this.formSuccess = true
           setTimeout(() => {
-            window.location.href = 'https://levineorthodontics.com/thank-you'
+            window.location.href = 'https://levineorthodontics.com/thankyou'
           }, 400)
           setTimeout(() => {
             this.fullname = ''
