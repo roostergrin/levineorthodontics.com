@@ -79,7 +79,5 @@
     (d.body || d.head).appendChild(ns);})(document);   
 
 </script>
-
-<div class="footer__container-userway-trigger" id="accessibilityWidget" tabindex="0">Click for Accessibility</div>
 </body>
 </html>

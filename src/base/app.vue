@@ -5,6 +5,7 @@
 import Navigation from 'components/navigation/navigation'
 import Revisions from 'revisions'
 import Footer from 'components/footer/footer'
+import BaseBaseAccess from 'components/base-access/index'
 
 export default {
   created () {
@@ -20,7 +21,8 @@ export default {
   components: {
     Navigation,
     Revisions,
-    Footer
+    Footer,
+    BaseBaseAccess
   },
   name: 'app'
 }

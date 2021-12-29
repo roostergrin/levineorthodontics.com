@@ -7,6 +7,7 @@ import TreatmentOptions from '@/pages/treatment-options/treatment-options'
 import Contact from '@/pages/contact-us/contact-us'
 import ThankYou from '@/pages/thank-you/thank-you'
 import ThankYouContact from '@/pages/thankyou/thankyou'
+import AccessibilityStatement from '@/pages/accessibility-statement/accessibility-statement'
 import VueScrollTo from 'vue-scrollto'
 
 Vue.use(VueRouter)
@@ -105,6 +106,12 @@ const router = new VueRouter({
       name: 'Thank You',
       navigation: false,
       component: ThankYouContact
+    },
+    {
+      path: '/accessibility-statement',
+      name: 'Accessibility Statement',
+      navigation: false,
+      component: AccessibilityStatement
     },
     {
       path: '/*',
