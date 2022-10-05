@@ -5,18 +5,18 @@ nav.navigation(:class="{'navigation--active': $store.state.nav, 'navigation--scr
         span.navigation__menu--text(:class="{'navigation__menu--text--active': $store.state.nav }", v-html='menu')
         Icon(name='rectangle').navigation__menu--icon
         Icon(name='rectangle', :class="{'navigation__menu--bg--active': $store.state.nav }").navigation__menu--bg
-        
+
     router-link(to='/')
       Icon(name='logo-1', :class="{'navigation__logo--scrolled': $store.state.scrolled}").navigation__logo
-      
+
     .navigation__call
       span(@click='modal', v-show='!call') CONTACT
       Icon(name='rectangle').navigation__menu--icon.navigation__menu--icon--option
-    
-    .navigation__call--form
-      a(href='https://formsroostergrin.com/levineorthodontics/AAO/AAO-SHQ.html', target='_blank') MED FORM
-      Icon(name='rectangle').navigation__menu--icon.navigation__menu--icon--option
-  
+
+    //.navigation__call--form
+    //  a(href='https://formsroostergrin.com/levineorthodontics/AAO/AAO-SHQ.html', target='_blank') MED FORM
+    //  Icon(name='rectangle').navigation__menu--icon.navigation__menu--icon--option
+
   .navigation__container.navigation__container--body(@mouseleave='activeLinks(0)')
     .navigation__left
       .navigation__body(:class="{'navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav}")
@@ -31,30 +31,30 @@ nav.navigation(:class="{'navigation--active': $store.state.nav, 'navigation--scr
           .navigation__sublink(v-for='(sublink, k) in sub.children', v-show='sub.children', @click='activate')
             router-link(:to='sublink.path') {{ sublink.name }}
           .navigation__image(:style="{ backgroundImage: 'url(' + sub.image + ')'}")
-          
+
   .navigation__container
     .navigation__bottom(:class="{'navigation__bottom--opacity': activeSub}")
       .navigation__body.navigation__body--option(:class="{' navigation__body--active': $store.state.nav, 'navigation__body--closed': !$store.state.nav }")
         .navigation__button(@mouseenter='buttonAnimate', @mouseleave='buttonAnimate', @click='modal')
           span(:style='styleObject')
           | book appointment
-          
+
         .navigation__social
-          a(href='http://facebook.com/levineorthodontics', target='_blank')  
+          a(href='http://facebook.com/levineorthodontics', target='_blank')
             Icon(name='facebook').navigation__social--icon
           a(href='https://www.youtube.com/user/LevineOrtho', target='_blank')
-            Icon(name='youtube').navigation__social--icon 
+            Icon(name='youtube').navigation__social--icon
           a(href='https://www.instagram.com/levineorthodontics', target='_blank')
-            Icon(name='instagram-01').navigation__social--icon 
+            Icon(name='instagram-01').navigation__social--icon
 
         .navigation__contact
           .navigation__contact--phone
             a(href='tel:+17818609473')
               | 781. 860. 9473
-          .navigation__contact--address    
+          .navigation__contact--address
             | 18 Muzzey Street
-          .navigation__contact--address 
+          .navigation__contact--address
             | Lexington, MA 02421
-  
-  
+
+
   Modal
