@@ -10,8 +10,8 @@ nav.navigation(:class="{'navigation--active': $store.state.nav, 'navigation--scr
       Icon(name='logo-1', :class="{'navigation__logo--scrolled': $store.state.scrolled}").navigation__logo
 
     .navigation__call
-      span(@click='modal', v-show='!call') CONTACT
-      Icon(name='rectangle').navigation__menu--icon.navigation__menu--icon--option
+      span.openchair.openchair-widget( v-show='!call') Schedule Consultation 
+      Icon(name='rectangle').navigation__menu--icon.navigation__menu--icon--option.navigation__menu--icon--option--openchair
 
     //.navigation__call--form
     //  a(href='https://formsroostergrin.com/levineorthodontics/AAO/AAO-SHQ.html', target='_blank') MED FORM
