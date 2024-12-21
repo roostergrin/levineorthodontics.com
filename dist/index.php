@@ -4,35 +4,6 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">   
     <?php wp_head(); ?>
-    <script src="https://onlineschedulingv2.threadcommunication.com"
-type="text/javascript"></script>
-
-<script type="text/javascript">
-
-OpenChair.init({
-
-token:
-"eyJhbGciOiJIUzI1NiJ9.eyJvcmlnaW4iOiJMZXZpbmVvcnRob2RvbnRpY3MuY29tIiwicHJhY3RpY2VfaWQiOiIxMDEzIn0.TT7o9Nu7aDXGy77cU1hMAx3b3CoH-OsUcbZ28LxCuug",
-
-hideTooltipHeader: true,
-
-floatDownLocsWithoutBookings: true,
-
-filterOptions: {
-
-"New Patient Child ":
-["1013-635a331a-b415-42e1-9777-889fc4a95abb"],
-
-"New Patient Adult":
-["1013-d266a5ed-5dce-4c9d-baf3-d821f0c7bdf9"],
-
-},
-
-specificLocations: ["1013-c0c00395-163c-4669-a1eb-12cbd20ce508"],
-
-})
-
-</script>
 <!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-C4GG7BW525"></script>
 	<script>
@@ -114,6 +85,34 @@ specificLocations: ["1013-c0c00395-163c-4669-a1eb-12cbd20ce508"],
     var ns = d.createElement("noscript");
     ns.innerHTML = `Please ensure Javascript is enabled for purposes of <a href="https://userway.org">website accessibility</a>`;
     (d.body || d.head).appendChild(ns);})(document);   
+
+</script>
+    <script src="https://onlineschedulingv2.threadcommunication.com" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+OpenChair.init({
+
+token:
+"eyJhbGciOiJIUzI1NiJ9.eyJvcmlnaW4iOiJMZXZpbmVvcnRob2RvbnRpY3MuY29tIiwicHJhY3RpY2VfaWQiOiIxMDEzIn0.TT7o9Nu7aDXGy77cU1hMAx3b3CoH-OsUcbZ28LxCuug",
+
+hideTooltipHeader: true,
+
+floatDownLocsWithoutBookings: true,
+
+filterOptions: {
+
+"New Patient Child ":
+["1013-635a331a-b415-42e1-9777-889fc4a95abb"],
+
+"New Patient Adult":
+["1013-d266a5ed-5dce-4c9d-baf3-d821f0c7bdf9"],
+
+},
+
+specificLocations: ["1013-c0c00395-163c-4669-a1eb-12cbd20ce508"],
+
+})
 
 </script>
 </body>
