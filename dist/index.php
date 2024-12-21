@@ -93,8 +93,7 @@
 
 OpenChair.init({
 
-token:
-"eyJhbGciOiJIUzI1NiJ9.eyJvcmlnaW4iOiJMZXZpbmVvcnRob2RvbnRpY3MuY29tIiwicHJhY3RpY2VfaWQiOiIxMDEzIn0.TT7o9Nu7aDXGy77cU1hMAx3b3CoH-OsUcbZ28LxCuug",
+token: "eyJhbGciOiJIUzI1NiJ9.eyJvcmlnaW4iOiJsZXZpbmVvcnRob2RvbnRpY3MuY29tIiwicHJhY3RpY2VfaWQiOiIxMDEzIn0.7E01vzWc8G-OHCOggx3T3qUAteJLbKgibjf9en3grNc",
 
 hideTooltipHeader: true,
 
@@ -102,11 +101,9 @@ floatDownLocsWithoutBookings: true,
 
 filterOptions: {
 
-"New Patient Child ":
-["1013-635a331a-b415-42e1-9777-889fc4a95abb"],
+"New Patient Child ": ["1013-635a331a-b415-42e1-9777-889fc4a95abb"],
 
-"New Patient Adult":
-["1013-d266a5ed-5dce-4c9d-baf3-d821f0c7bdf9"],
+"New Patient Adult": ["1013-d266a5ed-5dce-4c9d-baf3-d821f0c7bdf9"],
 
 },
 
