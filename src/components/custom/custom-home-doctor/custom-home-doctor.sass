@@ -16,9 +16,12 @@
       position: relative
       margin-bottom: rem-calc(32)
 
+    @media screen and (max-width: $screen-lg)
+      position: relative
+      margin-bottom: rem-calc(32)    
+
   &__left
-    @extend .col-flex-4
-    @extend .col-flex-offset-1
+    @extend .col-flex-6
     height: rem-calc(450)
 
     @supports (display: flex)
@@ -26,14 +29,14 @@
 
     @media screen and (max-width: $screen-md)
       margin-bottom: rem-calc(32)
-      height: rem-calc(400)
+      height: rem-calc(350)
 
     &--active
       transform: none
       opacity: 1
 
   &__right
-    @extend .col-flex-7
+    @extend .col-flex-6
     align-self: center
     transform: translateX(10px)
     transition: all 1.5s ease-in-out
@@ -68,10 +71,9 @@
 
   &__image
     background-repeat: no-repeat
-    background-position: center -60px
-    background-size: cover
+    background-position: center center
+    background-size: contain
     height: 100%
-    background-image: url('/static/meet-doctor.jpeg')
 
   &__waypoint
     transform: translateY(250px)

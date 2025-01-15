@@ -31,6 +31,7 @@ function remove_wysiwyg_editor () {
  * @return void
  */
 
+/**
 function hide_editor() {
   global $pagenow;
     if(!('post.php' == $pagenow)){
@@ -56,3 +57,4 @@ function hide_editor() {
   }
 }
 add_action('admin_init', 'hide_editor');
+ */
