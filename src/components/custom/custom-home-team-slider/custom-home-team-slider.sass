@@ -8,6 +8,7 @@
 
     @media screen and (max-width: $screen-md)
       padding-top: rem-calc(64)
+      padding-bottom: 2rem
 
   &__bg
     position: absolute
@@ -15,7 +16,7 @@
     left: 0
     background-color: $c9
     width: 100%
-    height: rem-calc(575)
+    height: 100%
 
   &__col
     @extend .col-flex-6
@@ -26,6 +27,7 @@
 
     @media screen and (max-width: $screen-md)
       height: auto
+      width: 100% !important
       &:nth-child(1)
         display: none
 
@@ -51,6 +53,8 @@
 
     @media screen and (max-width: $screen-md)
       padding: rem-calc(16)
+      max-width: 500px !important
+      margin: 10px auto
 
   &__slide
     background-position: center -100px
@@ -59,5 +63,5 @@
     height: rem-calc(400) !important
 
     @media screen and (max-width: $screen-md)
-      background-position: top center
+      background-position: top -100%
       height: rem-calc(350) !important
