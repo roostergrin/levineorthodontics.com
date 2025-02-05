@@ -1,0 +1,6 @@
+.custom-home-instagram
+  h2.custom-home-instagram__title Follow us
+  .custom-home-instagram__container
+      a.custom-home-instagram__thumb(:href='image.permalink' v-for='(image, i) in instagram.data', :key='`image-${i}`',  target='_blank' rel='noopener noreferrer')
+        .custom-home-instagram__imagewrap
+          img.custom-home-instagram__image(:src='image.source', :alt='"instagram-" + i')    

@@ -1,0 +1,60 @@
+.custom-home-instagram
+  position: relative
+  padding: 70px 0 40px
+  background: #71caf2
+
+  @media screen and (max-width: $screen-md)
+    padding: 30px 0  
+
+  &__container
+    @extend .flex-container
+    padding-top: 10px
+    padding-bottom: 3rem
+
+    @media screen and (max-width: $screen-md)
+      padding-top: 10px
+      padding-bottom: 2rem
+      justify-content: center
+
+  &__title
+    @extend h2
+    text-align: center     
+
+  &__thumb
+    align-items: center
+    aspect-ratio: 1/1
+    display: flex
+    padding: 15px
+    transition: all .2s ease
+    width: 20%
+
+    &:hover
+      opacity: 0.8
+
+    @media screen and (max-width: $screen-md)
+      width: 33%
+      padding: 15px 10px
+
+    @media screen and (max-width: $screen-sm)
+      width: 50%                 
+
+  &__imagewrap
+    position: relative
+    border-radius: 15px
+    box-shadow: .0625rem .0625rem .4375rem rgba(0,0,0,.15)
+    height: 100%
+    overflow: hidden
+    width: 100%
+
+  &__image
+    max-width: 100% 
+    object-position: center center
+    -o-object-fit: cover
+    object-fit: cover
+    height: 100%
+    left: 0
+    position: absolute
+    top: 0
+    width: 100%
+
+

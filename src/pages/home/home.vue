@@ -6,7 +6,7 @@ import Hero from 'components/hero/hero'
 import BlockText from 'components/block/block-text/block-text'
 import CustomHomeDoctor from 'components/custom/custom-home-doctor/custom-home-doctor'
 import TabHomeTeam from 'components/tab/tab-home-team/tab-home-team'
-import CustomHomeTeamSlider from 'components/custom/custom-home-team-slider/custom-home-team-slider'
+import CustomHomeInstagramFeeds from 'components/custom/custom-home-instagram-feeds/custom-home-instagram-feeds'
 import CustomHomeOfficeTour from 'components/custom/custom-home-office-tour/custom-home-office-tour'
 import CustomHomeContact from 'components/custom/custom-home-contact/custom-home-contact'
 import Modal from 'components/modal/modal'
@@ -27,7 +27,7 @@ export default {
     BlockText,
     CustomHomeDoctor,
     TabHomeTeam,
-    CustomHomeTeamSlider,
+    CustomHomeInstagramFeeds,
     CustomHomeOfficeTour,
     CustomHomeContact,
     Modal
