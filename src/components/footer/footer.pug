@@ -13,7 +13,16 @@ footer.footer(v-if='props')
           Icon(name='instagram-01').footer__icon
 
   .footer__divider
-    .footer__container
+    .footer__container.footer__bottom-bar
+      .footer__links
+        a(href='/privacy-policy') Privacy Policy
+        |  • 
+        a(href='/hipaa-privacy-supplement') HIPAA Privacy Supplement
+        |  • 
+        a(href='/terms-of-use') Terms of Use
+        |  • 
+        a(href='/cookie-notice') Cookie Notice
+
       .footer__trade
         span#accessibilityWidget Click for Accessibility 
         span | 
