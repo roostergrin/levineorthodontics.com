@@ -10,7 +10,7 @@ import ThankYouContact from '@/pages/thankyou/thankyou'
 import AccessibilityStatement from '@/pages/accessibility-statement/accessibility-statement'
 import PrivacyPolicy from '@/pages/privacy-policy/privacy-policy'
 import Termsofuse from '@/pages/terms-of-use/terms-of-use'
-import HippaPrivacySupplement from '@/pages/hippa-privacy-supplement/hippa-privacy-supplement'
+import HipaaPrivacySupplement from '@/pages/hipaa-privacy-supplement/hipaa-privacy-supplement'
 import CookieNotice from '@/pages/cookie-notice/cookie-notice'
 import VueScrollTo from 'vue-scrollto'
 
@@ -118,10 +118,10 @@ const router = new VueRouter({
       component: PrivacyPolicy
     },
     {
-      path: '/hippa-privacy-supplement',
-      name: 'Hippa Privacy Supplement',
+      path: '/hipaa-privacy-supplement',
+      name: 'Hipaa Privacy Supplement',
       navigation: false,
-      component: HippaPrivacySupplement
+      component: HipaaPrivacySupplement
     },
     {
       path: '/cookie-notice',
