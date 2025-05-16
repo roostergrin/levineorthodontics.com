@@ -8,6 +8,10 @@ import Contact from '@/pages/contact-us/contact-us'
 import ThankYou from '@/pages/thank-you/thank-you'
 import ThankYouContact from '@/pages/thankyou/thankyou'
 import AccessibilityStatement from '@/pages/accessibility-statement/accessibility-statement'
+import PrivacyPolicy from '@/pages/privacy-policy/privacy-policy'
+import Termsofuse from '@/pages/terms-of-use/terms-of-use'
+import HippaPrivacySupplement from '@/pages/hippa-privacy-supplement/hippa-privacy-supplement'
+import CookieNotice from '@/pages/cookie-notice/cookie-notice'
 import VueScrollTo from 'vue-scrollto'
 
 Vue.use(VueRouter)
@@ -99,13 +103,37 @@ const router = new VueRouter({
       path: '/thank-you',
       name: 'Thank You',
       navigation: false,
+      component: ThankYouContact
+    },
+    {
+      path: '/thank-you',
+      name: 'Thank You',
+      navigation: false,
       component: ThankYou
     },
     {
-      path: '/thankyou',
-      name: 'Thank You',
+      path: '/privacy-policy',
+      name: 'Privacy Policy',
       navigation: false,
-      component: ThankYouContact
+      component: PrivacyPolicy
+    },
+    {
+      path: '/hippa-privacy-supplement',
+      name: 'Hippa Privacy Supplement',
+      navigation: false,
+      component: HippaPrivacySupplement
+    },
+    {
+      path: '/cookie-notice',
+      name: 'Cookie Notice',
+      navigation: false,
+      component: CookieNotice
+    },
+    {
+      path: '/terms-of-use',
+      name: 'Terms of Use',
+      navigation: false,
+      component: Termsofuse
     },
     {
       path: '/accessibility-statement',
