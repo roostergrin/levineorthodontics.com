@@ -9,6 +9,10 @@
       Icon(name='arrow-left')
 
   .hero__image--option(:style="{ backgroundImage: 'url(' + props.image + ')' }", v-if='$route.name !== "home"')
+    .hero__text-overlay(v-if='props.heading')
+      .hero__text-content
+        h1.hero__heading(v-html='props.heading')
+        span.hero__openchair.openchair-widget(v-html='props.btntxt')
   .hero__waypoint(v-waypoint='{ active: true, callback: changeNav }')
   .hero__scroll
     Icon(name='arrow-right', class='hero__scroll--arrow')

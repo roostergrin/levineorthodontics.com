@@ -46,21 +46,21 @@ const router = new VueRouter({
       image: '/static/patient_info.jpg',
       children: [
         {
+          path: '/patient-info#consultation-today',
+          name: 'Book a FREE'
+        },
+        {
           path: '/patient-info#new-patients',
-          name: 'new patients'
+          name: 'Consultation Today'
         },
         {
           path: '/patient-info#orthofi',
-          name: 'OrthoFi'
-        },
-        {
-          path: '/patient-info#orthodontic-care',
-          name: 'Orthodontic Care'
-        },
-        {
-          path: '/patient-info#eating-with-braces',
-          name: 'Eating with Braces'
+          name: 'Terms & Conditions'
         }
+        // {
+        //   path: '/patient-info#eating-with-braces',
+        //   name: 'Eating with Braces'
+        // }
       ]
     },
     {
