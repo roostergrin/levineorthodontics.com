@@ -5,6 +5,7 @@ import Home from '@/pages/home/home'
 import PatientInfo from '@/pages/patient-info/patient-info'
 import TreatmentOptions from '@/pages/treatment-options/treatment-options'
 import Contact from '@/pages/contact-us/contact-us'
+import Promo from '@/pages/promo/promo'
 import ThankYou from '@/pages/thank-you/thank-you'
 import ThankYouContact from '@/pages/thankyou/thankyou'
 import AccessibilityStatement from '@/pages/accessibility-statement/accessibility-statement'
@@ -46,15 +47,40 @@ const router = new VueRouter({
       image: '/static/patient_info.jpg',
       children: [
         {
-          path: '/patient-info#consultation-today',
-          name: 'Book a FREE'
-        },
-        {
           path: '/patient-info#new-patients',
-          name: 'Consultation Today'
+          name: 'new patients'
         },
         {
           path: '/patient-info#orthofi',
+          name: 'OrthoFi'
+        },
+        {
+          path: '/patient-info#orthodontic-care',
+          name: 'Orthodontic Care'
+        }
+        // {
+        //   path: '/patient-info#eating-with-braces',
+        //   name: 'Eating with Braces'
+        // }
+      ]
+    },
+    {
+      path: '/promo',
+      name: 'Promo',
+      navigation: false,
+      component: Promo,
+      image: '/static/patient_info.jpg',
+      children: [
+        {
+          path: '/promo#book-free',
+          name: 'Book a FREE'
+        },
+        {
+          path: '/promo#consultation-today',
+          name: 'Consultation Today'
+        },
+        {
+          path: '/promo#terms',
           name: 'Terms & Conditions'
         }
         // {
