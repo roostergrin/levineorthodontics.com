@@ -97,9 +97,6 @@ token: "eyJhbGciOiJIUzI1NiJ9.eyJvcmlnaW4iOiJsZXZpbmVvcnRob2RvbnRpY3MuY29tIiwicHJ
 
 hideTooltipHeader: true,
 
-adultPatientsOnly: true,
-
-minorPatientsOnly: true,
 
 floatDownLocsWithoutBookings: true,
 
