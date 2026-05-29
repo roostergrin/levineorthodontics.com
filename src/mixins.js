@@ -154,3 +154,54 @@ export const buttonOver = {
     }
   }
 }
+
+export const lazyLoadWhenVisible = {
+  data () {
+    return {
+      canLoadMedia: false,
+      mediaObserver: null
+    }
+  },
+  mounted () {
+    this.observeMediaLoad()
+  },
+  beforeDestroy () {
+    if (this.mediaObserver) {
+      this.mediaObserver.disconnect()
+      this.mediaObserver = null
+    }
+  },
+  methods: {
+    observeMediaLoad () {
+      if (typeof window === 'undefined' || !this.$el || !('IntersectionObserver' in window)) {
+        this.revealMedia()
+        return
+      }
+
+      this.mediaObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.revealMedia()
+            if (this.mediaObserver) {
+              this.mediaObserver.disconnect()
+              this.mediaObserver = null
+            }
+          }
+        })
+      }, {
+        rootMargin: '400px 0px'
+      })
+
+      this.mediaObserver.observe(this.$el)
+    },
+    revealMedia () {
+      this.canLoadMedia = true
+      this.$nextTick(() => {
+        if (typeof this.updateLazyMedia === 'function') this.updateLazyMedia()
+      })
+    },
+    lazyBackground (image) {
+      return this.canLoadMedia && image ? { backgroundImage: 'url(' + image + ')' } : {}
+    }
+  }
+}

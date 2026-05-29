@@ -5,8 +5,8 @@
       .custom-home-office-tour__title(v-html='props.title')
   
   .custom-home-office-tour__container
-    swiper.custom-home-office-tour__slider(:options='sliderOptions')
-      swiper-slide.custom-home-office-tour__slide(v-for='(slide, i) in props.gallery', :key='i', :style="{ backgroundImage: 'url(' + slide.url + ')' }")
+    swiper.custom-home-office-tour__slider(ref='officeTourSlider', :options='sliderOptions')
+      swiper-slide.custom-home-office-tour__slide(v-for='(slide, i) in props.gallery', :key='i', :style='lazyBackground(slide.url)')
       .custom-home-office-tour__button-next(slot='button-next')
         Icon(name='arrow-right')      
       .custom-home-office-tour__button-prev(slot='button-prev')

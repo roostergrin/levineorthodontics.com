@@ -2,9 +2,11 @@
 
 <script>
 import Icon from 'components/icon/icon'
+import { lazyLoadWhenVisible } from '@/mixins'
 
 export default {
   props: ['props'],
+  mixins: [lazyLoadWhenVisible],
   data () {
     return {
       sliderOptions: {
@@ -18,6 +20,14 @@ export default {
           prevEl: '.custom-home-office-tour__button-prev'
         }
       }
+    }
+  },
+  methods: {
+    updateLazyMedia () {
+      const swiper = this.$refs.officeTourSlider && this.$refs.officeTourSlider.swiper
+      if (!swiper) return
+      if (swiper.reLoop) swiper.reLoop()
+      if (swiper.update) swiper.update(true)
     }
   },
   components: {

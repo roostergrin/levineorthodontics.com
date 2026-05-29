@@ -3,11 +3,15 @@
 <script>
 import axios from 'axios'
 import api from 'api'
+import { lazyLoadWhenVisible } from '@/mixins'
+
 export default {
   props: ['props'],
+  mixins: [lazyLoadWhenVisible],
   data () {
     return {
-      instagram: null,
+      instagram: { data: [] },
+      instagramLoaded: false,
       sliderOptions: {
         loop: true,
         autoplay: {
@@ -21,12 +25,20 @@ export default {
       }
     }
   },
-  async created () {
-    this.instagram = await axios.get(`${api}/rg-instagram/v1/get-photos`)
-  },
   methods: {
-    getIg () {
-      this.instagram = this.axios.get(`${api}/rg-instagram/v1/get-photos`)
+    updateLazyMedia () {
+      this.getIg()
+    },
+    async getIg () {
+      if (this.instagramLoaded) return
+      this.instagramLoaded = true
+
+      try {
+        this.instagram = await axios.get(`${api}/rg-instagram/v1/get-photos`)
+      } catch (e) {
+        this.instagramLoaded = false
+        console.log('INSTAGRAM API: ' + e)
+      }
     }
   }
 }

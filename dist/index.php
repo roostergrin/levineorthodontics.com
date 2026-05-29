@@ -3,6 +3,10 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <link rel="preload" href="<?php echo esc_url(get_template_directory_uri() . '/static/home.webp'); ?>" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.userway.org" crossorigin>
+    <link rel="dns-prefetch" href="//onlineschedulingv2.threadcommunication.com">
     <?php wp_head(); ?>
 <!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-C4GG7BW525"></script>
@@ -17,18 +21,6 @@
   <div id="app"></div>
   <?php wp_footer(); ?>
   <script type="text/javascript">
-    WebFontConfig = {
-      google: { families: [ 'Open+Sans:400,600' ] }
-    };
-    (function() {
-      var wf = document.createElement('script');
-      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-      wf.type = 'text/javascript';
-      wf.async = 'true';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(wf, s);
-    })();
     var $buoop = {notify:{e:-6,f:-4,o:-4,s:-2,c:-4},insecure:true,api:5};
 
     function $buo_f(){
@@ -53,17 +45,18 @@
     Object.assign( element.style, styles )
   }
 
-  (function waitForElement(interval = 1) {
+  (function waitForElement(attempts) {
+    if (!attempts) return;
     setTimeout(() => {
       const element = document.querySelector('.rhinogram-widget-container');
       if( element ){
         applyStyles(element);
       }
       else{
-        waitForElement(1);
+        waitForElement(attempts - 1);
       }
-    }, interval);
-  })();
+    }, 250);
+  })(40);
 
 </script>
 
