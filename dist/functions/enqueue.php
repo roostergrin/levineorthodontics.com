@@ -39,6 +39,32 @@ function load_scripts() {
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 
+function rg_defer_noncritical_styles($html, $handle, $href, $media) {
+	if (is_admin()) {
+		return $html;
+	}
+
+	$defer_handles = array(
+		'sbr_styles',
+		'sbi_styles',
+		'ctf_styles',
+		'cff',
+		'sb-font-awesome'
+	);
+
+	if (!in_array($handle, $defer_handles, true)) {
+		return $html;
+	}
+
+	$href = esc_url($href);
+	$media = esc_attr($media ? $media : 'all');
+	$id = esc_attr($handle . '-css');
+
+	return "<link rel='preload' id='{$id}' href='{$href}' as='style' onload=\"this.onload=null;this.rel='stylesheet'\" media='{$media}' />\n" .
+		"<noscript><link rel='stylesheet' id='{$id}-noscript' href='{$href}' media='{$media}' /></noscript>\n";
+}
+add_filter('style_loader_tag', 'rg_defer_noncritical_styles', 10, 4);
+
 function get_menu() {
     return wp_get_nav_menu_items('menu');
 }

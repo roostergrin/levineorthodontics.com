@@ -1,5 +1,5 @@
 .custom-home-contact
-  .custom-home-contact__bg(:style='lazyBackground(props.background)')
+  .custom-home-contact__bg(:style="backgroundReady ? { backgroundImage: 'url('+ props.background +')' } : null")
     .custom-home-contact__address(v-html='props.address')
     .custom-home-contact__form
       ContactForm

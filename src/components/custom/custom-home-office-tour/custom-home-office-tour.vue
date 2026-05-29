@@ -2,13 +2,13 @@
 
 <script>
 import Icon from 'components/icon/icon'
-import { lazyLoadWhenVisible } from '@/mixins'
 
 export default {
   props: ['props'],
-  mixins: [lazyLoadWhenVisible],
   data () {
     return {
+      imagesReady: false,
+      observer: null,
       sliderOptions: {
         loop: true,
         autoplay: {
@@ -22,12 +22,30 @@ export default {
       }
     }
   },
+  mounted () {
+    if ('IntersectionObserver' in window) {
+      this.observer = new IntersectionObserver((entries) => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          this.loadImages()
+          this.observer.disconnect()
+        }
+      }, {
+        rootMargin: '700px 0px'
+      })
+      this.observer.observe(this.$el)
+      return
+    }
+
+    this.loadImages()
+  },
+  beforeDestroy () {
+    if (this.observer) {
+      this.observer.disconnect()
+    }
+  },
   methods: {
-    updateLazyMedia () {
-      const swiper = this.$refs.officeTourSlider && this.$refs.officeTourSlider.swiper
-      if (!swiper) return
-      if (swiper.reLoop) swiper.reLoop()
-      if (swiper.update) swiper.update(true)
+    loadImages () {
+      this.imagesReady = true
     }
   },
   components: {

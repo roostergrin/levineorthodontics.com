@@ -1,6 +1,10 @@
 .custom-home-instagram
   h2.custom-home-instagram__title Get to Know Us
   .custom-home-instagram__container
-      a.custom-home-instagram__thumb(:href='image.permalink' v-for='(image, i) in instagram.data', :key='`image-${i}`',  target='_blank' rel='noopener noreferrer')
-        .custom-home-instagram__imagewrap
-          img.custom-home-instagram__image(:src='image.source', :alt='"instagram-" + i', loading='lazy', decoding='async')
+      template(v-for='(image, i) in instagramImages')
+        a.custom-home-instagram__thumb(v-if='image.source', :href='image.permalink', :key='`image-${i}`',  target='_blank' rel='noopener noreferrer')
+          .custom-home-instagram__imagewrap
+            img.custom-home-instagram__image(:src='image.source', :alt='"instagram-" + i', loading='lazy', decoding='async', width='320', height='320')
+        .custom-home-instagram__thumb.custom-home-instagram__thumb--placeholder(v-else, :key='`image-placeholder-${i}`', aria-hidden='true')
+          .custom-home-instagram__imagewrap
+            .custom-home-instagram__placeholder

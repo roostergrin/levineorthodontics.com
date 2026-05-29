@@ -1,10 +1,10 @@
 .custom-home-team-slider
   .custom-home-team-slider__bg
   .custom-home-team-slider__container
-    .custom-home-team-slider__col(:style='lazyBackground(props.image)')
+    .custom-home-team-slider__col(:style="{ backgroundImage: 'url('+ props.image +')' }")
     .custom-home-team-slider__col
       .custom-home-team-slider__content
         .custom-home-team-slider__subtitle(v-html='props.subtitle')
         .custom-home-team-slider__title(v-html='props.title')
-        swiper.custom-home-team-slider__slider(ref='teamSlider', :options='sliderOptions')
-          swiper-slide.custom-home-team-slider__slide(v-for='(slide, k) in props.gallery', :key='k', :style='lazyBackground(slide.url)')
+        swiper.custom-home-team-slider__slider(:options='sliderOptions')
+          swiper-slide.custom-home-team-slider__slide(v-for='(slide, k) in props.gallery', :key='k', :style="{ backgroundImage: 'url('+ slide.url +')' }")

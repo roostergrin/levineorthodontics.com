@@ -1,14 +1,11 @@
-.hero
-  swiper.hero__slider(ref='heroSwiper', v-if='$route.name === "home"', :options='swiperOption')
-    swiper-slide.hero__slide(v-for='(slide, index) in homeSlides', :key='slide.image')
-      .hero__image
-        picture.hero__picture(v-if='shouldLoadSlide(index)')
-          source(v-if='slide.webp', :srcset='slide.webp', type='image/webp')
-          img.hero__image-img(:src='slide.image', :alt='slide.alt', :width='slide.width', :height='slide.height', :loading='index === 0 ? "eager" : "lazy"', :decoding='index === 0 ? "sync" : "async"', :fetchpriority='index === 0 ? "high" : null')
+.hero(:class="{ 'hero--secondary-ready': secondaryImagesReady }")
+  swiper.hero__slider(v-if='$route.name === "home"', :options='swiperOption')
+    swiper-slide.hero__slide(v-for='i in 5', :key='i')
+      .hero__image(:class="'hero__image--' + i")
   
-    .hero__slide-button-next(slot='button-next')
+    .hero__slide-button-next(slot='button-next', @mouseenter='loadSecondaryHeroImages', @touchstart='loadSecondaryHeroImages', @click='loadSecondaryHeroImages')
       Icon(name='arrow-right')      
-    .hero__slide-button-prev(slot='button-prev')
+    .hero__slide-button-prev(slot='button-prev', @mouseenter='loadSecondaryHeroImages', @touchstart='loadSecondaryHeroImages', @click='loadSecondaryHeroImages')
       Icon(name='arrow-left')
 
   .hero__image--option(:style="{ backgroundImage: 'url(' + props.image + ')' }", v-if='$route.name !== "home"')

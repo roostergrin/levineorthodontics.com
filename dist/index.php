@@ -3,10 +3,10 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">   
-    <link rel="preload" href="<?php echo esc_url(get_template_directory_uri() . '/static/home.webp'); ?>" as="image" type="image/webp" fetchpriority="high">
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://cdn.userway.org" crossorigin>
-    <link rel="dns-prefetch" href="//onlineschedulingv2.threadcommunication.com">
+    <link rel="preconnect" href="https://onlineschedulingv2.threadcommunication.com" crossorigin>
+    <link rel="preload" href="<?php echo esc_url(home_url('/static/home.jpg')); ?>" as="image" fetchpriority="high">
     <?php wp_head(); ?>
 <!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-C4GG7BW525"></script>
@@ -21,16 +21,32 @@
   <div id="app"></div>
   <?php wp_footer(); ?>
   <script type="text/javascript">
-    var $buoop = {notify:{e:-6,f:-4,o:-4,s:-2,c:-4},insecure:true,api:5};
+    window.$buoop = {notify:{e:-6,f:-4,o:-4,s:-2,c:-4},insecure:true,api:5};
 
     function $buo_f(){
       var e = document.createElement("script");
       e.src = "//browser-update.org/update.min.js";
+      e.async = true;
       document.body.appendChild(e);
     };
 
-    try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
-    catch(e){window.attachEvent("onload", $buo_f)}
+    function scheduleBrowserUpdate(){
+      if (window.requestIdleCallback) {
+        window.requestIdleCallback($buo_f, { timeout: 5000 });
+      } else {
+        setTimeout($buo_f, 5000);
+      }
+    }
+
+    try {
+      if (document.readyState === "complete") {
+        scheduleBrowserUpdate();
+      } else {
+        window.addEventListener("load", scheduleBrowserUpdate, false);
+      }
+    } catch(e) {
+      window.attachEvent("onload", scheduleBrowserUpdate);
+    }
   </script>
 
   <!-- <script id="rhinogram-embed" src="https://app.rhinogram.com/widget/embed.js?id=043a1ea3-aaca-416b-9670-f48459f57b12"></script> -->
@@ -68,11 +84,32 @@
     <?php }?> 
     <script type="text/javascript">
 
-  (function(d){
+  (function(d, w){
     var s = d.createElement("script");
+    s.id = "userway-widget-script";
     s.setAttribute("data-account", "D3656BNpyD");
     s.setAttribute("src", "https://cdn.userway.org/widget.js");
-    (d.body || d.head).appendChild(s);})(document);
+    s.async = true;
+
+    function loadUserWay() {
+      if (d.getElementById("userway-widget-script")) return;
+      (d.body || d.head).appendChild(s);
+    }
+
+    function scheduleUserWay() {
+      if (w.requestIdleCallback) {
+        w.requestIdleCallback(loadUserWay, { timeout: 3000 });
+      } else {
+        setTimeout(loadUserWay, 1500);
+      }
+    }
+
+    if (d.readyState === "complete") {
+      scheduleUserWay();
+    } else {
+      w.addEventListener("load", scheduleUserWay, false);
+    }
+  })(document, window);
 
   (function(d){
     var ns = d.createElement("noscript");
@@ -80,11 +117,11 @@
     (d.body || d.head).appendChild(ns);})(document);   
 
 </script>
-    <script src="https://onlineschedulingv2.threadcommunication.com" type="text/javascript"></script>
 
 <script type="text/javascript">
 
-OpenChair.init({
+  (function(d, w) {
+    var openChairConfig = {
 
 token: "eyJhbGciOiJIUzI1NiJ9.eyJvcmlnaW4iOiJsZXZpbmVvcnRob2RvbnRpY3MuY29tIiwicHJhY3RpY2VfaWQiOiIxMDEzIn0.7E01vzWc8G-OHCOggx3T3qUAteJLbKgibjf9en3grNc",
 
@@ -103,7 +140,73 @@ filterOptions: {
 
 specificLocations: ["1013-c0c00395-163c-4669-a1eb-12cbd20ce508"],
 
-})
+};
+
+    var openChairLoading = false;
+    var openChairReady = false;
+    var pendingOpenChairTarget = null;
+
+    function closestOpenChair(element) {
+      while (element && element !== d) {
+        if (typeof element.className === "string" && (" " + element.className + " ").indexOf(" openchair-widget ") > -1) {
+          return element;
+        }
+
+        element = element.parentNode;
+      }
+
+      return null;
+    }
+
+    function initOpenChair() {
+      if (openChairReady || !w.OpenChair || !w.OpenChair.init) return;
+
+      openChairReady = true;
+      w.OpenChair.init(openChairConfig);
+
+      if (pendingOpenChairTarget && pendingOpenChairTarget.click) {
+        var target = pendingOpenChairTarget;
+        pendingOpenChairTarget = null;
+        setTimeout(function() {
+          target.click();
+        }, 50);
+      }
+    }
+
+    function loadOpenChair() {
+      if (openChairLoading) return;
+
+      openChairLoading = true;
+      var script = d.createElement("script");
+      script.src = "https://onlineschedulingv2.threadcommunication.com";
+      script.async = true;
+      script.onload = initOpenChair;
+      (d.body || d.head).appendChild(script);
+    }
+
+    function scheduleOpenChair() {
+      if (w.requestIdleCallback) {
+        w.requestIdleCallback(loadOpenChair, { timeout: 3000 });
+      } else {
+        setTimeout(loadOpenChair, 1500);
+      }
+    }
+
+    d.addEventListener("click", function(event) {
+      var target = closestOpenChair(event.target);
+      if (!target || openChairReady) return;
+
+      event.preventDefault();
+      pendingOpenChairTarget = target;
+      loadOpenChair();
+    }, true);
+
+    if (d.readyState === "complete") {
+      scheduleOpenChair();
+    } else {
+      w.addEventListener("load", scheduleOpenChair, false);
+    }
+  })(document, window);
 
 </script>
 </body>

@@ -6,7 +6,7 @@
     .tab-home-team__team(:class="{'tab-home-team__team--active': active}")
       .tab-home-team__images
         .tab-home-team__image(v-for='(team, k) in props.team', @mouseenter='top = k')
-          .tab-home-team__bg(:style='lazyBackground(team.image)', :class="{'tab-home-team__bg--active': top === k}")
+          .tab-home-team__bg(:style="{ backgroundImage: 'url('+ team.image +')'}", :class="{'tab-home-team__bg--active': top === k}")
           .tab-home-team__body
             .tab-home-team__team-title(v-html='team.name')
             .tab-home-team__position(v-html='team.position')    

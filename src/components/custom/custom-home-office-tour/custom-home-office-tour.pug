@@ -5,9 +5,9 @@
       .custom-home-office-tour__title(v-html='props.title')
   
   .custom-home-office-tour__container
-    swiper.custom-home-office-tour__slider(ref='officeTourSlider', :options='sliderOptions')
-      swiper-slide.custom-home-office-tour__slide(v-for='(slide, i) in props.gallery', :key='i', :style='lazyBackground(slide.url)')
-      .custom-home-office-tour__button-next(slot='button-next')
+    swiper.custom-home-office-tour__slider(:options='sliderOptions')
+      swiper-slide.custom-home-office-tour__slide(v-for='(slide, i) in props.gallery', :key='i', :style="imagesReady ? { backgroundImage: 'url(' + slide.url + ')' } : null")
+      .custom-home-office-tour__button-next(slot='button-next', @click='loadImages')
         Icon(name='arrow-right')      
-      .custom-home-office-tour__button-prev(slot='button-prev')
+      .custom-home-office-tour__button-prev(slot='button-prev', @click='loadImages')
         Icon(name='arrow-left')  

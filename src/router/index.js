@@ -1,21 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/pages/home/home'
+// const AboutUs = () => import(/* webpackChunkName: "group" */ '@/pages/about-us/about-us')
+import PatientInfo from '@/pages/patient-info/patient-info'
+import TreatmentOptions from '@/pages/treatment-options/treatment-options'
+import Contact from '@/pages/contact-us/contact-us'
+import Promo from '@/pages/promo/promo'
+import ThankYou from '@/pages/thank-you/thank-you'
+import ThankYouContact from '@/pages/thankyou/thankyou'
+import AccessibilityStatement from '@/pages/accessibility-statement/accessibility-statement'
+import PrivacyPolicy from '@/pages/privacy-policy/privacy-policy'
+import Termsofuse from '@/pages/terms-of-use/terms-of-use'
+import HipaaPrivacySupplement from '@/pages/hipaa-privacy-supplement/hipaa-privacy-supplement'
+import CookieNotice from '@/pages/cookie-notice/cookie-notice'
 import VueScrollTo from 'vue-scrollto'
 
 Vue.use(VueRouter)
-
-const PatientInfo = resolve => require.ensure([], () => resolve(require('@/pages/patient-info/patient-info')), 'patient-info')
-const TreatmentOptions = resolve => require.ensure([], () => resolve(require('@/pages/treatment-options/treatment-options')), 'treatment-options')
-const Contact = resolve => require.ensure([], () => resolve(require('@/pages/contact-us/contact-us')), 'contact-us')
-const Promo = resolve => require.ensure([], () => resolve(require('@/pages/promo/promo')), 'promo')
-const ThankYou = resolve => require.ensure([], () => resolve(require('@/pages/thank-you/thank-you')), 'thank-you')
-const ThankYouContact = resolve => require.ensure([], () => resolve(require('@/pages/thankyou/thankyou')), 'thank-you-contact')
-const AccessibilityStatement = resolve => require.ensure([], () => resolve(require('@/pages/accessibility-statement/accessibility-statement')), 'accessibility-statement')
-const PrivacyPolicy = resolve => require.ensure([], () => resolve(require('@/pages/privacy-policy/privacy-policy')), 'privacy-policy')
-const Termsofuse = resolve => require.ensure([], () => resolve(require('@/pages/terms-of-use/terms-of-use')), 'terms-of-use')
-const HipaaPrivacySupplement = resolve => require.ensure([], () => resolve(require('@/pages/hipaa-privacy-supplement/hipaa-privacy-supplement')), 'hipaa-privacy-supplement')
-const CookieNotice = resolve => require.ensure([], () => resolve(require('@/pages/cookie-notice/cookie-notice')), 'cookie-notice')
 
 const scrollBehavior = function (to, from, savedPosition) {
   if (savedPosition) {
