@@ -8,14 +8,44 @@
     <link rel="preconnect" href="https://onlineschedulingv2.threadcommunication.com" crossorigin>
     <link rel="preload" href="<?php echo esc_url(home_url('/static/home.jpg')); ?>" as="image" fetchpriority="high">
     <?php wp_head(); ?>
-<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-C4GG7BW525"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date()); 
-		gtag('config', 'G-C4GG7BW525');
-	</script>
+    <script>
+      (function(w, d) {
+        w.dataLayer = w.dataLayer || [];
+        w.gtag = w.gtag || function(){ w.dataLayer.push(arguments); };
+        w.gtag('js', new Date());
+        w.gtag('config', 'G-C4GG7BW525');
+
+        function hasGtagScript() {
+          return d.querySelector('script[src*="googletagmanager.com/gtag/js?id=G-C4GG7BW525"]');
+        }
+
+        function loadGtag() {
+          if (hasGtagScript()) return;
+
+          var script = d.createElement('script');
+          script.id = 'rg-gtag-c4';
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-C4GG7BW525';
+          (d.head || d.body).appendChild(script);
+        }
+
+        function scheduleGtag() {
+          setTimeout(function() {
+            if (w.requestIdleCallback) {
+              w.requestIdleCallback(loadGtag, { timeout: 4000 });
+            } else {
+              loadGtag();
+            }
+          }, 6000);
+        }
+
+        if (d.readyState === 'complete') {
+          scheduleGtag();
+        } else {
+          w.addEventListener('load', scheduleGtag, false);
+        }
+      })(window, document);
+    </script>
 </head>
 <body <?php echo body_class();  ?>>
   <div id="app"></div>
@@ -31,11 +61,13 @@
     };
 
     function scheduleBrowserUpdate(){
-      if (window.requestIdleCallback) {
-        window.requestIdleCallback($buo_f, { timeout: 5000 });
-      } else {
-        setTimeout($buo_f, 5000);
-      }
+      setTimeout(function() {
+        if (window.requestIdleCallback) {
+          window.requestIdleCallback($buo_f, { timeout: 8000 });
+        } else {
+          $buo_f();
+        }
+      }, 10000);
     }
 
     try {
@@ -79,7 +111,7 @@
       <?php
       if(is_page(391)){ ?>
         <script>
-           gtag('event', 'conversion', {'send_to': 'AW-619810451/UM0qCMzV89UBEJOdxqcC'});
+           window.gtag && window.gtag('event', 'conversion', {'send_to': 'AW-619810451/UM0qCMzV89UBEJOdxqcC'});
         </script>
     <?php }?> 
     <script type="text/javascript">
@@ -97,11 +129,13 @@
     }
 
     function scheduleUserWay() {
-      if (w.requestIdleCallback) {
-        w.requestIdleCallback(loadUserWay, { timeout: 3000 });
-      } else {
-        setTimeout(loadUserWay, 1500);
-      }
+      setTimeout(function() {
+        if (w.requestIdleCallback) {
+          w.requestIdleCallback(loadUserWay, { timeout: 8000 });
+        } else {
+          loadUserWay();
+        }
+      }, 8000);
     }
 
     if (d.readyState === "complete") {
@@ -185,11 +219,13 @@ specificLocations: ["1013-c0c00395-163c-4669-a1eb-12cbd20ce508"],
     }
 
     function scheduleOpenChair() {
-      if (w.requestIdleCallback) {
-        w.requestIdleCallback(loadOpenChair, { timeout: 3000 });
-      } else {
-        setTimeout(loadOpenChair, 1500);
-      }
+      setTimeout(function() {
+        if (w.requestIdleCallback) {
+          w.requestIdleCallback(loadOpenChair, { timeout: 8000 });
+        } else {
+          loadOpenChair();
+        }
+      }, 9000);
     }
 
     d.addEventListener("click", function(event) {

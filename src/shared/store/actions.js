@@ -16,7 +16,7 @@ const actions = {
   GET_PAGES ({ commit }) {
     (async () => {
       try {
-        const response = await axios.get(`${api}/wp/v2/pages?per_page=100`)
+        const response = await axios.get(`${api}/wp/v2/pages?per_page=100&_fields=slug,acf`)
         const data = response.data.reduce(
           (allData, data) => ({ ...allData, [data.slug]: data }),
           {}
@@ -30,7 +30,7 @@ const actions = {
   GET_APP ({ commit }) {
     (async () => {
       try {
-        const response = await axios.get(`${api}/wp/v2/app`)
+        const response = await axios.get(`${api}/wp/v2/app?_fields=slug,acf`)
         const data = response.data.reduce(
           (allData, data) => ({ ...allData, [data.slug]: data }),
           {}

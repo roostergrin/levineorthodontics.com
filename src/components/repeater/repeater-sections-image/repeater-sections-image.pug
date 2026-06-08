@@ -1,7 +1,7 @@
 .repeater-sections-image 
-  .repeater-sections-image__container(v-for='(section, i) in props.sections')
+  .repeater-sections-image__container(v-for='(section, i) in props.sections', :key='i')
     .repeater-sections-image__waypoint(v-waypoint='{ active: true, callback: change, direction: undefined }')
     .repeater-sections-image__scroll(:id='section.id')
     .repeater-sections-image__content(v-html='section.content', v-if='!(i % 2)', :class="{ 'repeater-sections-image__content--active':  j }")
-    .repeater-sections-image__image(:style="{ backgroundImage: 'url(' + section.image + ')'}")  
+    .repeater-sections-image__image(:style="imagesReady ? { backgroundImage: 'url(' + section.image + ')' } : null")  
     .repeater-sections-image__content(v-html='section.content', v-if='i % 2', :class="{ 'repeater-sections-image__content--active': k }")

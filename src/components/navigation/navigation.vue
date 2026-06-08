@@ -22,17 +22,29 @@ export default {
     return {
       activeSub: 0,
       call: false,
-      menu: 'MENU'
+      menu: 'MENU',
+      imageUrlsReady: false
     }
   },
   methods: {
     activate () {
+      if (!this.$store.state.nav) {
+        this.showNavigationImages()
+      }
+
       this.$store.state.nav ? this.$store.dispatch('VIEW_NAV', false) : this.$store.dispatch('VIEW_NAV', true)
       this.$store.state.nav ? this.showMenu(false) : this.showMenu()
       this.$store.state.nav ? this.menu = 'EXIT' : this.menu = 'MENU'
     },
     activeLinks (e) {
+      if (e) {
+        this.showNavigationImages()
+      }
+
       this.activeSub = e
+    },
+    showNavigationImages () {
+      this.imageUrlsReady = true
     },
     callFunc () {
       this.call ? this.call = false : this.call = true

@@ -30,7 +30,7 @@ nav.navigation(:class="{'navigation--active': $store.state.nav, 'navigation--scr
         .navigation__body-animation(v-for='(sub, j) in links', :class="{'navigation__body-animation--active': activeSub === j}" v-bind:id='"subMenu-"+j')
           .navigation__sublink(v-for='(sublink, k) in sub.children', v-show='sub.children', @click='activate')
             router-link(:to='sublink.path') {{ sublink.name }}
-          .navigation__image(:style="{ backgroundImage: 'url(' + sub.image + ')'}")
+          .navigation__image(:style="imageUrlsReady && sub.image ? { backgroundImage: 'url(' + sub.image + ')' } : null")
 
   .navigation__container
     .navigation__bottom(:class="{'navigation__bottom--opacity': activeSub}")
