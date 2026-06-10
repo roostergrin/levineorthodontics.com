@@ -48,7 +48,6 @@ Vue.use(VueWaypoint)
 /* eslint-disable no-new */
 new Vue({
   router,
-  template: '<App/>',
   store: store,
   render: h => h(App)
 }).$mount('#app')

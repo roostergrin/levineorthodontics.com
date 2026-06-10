@@ -1,18 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/pages/home/home'
-// const AboutUs = () => import(/* webpackChunkName: "group" */ '@/pages/about-us/about-us')
-import PatientInfo from '@/pages/patient-info/patient-info'
-import TreatmentOptions from '@/pages/treatment-options/treatment-options'
-import Contact from '@/pages/contact-us/contact-us'
-import Promo from '@/pages/promo/promo'
-import ThankYou from '@/pages/thank-you/thank-you'
-import ThankYouContact from '@/pages/thankyou/thankyou'
-import AccessibilityStatement from '@/pages/accessibility-statement/accessibility-statement'
-import PrivacyPolicy from '@/pages/privacy-policy/privacy-policy'
-import Termsofuse from '@/pages/terms-of-use/terms-of-use'
-import HipaaPrivacySupplement from '@/pages/hipaa-privacy-supplement/hipaa-privacy-supplement'
-import CookieNotice from '@/pages/cookie-notice/cookie-notice'
+const PatientInfo = () => import(/* webpackChunkName: "patient-info" */ '@/pages/patient-info/patient-info')
+const TreatmentOptions = () => import(/* webpackChunkName: "treatment-options" */ '@/pages/treatment-options/treatment-options')
+const Contact = () => import(/* webpackChunkName: "contact-us" */ '@/pages/contact-us/contact-us')
+const Promo = () => import(/* webpackChunkName: "promo" */ '@/pages/promo/promo')
+const ThankYou = () => import(/* webpackChunkName: "thank-you" */ '@/pages/thank-you/thank-you')
+const ThankYouContact = () => import(/* webpackChunkName: "thankyou" */ '@/pages/thankyou/thankyou')
+const AccessibilityStatement = () => import(/* webpackChunkName: "policies" */ '@/pages/accessibility-statement/accessibility-statement')
+const PrivacyPolicy = () => import(/* webpackChunkName: "policies" */ '@/pages/privacy-policy/privacy-policy')
+const Termsofuse = () => import(/* webpackChunkName: "policies" */ '@/pages/terms-of-use/terms-of-use')
+const HipaaPrivacySupplement = () => import(/* webpackChunkName: "policies" */ '@/pages/hipaa-privacy-supplement/hipaa-privacy-supplement')
+const CookieNotice = () => import(/* webpackChunkName: "policies" */ '@/pages/cookie-notice/cookie-notice')
 import VueScrollTo from 'vue-scrollto'
 
 Vue.use(VueRouter)
@@ -37,14 +36,14 @@ const router = new VueRouter({
       name: 'home',
       navigation: true,
       component: Home,
-      image: '/static/home.jpg'
+      image: '/static/home.webp'
     },
     {
       path: '/patient-info',
       name: 'patient info',
       navigation: true,
       component: PatientInfo,
-      image: '/static/patient_info.jpg',
+      image: '/static/patient_info.webp',
       children: [
         {
           path: '/patient-info#new-patients',
@@ -69,7 +68,7 @@ const router = new VueRouter({
       name: 'Promo',
       navigation: false,
       component: Promo,
-      image: '/static/patient_info.jpg',
+      image: '/static/patient_info.webp',
       children: [
         {
           path: '/promo#book-free',
@@ -94,7 +93,7 @@ const router = new VueRouter({
       name: 'Treatment Options',
       navigation: true,
       component: TreatmentOptions,
-      image: '/static/treatment_options.jpg',
+      image: '/static/treatment_options.webp',
       children: [
         {
           path: '/treatment-options#invisalign',
@@ -123,7 +122,7 @@ const router = new VueRouter({
       name: 'Contact Us',
       navigation: true,
       component: Contact,
-      image: '/static/hero-home-3.jpg'
+      image: '/static/hero-home-3.webp'
     },
     {
       path: '/thank-you',

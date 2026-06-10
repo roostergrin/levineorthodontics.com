@@ -12,30 +12,37 @@ import {
   VIEW_MODALCONTENT
 } from './mutation-types'
 
+const inlineState = (typeof window !== 'undefined' && window.__INITIAL_STATE__) || {}
+
+const keyBySlug = (items) => items.reduce(
+  (allData, data) => ({ ...allData, [data.slug]: data }),
+  {}
+)
+
 const actions = {
   GET_PAGES ({ commit }) {
+    if (Array.isArray(inlineState.pages) && inlineState.pages.length) {
+      commit(GET_PAGES, keyBySlug(inlineState.pages))
+      return
+    }
     (async () => {
       try {
         const response = await axios.get(`${api}/wp/v2/pages?per_page=100&_fields=slug,acf`)
-        const data = response.data.reduce(
-          (allData, data) => ({ ...allData, [data.slug]: data }),
-          {}
-        )
-        commit(GET_PAGES, data)
+        commit(GET_PAGES, keyBySlug(response.data))
       } catch (e) {
         console.log('PAGES API: ' + e)
       }
     })()
   },
   GET_APP ({ commit }) {
+    if (Array.isArray(inlineState.app) && inlineState.app.length) {
+      commit(GET_APP, keyBySlug(inlineState.app))
+      return
+    }
     (async () => {
       try {
         const response = await axios.get(`${api}/wp/v2/app?_fields=slug,acf`)
-        const data = response.data.reduce(
-          (allData, data) => ({ ...allData, [data.slug]: data }),
-          {}
-        )
-        commit(GET_APP, data)
+        commit(GET_APP, keyBySlug(response.data))
       } catch (e) { console.log('APP API: ' + e) }
     })()
   },

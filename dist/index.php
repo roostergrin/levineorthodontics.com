@@ -1,12 +1,23 @@
-<!DOCTYPE html>
+<?php
+// Hero image for this route (from the cached initial-state payload). Used for
+// the preload hint and the pre-Vue placeholder so the LCP image paints before
+// the app boots.
+$rg_hero_image = function_exists('rg_get_route_hero_image') ? rg_get_route_hero_image() : '';
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://cdn.userway.org" crossorigin>
     <link rel="preconnect" href="https://onlineschedulingv2.threadcommunication.com" crossorigin>
-    <link rel="preload" href="<?php echo esc_url(home_url('/static/home.jpg')); ?>" as="image" fetchpriority="high">
+    <?php if ($rg_hero_image): ?>
+    <link rel="preload" href="<?php echo esc_url($rg_hero_image); ?>" as="image" fetchpriority="high">
+    <style id="rg-prepaint-css">
+      #app .rg-prepaint{height:100vh;background:url('<?php echo esc_url($rg_hero_image); ?>') center center/cover no-repeat}
+      @media screen and (max-width: 1024px){#app .rg-prepaint{height:60vh}}
+    </style>
+    <?php endif; ?>
     <?php wp_head(); ?>
     <script>
       (function(w, d) {
@@ -48,7 +59,7 @@
     </script>
 </head>
 <body <?php echo body_class();  ?>>
-  <div id="app"></div>
+  <div id="app"><?php if ($rg_hero_image): ?><div class="rg-prepaint"></div><?php endif; ?></div>
   <?php wp_footer(); ?>
   <script type="text/javascript">
     window.$buoop = {notify:{e:-6,f:-4,o:-4,s:-2,c:-4},insecure:true,api:5};

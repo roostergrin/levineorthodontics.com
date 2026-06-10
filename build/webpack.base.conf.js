@@ -11,7 +11,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    app: [ 'babel-polyfill', './src/main.js']
+    app: ['./src/main.js']
   },
   output: {
     path: config.build.assetsRoot,
@@ -23,7 +23,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      'vue$': 'vue/dist/vue.runtime.esm.js',
       '@': resolve('src'),
       api: resolve('./src/shared/api/api'),
       revisions: resolve('./src/shared/revisions/revisions'),

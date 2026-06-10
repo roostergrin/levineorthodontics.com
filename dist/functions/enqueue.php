@@ -170,6 +170,21 @@ function rg_defer_noncritical_scripts($tag, $handle, $src) {
 }
 add_filter('script_loader_tag', 'rg_defer_noncritical_scripts', 10, 3);
 
+function rg_delay_sitekit_gtag($tag, $handle, $src) {
+	if (is_admin() || $handle !== 'google_gtagjs') {
+		return $tag;
+	}
+
+	$src = esc_url($src);
+
+	return "<script id='google_gtagjs-js-delayed'>(function(w,d){" .
+		"function l(){if(d.getElementById('google_gtagjs-js'))return;var s=d.createElement('script');s.id='google_gtagjs-js';s.async=true;s.src='{$src}';(d.head||d.body).appendChild(s);}" .
+		"function sch(){setTimeout(function(){if(w.requestIdleCallback){w.requestIdleCallback(l,{timeout:4000});}else{l();}},6000);}" .
+		"if(d.readyState==='complete'){sch();}else{w.addEventListener('load',sch,false);}" .
+		"})(window,document);</script>\n";
+}
+add_filter('script_loader_tag', 'rg_delay_sitekit_gtag', 10, 3);
+
 function rg_public_rest_cache_headers($response, $server, $request) {
 	if (!($response instanceof WP_REST_Response) || $request->get_method() !== 'GET' || is_user_logged_in()) {
 		return $response;

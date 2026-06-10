@@ -2,6 +2,7 @@
 
 // include additional functionality -------------------------
 include_once(get_template_directory() . '/functions/enqueue.php');
+include_once(get_template_directory() . '/functions/initial-state.php');
 include_once(get_template_directory() . '/functions/admin-bar.php');
 include_once(get_template_directory() . '/functions/filters.php');
 include_once(get_template_directory() . '/functions/editor.php');
