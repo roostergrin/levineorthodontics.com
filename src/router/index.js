@@ -36,7 +36,8 @@ const router = new VueRouter({
       name: 'home',
       navigation: true,
       component: Home,
-      image: '/static/home.webp'
+      image: '/static/home.webp',
+      meta: { title: 'Levine Orthodontics | Orthodontist in Lexington, MA' }
     },
     {
       path: '/patient-info',
@@ -44,6 +45,7 @@ const router = new VueRouter({
       navigation: true,
       component: PatientInfo,
       image: '/static/patient_info.webp',
+      meta: { title: 'Patient Info | Levine Orthodontics' },
       children: [
         {
           path: '/patient-info#new-patients',
@@ -69,6 +71,7 @@ const router = new VueRouter({
       navigation: false,
       component: Promo,
       image: '/static/patient_info.webp',
+      meta: { title: 'Promo | Levine Orthodontics' },
       children: [
         {
           path: '/promo#book-free',
@@ -94,6 +97,7 @@ const router = new VueRouter({
       navigation: true,
       component: TreatmentOptions,
       image: '/static/treatment_options.webp',
+      meta: { title: 'Treatment Options | Levine Orthodontics' },
       children: [
         {
           path: '/treatment-options#invisalign',
@@ -122,49 +126,57 @@ const router = new VueRouter({
       name: 'Contact Us',
       navigation: true,
       component: Contact,
-      image: '/static/hero-home-3.webp'
+      image: '/static/hero-home-3.webp',
+      meta: { title: 'Contact Us | Levine Orthodontics' }
     },
     {
       path: '/thank-you',
       name: 'Thank You',
       navigation: false,
-      component: ThankYouContact
+      component: ThankYouContact,
+      meta: { title: 'Thank You | Levine Orthodontics' }
     },
     {
       path: '/thank-you',
       name: 'Thank You',
       navigation: false,
-      component: ThankYou
+      component: ThankYou,
+      meta: { title: 'Thank You | Levine Orthodontics' }
     },
     {
       path: '/privacy-policy',
       name: 'Privacy Policy',
       navigation: false,
-      component: PrivacyPolicy
+      component: PrivacyPolicy,
+      meta: { title: 'Privacy Policy | Levine Orthodontics' }
     },
     {
       path: '/hipaa-privacy-supplement',
       name: 'Hipaa Privacy Supplement',
       navigation: false,
-      component: HipaaPrivacySupplement
+      component: HipaaPrivacySupplement,
+      meta: { title: 'HIPAA Privacy Supplement | Levine Orthodontics' }
     },
     {
       path: '/cookie-notice',
       name: 'Cookie Notice',
       navigation: false,
-      component: CookieNotice
+      component: CookieNotice,
+      meta: { title: 'Cookie Notice | Levine Orthodontics' }
     },
     {
       path: '/terms-of-use',
       name: 'Terms of Use',
       navigation: false,
-      component: Termsofuse
+      component: Termsofuse,
+      meta: { title: 'Terms of Use | Levine Orthodontics' }
     },
     {
       path: '/accessibility-statement',
       name: 'Accessibility Statement',
       navigation: false,
-      component: AccessibilityStatement
+      component: AccessibilityStatement,
+      meta: { title: 'Accessibility Statement | Levine Orthodontics' }
     },
     {
       path: '/*',
@@ -174,6 +186,19 @@ const router = new VueRouter({
     }
   ],
   scrollBehavior
+})
+
+// Keep document.title in sync on client-side navigation. The server-rendered
+// title (AIOSEO) only covers the initial page load.
+router.afterEach((to) => {
+  let title = 'Levine Orthodontics'
+  for (let i = to.matched.length - 1; i >= 0; i--) {
+    if (to.matched[i].meta && to.matched[i].meta.title) {
+      title = to.matched[i].meta.title
+      break
+    }
+  }
+  document.title = title
 })
 
 export default router

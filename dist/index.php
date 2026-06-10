@@ -18,6 +18,31 @@ $rg_hero_image = function_exists('rg_get_route_hero_image') ? rg_get_route_hero_
       @media screen and (max-width: 1024px){#app .rg-prepaint{height:60vh}}
     </style>
     <?php endif; ?>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dentist",
+      "@id": "https://levineorthodontics.com/#localbusiness",
+      "name": "Levine Orthodontics",
+      "description": "Orthodontic care for adults, adolescents and kids in Lexington, MA and the surrounding Bedford, Concord and Arlington areas.",
+      "url": "https://levineorthodontics.com/",
+      "telephone": "+1-781-860-9473",
+      "image": "https://levineorthodontics.com/static/LevineOrthoLogo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "18 Muzzey Street",
+        "addressLocality": "Lexington",
+        "addressRegion": "MA",
+        "postalCode": "02421",
+        "addressCountry": "US"
+      },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=18+Muzzey+Street%2C+Lexington%2C+MA+02421",
+      "sameAs": [
+        "https://www.facebook.com/levineorthodontics",
+        "https://www.instagram.com/levineorthodontics"
+      ]
+    }
+    </script>
     <?php wp_head(); ?>
     <script>
       (function(w, d) {
